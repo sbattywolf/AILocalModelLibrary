@@ -1,0 +1,15 @@
+# Exclude tests, tool artifacts, and local developer files from exported archives
+tests/** export-ignore
+.continue/** export-ignore
+.tools/** export-ignore
+.vscode/** export-ignore
+.github/** export-ignore
+
+# Keep module files with CRLF on Windows
+*.ps1    text eol=crlf
+*.psm1   text eol=crlf
+*.psd1   text eol=crlf
+
+# Ensure large binary files (if any) not misdetected
+*.zip    binary
+*.exe    binary
