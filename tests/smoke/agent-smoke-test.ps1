@@ -14,7 +14,7 @@ if (-not $PSScriptRoot) { $PSScriptRoot = Split-Path -Parent $MyInvocation.MyCom
 # Walk up to repo root
 $RepoRoot = $PSScriptRoot
 while ($true) {
-    if (Test-Path (Join-Path $RepoRoot '.git') -or Test-Path (Join-Path $RepoRoot 'agent') -or Test-Path (Join-Path $RepoRoot 'templates\agent')) { break }
+    if ((Test-Path (Join-Path $RepoRoot '.git')) -or (Test-Path (Join-Path $RepoRoot 'agent')) -or (Test-Path (Join-Path $RepoRoot 'templates\agent'))) { break }
     $parent = Split-Path -Parent $RepoRoot
     if ($parent -eq $RepoRoot -or [string]::IsNullOrEmpty($parent)) { break }
     $RepoRoot = $parent
