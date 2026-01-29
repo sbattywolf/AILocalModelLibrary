@@ -16,8 +16,8 @@ if (-not (Get-Command -Name Start-TestSession -ErrorAction SilentlyContinue)) { 
 
 # Import agent modules
 $AgentPath = "$PSScriptRoot\..\..\..\agent"
-Import-Module "$AgentPath\src\core\ConfigManager.psm1" -Force
-Import-Module "$AgentPath\src\core\AgentCore.psm1" -Force
+Import-Module "$AgentPath\SimRacingAgent\Core\ConfigManager.psm1" -Force
+Import-Module "$AgentPath\SimRacingAgent\Core\AgentCore.psm1" -Force
 
 function Test-AgentConfigManager {
     [CmdletBinding()]

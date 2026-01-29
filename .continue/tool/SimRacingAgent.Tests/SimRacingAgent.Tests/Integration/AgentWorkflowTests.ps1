@@ -17,8 +17,8 @@ if (-not (Get-Command -Name Start-TestSession -ErrorAction SilentlyContinue)) { 
 
 # Import agent modules
 $AgentPath = "$PSScriptRoot\..\..\..\agent"
-Import-Module (Join-Path $AgentPath 'src\core\ConfigManager.psm1') -ErrorAction SilentlyContinue
-Import-Module (Join-Path $AgentPath 'src\core\AgentCore.psm1') -ErrorAction SilentlyContinue
+Import-Module (Join-Path $AgentPath 'SimRacingAgent\Core\ConfigManager.psm1') -ErrorAction SilentlyContinue
+Import-Module (Join-Path $AgentPath 'SimRacingAgent\Core\AgentCore.psm1') -ErrorAction SilentlyContinue
 Import-Module (Join-Path $AgentPath 'SimRacingAgent\Modules\USBMonitor.psm1') -ErrorAction SilentlyContinue
 Import-Module (Join-Path $AgentPath 'SimRacingAgent\Modules\ProcessManager.psm1') -ErrorAction SilentlyContinue
 
