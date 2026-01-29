@@ -1,0 +1,37 @@
+﻿{
+    "CollectedAt":  "2026-01-29T22:26:12.7235621+01:00",
+    "Samples":  [
+                    {
+                        "Timestamp":  "2026-01-29T22:26:11.6908765+01:00",
+                        "PID":  28032,
+                        "ProcessName":  "powershell",
+                        "Role":  "monitor-unit",
+                        "CPUPercent":  0,
+                        "WorkingSetMB":  84.23,
+                        "PrivateMB":  65.83,
+                        "VirtualMB":  2101935.64,
+                        "Threads":  29,
+                        "Handles":  701,
+                        "IOReadBytes":  null,
+                        "IOWriteBytes":  null,
+                        "Alive":  true,
+                        "StartTime":  "2026-01-29T22:26:10.0540758+01:00"
+                    },
+                    {
+                        "Timestamp":  "2026-01-29T22:26:12.7162557+01:00",
+                        "PID":  28032,
+                        "ProcessName":  "powershell",
+                        "Role":  "monitor-unit",
+                        "CPUPercent":  0,
+                        "WorkingSetMB":  84.22,
+                        "PrivateMB":  65.8,
+                        "VirtualMB":  2101935.39,
+                        "Threads":  28,
+                        "Handles":  700,
+                        "IOReadBytes":  null,
+                        "IOWriteBytes":  null,
+                        "Alive":  true,
+                        "StartTime":  "2026-01-29T22:26:10.0540758+01:00"
+                    }
+                ]
+}
