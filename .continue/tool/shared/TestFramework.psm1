@@ -15,7 +15,7 @@ if (-not $PSScriptRoot) { $PSScriptRoot = Split-Path -Parent $MyInvocation.MyCom
 # Resolve repository root by walking up until we find markers (.git or agent folder)
 $RepoRoot = $PSScriptRoot
 while ($true) {
-	if (Test-Path (Join-Path $RepoRoot '.git') -or Test-Path (Join-Path $RepoRoot 'agent')) { break }
+	if (Test-Path (Join-Path $RepoRoot '.git') -or Test-Path (Join-Path $RepoRoot 'agent') -or Test-Path (Join-Path $RepoRoot 'templates\agent')) { break }
 	$parent = Split-Path -Parent $RepoRoot
 	if ($parent -eq $RepoRoot -or [string]::IsNullOrEmpty($parent)) { break }
 	$RepoRoot = $parent
@@ -35,7 +35,14 @@ if ($found) {
 	try { Import-Module $found -Force -ErrorAction SilentlyContinue ; Write-Verbose "TestFramework loaded from $found" } catch { Write-Warning "Failed to import TestFramework from $found: $_" }
 	# Publish repo and agent paths as globals so tests can reuse a single source of truth
 	try { $Global:RepoRoot = $RepoRoot } catch {}
-	try { $Global:AgentPath = Join-Path $RepoRoot 'agent' } catch {}
+	try {
+		# Prefer existing `agent` folder, otherwise use `templates/agent` when present.
+		$agentCandidate = Join-Path $RepoRoot 'agent'
+		$templateCandidate = Join-Path $RepoRoot 'templates\agent'
+		if (Test-Path $agentCandidate) { $Global:AgentPath = $agentCandidate }
+		elseif (Test-Path $templateCandidate) { $Global:AgentPath = $templateCandidate }
+		else { $Global:AgentPath = $agentCandidate }
+	} catch {}
 } else {
 	Write-Verbose "TestFramework not found in candidates; tests that dot-source relative paths will need the framework available." 
 }
