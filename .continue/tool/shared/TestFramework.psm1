@@ -39,8 +39,9 @@ if ($found) {
 		# Prefer existing `agent` folder, otherwise use `templates/agent` when present.
 		$agentCandidate = Join-Path $RepoRoot 'agent'
 		$templateCandidate = Join-Path $RepoRoot 'templates\agent'
-		if (Test-Path $agentCandidate) { $Global:AgentPath = $agentCandidate }
-		elseif (Test-Path $templateCandidate) { $Global:AgentPath = $templateCandidate }
+		# Prefer agent when it contains the SimRacingAgent folder, otherwise prefer templates/agent
+		if (Test-Path (Join-Path $agentCandidate 'SimRacingAgent')) { $Global:AgentPath = $agentCandidate }
+		elseif (Test-Path (Join-Path $templateCandidate 'SimRacingAgent')) { $Global:AgentPath = $templateCandidate }
 		else { $Global:AgentPath = $agentCandidate }
 	} catch {}
 } else {
