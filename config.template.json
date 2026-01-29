@@ -1,0 +1,7 @@
+{
+  "openai_api_key": "<PUT_YOUR_OPENAI_API_KEY_HERE>",
+  "ollama_cmd": "ollama",
+  "ollama_model": "llama2",
+  "local_llm_path": "<PATH_TO_LOCAL_MODEL_OR_BINARY>",
+  "user_notes": "replace-with-personal-settings (do NOT commit)"
+}

@@ -12,3 +12,6 @@ reports/
 *.tmp
 Thumbs.db
 .DS_Store
+
+# Local private config (do NOT commit secrets)
+.private/
