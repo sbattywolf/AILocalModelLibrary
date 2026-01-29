@@ -1,0 +1,96 @@
+{
+  "preference": {
+    "priority": "accuracy",
+    "note": "Prefer models with higher measured quality/accuracy for reasoning and code tasks. Use smaller/faster models only when latency or memory is constrained."
+  },
+  "agents": [
+    {
+      "name": "CustomAgent",
+      "type": "local-script",
+      "entry": ".continue/agent-runner.ps1",
+      "description": "Default local agent (echo stub).",
+      "options": {
+        "model": "qwen2.5-coder:1.5b",
+        "mode": "default"
+      }
+    },
+    {
+      "name": "TurboAgent",
+      "type": "local-script",
+      "entry": ".continue/agent-runner.ps1",
+      "description": "High-performance agent profile (low-latency, may trade accuracy).",
+      "options": {
+        "model": "qwen2.5-coder:32b",
+        "mode": "turbo"
+      },
+      "quality": "high",
+      "notes": "Large model; best accuracy when resources permit."
+    },
+    {
+      "name": "LocalModelA",
+      "type": "local-model",
+      "entry": ".continue/python/agent_runner.py",
+      "description": "Local model A (smaller/faster).",
+      "options": {
+        "model": "local-qwen-a:1.0",
+        "mode": "local"
+      },
+      "quality": "medium",
+      "notes": "Good for quick iterations on limited VRAM."
+    },
+    {
+      "name": "LocalModelB",
+      "type": "local-model",
+      "entry": ".continue/python/agent_runner.py",
+      "description": "Local model B (larger/quality).",
+      "options": {
+        "model": "local-qwen-b:1.0",
+        "mode": "local"
+      },
+      "quality": "high",
+      "notes": "Preferred for accuracy-sensitive tasks when hardware allows."
+    },
+    {
+      "name": "CodeLlama-7B",
+      "type": "local-model",
+      "entry": ".continue/python/agent_runner.py",
+      "description": "Code Llama 7B instruct (good for code gen).",
+      "options": { "model": "codellama/7b-instruct", "mode": "code" },
+      "quality": "medium-high",
+      "notes": "Good code generation; consider quantized variant for RTX3090."
+    },
+    {
+      "name": "StarCoder-15B",
+      "type": "local-model",
+      "entry": ".continue/python/agent_runner.py",
+      "description": "StarCoder 15B (quantize for RTX3090).",
+      "options": { "model": "starcoder/15b", "mode": "code" },
+      "quality": "high",
+      "notes": "High accuracy for coding tasks; may need quantization to fit."
+    },
+    {
+      "name": "Mistral-7B",
+      "type": "local-model",
+      "entry": ".continue/python/agent_runner.py",
+      "description": "Mistral 7B instruct (fast, good general reasoning).",
+      "options": { "model": "mistral-instruct-7b", "mode": "instruct" },
+      "quality": "high",
+      "notes": "Good balance of speed and accuracy."
+    },
+    {
+      "name": "Llama2-13B-Chat",
+      "type": "local-model",
+      "entry": ".continue/python/agent_runner.py",
+      "description": "Llama 2 13B chat (balanced quality).",
+      "options": { "model": "llama-2-13b-chat", "mode": "chat" },
+      "quality": "high",
+      "notes": "Strong general reasoning and chat capability."
+    }
+  ],
+  "default": "LocalModelB",
+  "auto_update_check": {
+    "enabled": false,
+    "frequency_days": 7,
+    "notify_on_change": false
+  }
+}

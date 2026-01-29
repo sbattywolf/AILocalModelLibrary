@@ -1,0 +1,7 @@
+﻿ollama : ma non atteso.
+In riga:1 car:76
++ ... 'ci-quote'; ollama run test-model 'O''Reilly''s test quoted' --keepal ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ma non atteso.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

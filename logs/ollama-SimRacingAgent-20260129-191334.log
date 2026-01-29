@@ -1,0 +1,78 @@
+﻿ollama : time=2026-01-29T19:13:35.023+01:00 level=INFO source=routes.go:1631 msg="server config" 
+env="map[CUDA_VISIBLE_DEVICES: GGML_VK_VISIBLE_DEVICES: GPU_DEVICE_ORDINAL: HIP_VISIBLE_DEVICES: 
+HSA_OVERRIDE_GFX_VERSION: HTTPS_PROXY: HTTP_PROXY: NO_PROXY: OLLAMA_CONTEXT_LENGTH:4096 OLLAMA_DEBUG:INFO 
+OLLAMA_FLASH_ATTENTION:false OLLAMA_GPU_OVERHEAD:0 OLLAMA_HOST:http://127.0.0.1:11434 OLLAMA_KEEP_ALIVE:5m0s 
+OLLAMA_KV_CACHE_TYPE: OLLAMA_LLM_LIBRARY: OLLAMA_LOAD_TIMEOUT:5m0s OLLAMA_MAX_LOADED_MODELS:0 OLLAMA_MAX_QUEUE:512 
+OLLAMA_MODELS:C:\\Users\\sbatt\\.ollama\\models OLLAMA_MULTIUSER_CACHE:false OLLAMA_NEW_ENGINE:false 
+OLLAMA_NOHISTORY:false OLLAMA_NOPRUNE:false OLLAMA_NUM_PARALLEL:1 OLLAMA_ORIGINS:[http://localhost https://localhost 
+http://localhost:* https://localhost:* http://127.0.0.1 https://127.0.0.1 http://127.0.0.1:* https://127.0.0.1:* 
+http://0.0.0.0 https://0.0.0.0 http://0.0.0.0:* https://0.0.0.0:* app://* file://* tauri://* vscode-webview://* 
+vscode-file://*] OLLAMA_REMOTES:[ollama.com] OLLAMA_SCHED_SPREAD:false OLLAMA_VULKAN:false ROCR_VISIBLE_DEVICES:]"
+In riga:1 car:48
++ ... E:\llm-models\.ollama'; = 'SimRacingAgent'; ollama serve 2>&1 | Out-F ...
++                                                 ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (time=2026-01-29...IBLE_DEVICES:]":String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+time=2026-01-29T19:13:35.048+01:00 level=INFO source=images.go:473 msg="total blobs: 5"
+time=2026-01-29T19:13:35.048+01:00 level=INFO source=images.go:480 msg="total unused blobs removed: 0"
+time=2026-01-29T19:13:35.049+01:00 level=INFO source=routes.go:1684 msg="Listening on 127.0.0.1:11434 (version 0.15.2)"
+time=2026-01-29T19:13:35.050+01:00 level=INFO source=runner.go:67 msg="discovering available GPUs..."
+time=2026-01-29T19:13:35.060+01:00 level=INFO source=runner.go:106 msg="experimental Vulkan support disabled.  To 
+enable, set OLLAMA_VULKAN=1"
+time=2026-01-29T19:13:35.071+01:00 level=INFO source=server.go:429 msg="starting runner" 
+cmd="C:\\Users\\sbatt\\AppData\\Local\\Programs\\Ollama\\ollama.exe runner --ollama-engine --port 55389"
+time=2026-01-29T19:13:35.301+01:00 level=INFO source=server.go:429 msg="starting runner" 
+cmd="C:\\Users\\sbatt\\AppData\\Local\\Programs\\Ollama\\ollama.exe runner --ollama-engine --port 55395"
+time=2026-01-29T19:13:35.520+01:00 level=INFO source=server.go:429 msg="starting runner" 
+cmd="C:\\Users\\sbatt\\AppData\\Local\\Programs\\Ollama\\ollama.exe runner --ollama-engine --port 55402"
+time=2026-01-29T19:13:35.619+01:00 level=INFO source=server.go:429 msg="starting runner" 
+cmd="C:\\Users\\sbatt\\AppData\\Local\\Programs\\Ollama\\ollama.exe runner --ollama-engine --port 55409"
+time=2026-01-29T19:13:35.619+01:00 level=INFO source=server.go:429 msg="starting runner" 
+cmd="C:\\Users\\sbatt\\AppData\\Local\\Programs\\Ollama\\ollama.exe runner --ollama-engine --port 55410"
+time=2026-01-29T19:13:35.888+01:00 level=INFO source=types.go:42 msg="inference compute" 
+id=GPU-33f272c7-180c-dbd9-3ce1-4977215e8a83 filter_id="" library=CUDA compute=8.6 name=CUDA0 description="NVIDIA 
+GeForce RTX 3090" libdirs=ollama,cuda_v13 driver=13.1 pci_id=0000:0a:00.0 type=discrete total="24.0 GiB" 
+available="22.8 GiB"
+[GIN] 2026/01/29 - 19:14:30 | 404 |      1.5398ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:14:30 | 404 |      1.5398ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:14:30 | 404 |      1.5398ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:18:27 | 404 |       999.9┬Ás |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:18:27 | 404 |       500.7┬Ás |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:18:27 | 404 |       999.9┬Ás |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:18:35 | 404 |      1.0007ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:18:35 | 404 |      1.0007ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:18:35 | 404 |      1.0007ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:20:04 | 404 |      1.0014ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:20:04 | 404 |      1.0014ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:20:04 | 404 |      1.0014ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:27:54 | 404 |      1.5011ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:27:54 | 404 |      1.5011ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:27:54 | 404 |      1.0003ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:29:55 | 404 |      1.0016ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:29:55 | 404 |      1.0016ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:29:55 | 404 |      1.0016ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:33:56 | 404 |      1.0007ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:33:56 | 404 |      1.0007ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:33:56 | 404 |      1.0007ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:38:55 | 404 |       999.5┬Ás |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:38:55 | 404 |       999.5┬Ás |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:38:55 | 404 |       999.5┬Ás |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:40:09 | 404 |      1.5013ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:40:09 | 404 |      1.0009ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:40:09 | 404 |      1.0009ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:54:05 | 404 |      1.5163ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:54:05 | 404 |      1.0119ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:54:05 | 404 |      1.0119ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:54:10 | 404 |      1.0195ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:54:10 | 404 |      2.0254ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:54:10 | 404 |      1.0195ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:54:10 | 404 |      1.0005ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:54:10 | 404 |      1.0005ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:54:10 | 404 |       999.6┬Ás |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:54:10 | 404 |      1.0503ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:54:10 | 404 |      1.0503ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:54:10 | 404 |      1.0503ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:56:40 | 404 |      1.0007ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:56:40 | 404 |      1.0007ms |       127.0.0.1 | POST     "/api/show"
+[GIN] 2026/01/29 - 19:56:40 | 404 |      1.0007ms |       127.0.0.1 | POST     "/api/show"

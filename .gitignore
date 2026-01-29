@@ -1,0 +1,17 @@
+# Ignore transient log files and test run outputs
+*.log
+logs/
+# Tool-specific and temporary reports
+.continue/*-run.log
+.continue/**/logs/
+scripts/tmp/
+reports/
+
+# Ignore OS and editor files
+*.swp
+*.tmp
+Thumbs.db
+.DS_Store
+
+# Local private config (do NOT commit secrets)
+.private/

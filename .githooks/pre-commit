@@ -1,0 +1,23 @@
+#!/bin/sh
+# Run pre-commit secret scan via PowerShell on Windows
+REPO_ROOT=$(git rev-parse --show-toplevel)
+if command -v powershell.exe >/dev/null 2>&1; then
+  # Block accidental commits of repository-private secrets
+  staged=$(git diff --cached --name-only)
+  for f in $staged; do
+    case "$f" in
+      .private/*)
+        echo "Refusing commit: attempted to add or modify $f under .private/ (private files must not be committed)."
+        exit 1
+        ;;
+    esac
+  done
+
+  powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$REPO_ROOT/scripts/pre-commit-scan.ps1"
+  rc=$?
+  if [ $rc -ne 0 ]; then
+    echo "Pre-commit secret scan failed. Commit aborted."
+    exit $rc
+  fi
+fi
+exit 0

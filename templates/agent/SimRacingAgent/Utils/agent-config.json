@@ -1,0 +1,9 @@
+{
+  "Agent": {
+    "Name": "TemplateAgent",
+    "DataPath": "C:\\ProgramData\\TemplateAgent"
+  },
+  "Logging": {
+    "LogFilePath": "C:\\ProgramData\\TemplateAgent\\logs\\agent.log"
+  }
+}

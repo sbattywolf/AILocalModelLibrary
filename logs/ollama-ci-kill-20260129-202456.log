@@ -1,0 +1,7 @@
+﻿ollama : ma non atteso.
+In riga:1 car:75
++ ... els\.ollama'; $env:OLLAMA_ROLE = 'ci-kill'; ollama serve 2>&1 | Out-F ...
++                                                 ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ma non atteso.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

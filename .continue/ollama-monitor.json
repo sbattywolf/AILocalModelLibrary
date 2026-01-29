@@ -1,0 +1,21 @@
+﻿{
+    "CollectedAt":  "2026-01-29T19:12:02.8293972+01:00",
+    "Samples":  [
+                    {
+                        "Timestamp":  "2026-01-29T19:12:02.8213313+01:00",
+                        "PID":  14980,
+                        "ProcessName":  null,
+                        "Role":  "SimRacingAgent",
+                        "CPUPercent":  null,
+                        "WorkingSetMB":  null,
+                        "PrivateMB":  null,
+                        "VirtualMB":  null,
+                        "Threads":  null,
+                        "Handles":  null,
+                        "IOReadBytes":  null,
+                        "IOWriteBytes":  null,
+                        "Alive":  false,
+                        "StartTime":  null
+                    }
+                ]
+}
