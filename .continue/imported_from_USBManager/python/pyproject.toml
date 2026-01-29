@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "usbdevicemanager_continue_agents"
+version = "0.0.0"
+description = "Local agent runner prototypes for USBDeviceManager workspace"
+authors = [ { name="Repo Tools" } ]
+readme = "README.md"

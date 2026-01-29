@@ -1,5 +1,5 @@
 # Test wrapper for USB monitor expected by tests
-Import-Module (Join-Path $PSScriptRoot "..\..\SimRacingAgent\Modules\DeviceMonitor.psm1") -ErrorAction SilentlyContinue
+Import-Module (Join-Path $PSScriptRoot "DeviceMonitor.psm1") -ErrorAction SilentlyContinue
  
 # Provide safe global mock/test variables when not present to avoid runtime errors
 if (-not (Get-Variable -Scope Global -Name MockFunctions -ErrorAction SilentlyContinue)) { Set-Variable -Scope Global -Name MockFunctions -Value @{} -Force }

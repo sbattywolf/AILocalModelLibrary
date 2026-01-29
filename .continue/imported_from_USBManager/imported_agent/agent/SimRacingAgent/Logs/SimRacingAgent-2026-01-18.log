@@ -1,0 +1,220 @@
+﻿[2026-01-18 12:29:47.075] [Info] [Logger] Log outputs configured: Console, File
+[2026-01-18 12:29:47.094] [Info] [Logger] Log level set to: Info
+[2026-01-18 12:29:47.099] [Info] [Startup] Starting SimRacing Agent v1.0.0
+[2026-01-18 12:29:47.101] [Info] [Startup] Agent ID: 42476de5-b3ed-4710-ac61-a7107bea0aef
+[2026-01-18 12:29:47.103] [Info] [Init] Initializing SimRacing Agent...
+[2026-01-18 12:29:47.166] [Info] [ConfigManager] Configuration loaded from: E:\Workspaces\Git\SimRacing\USBDeviceManager\agent\SimRacingAgent\Utils\agent-config.json
+[2026-01-18 12:29:47.168] [Info] [Init] Loading core modules...
+[2026-01-18 12:29:47.178] [Info] [Init] Loading feature modules...
+[2026-01-18 12:29:47.264] [Info] [Init] Loading service modules...
+[2026-01-18 12:29:47.320] [Info] [Init] All modules loaded successfully
+[2026-01-18 12:29:47.323] [Info] [Services] Starting agent services...
+[2026-01-18 12:29:47.417] [Info] [] Connected to dashboard at http://localhost:5000
+[2026-01-18 12:29:47.436] [Info] [Services] Connected to dashboard at: http://localhost:5000
+[2026-01-18 12:29:47.469] [Error] [] Dashboard API error (POST /api/agents/register): Errore del server remoto: (404) Non trovato.
+[2026-01-18 12:29:47.492] [Info] [] Starting device monitoring (interval: 5s)
+[2026-01-18 12:29:47.569] [Info] [] New device detected: Hub radice USB (USB 3.0)
+[2026-01-18 12:29:47.578] [Info] [] Device connected: Hub radice USB (USB 3.0)
+[2026-01-18 12:29:47.579] [Info] [] New device detected: Hub radice USB (USB 3.0)
+[2026-01-18 12:29:47.580] [Info] [] Device connected: Hub radice USB (USB 3.0)
+[2026-01-18 12:29:47.581] [Info] [] New device detected: Dispositivo USB composito
+[2026-01-18 12:29:47.583] [Info] [] Device connected: Dispositivo USB composito
+[2026-01-18 12:29:47.583] [Info] [] New device detected: Hub radice USB (USB 3.0)
+[2026-01-18 12:29:47.585] [Info] [] Device connected: Hub radice USB (USB 3.0)
+[2026-01-18 12:29:47.585] [Info] [] New device detected: Dispositivo USB composito
+[2026-01-18 12:29:47.587] [Info] [] Device connected: Dispositivo USB composito
+[2026-01-18 12:29:47.598] [Info] [] Device monitoring started successfully
+[2026-01-18 12:29:47.600] [Info] [Services] Device monitoring started (interval: 5s)
+[2026-01-18 12:29:47.633] [Info] [] Loaded 4 software configurations
+[2026-01-18 12:29:47.637] [Info] [] Starting software monitoring (interval: 10s)
+[2026-01-18 12:29:47.664] [Info] [] Software monitoring started successfully
+[2026-01-18 12:29:47.665] [Info] [Services] Software monitoring started (interval: 10s)
+[2026-01-18 12:29:47.710] [Info] [] Loaded 3 automation rules
+[2026-01-18 12:29:47.714] [Info] [] Starting automation engine
+[2026-01-18 12:29:47.718] [Info] [] Automation engine started successfully
+[2026-01-18 12:29:47.719] [Info] [Services] Automation engine started
+[2026-01-18 12:29:47.720] [Info] [Logger] Log outputs configured: Console, File, Dashboard
+[2026-01-18 12:29:47.726] [Info] [Services] All services started successfully
+[2026-01-18 12:29:47.727] [Info] [Main] SimRacing Agent started successfully
+[2026-01-18 12:29:47.729] [Info] [Main] Agent ID: 42476de5-b3ed-4710-ac61-a7107bea0aef
+[2026-01-18 12:29:47.735] [Info] [] [DEBUG] Heartbeat POST: http://localhost:5000/api/agents/42476de5-b3ed-4710-ac61-a7107bea0aef/heartbeat Body: {
+    "Timestamp":  "2026-01-18T12:29:47.732Z",
+    "Status":  "Active"
+}
+[2026-01-18 12:29:47.750] [Info] [] [DEBUG] Heartbeat response: {"status":"ok","agentId":"42476de5-b3ed-4710-ac61-a7107bea0aef"}
+[2026-01-18 12:35:00.854] [Info] [Logger] Log outputs configured: Console, File
+[2026-01-18 12:35:00.873] [Info] [Logger] Log level set to: Info
+[2026-01-18 12:35:00.878] [Info] [Startup] Starting SimRacing Agent v1.0.0
+[2026-01-18 12:35:00.880] [Info] [Startup] Agent ID: 0f8d8156-228f-41e0-94bd-c90667826c93
+[2026-01-18 12:35:00.882] [Info] [Init] Initializing SimRacing Agent...
+[2026-01-18 12:35:00.947] [Info] [ConfigManager] Configuration loaded from: E:\Workspaces\Git\SimRacing\USBDeviceManager\agent\SimRacingAgent\Utils\agent-config.json
+[2026-01-18 12:35:00.950] [Info] [Init] Loading core modules...
+[2026-01-18 12:35:00.960] [Info] [Init] Loading feature modules...
+[2026-01-18 12:35:01.006] [Info] [Init] Loading service modules...
+[2026-01-18 12:35:01.029] [Info] [Init] All modules loaded successfully
+[2026-01-18 12:35:01.032] [Info] [Services] Starting agent services...
+[2026-01-18 12:35:01.136] [Info] [] Connected to dashboard at http://localhost:5000
+[2026-01-18 12:35:01.147] [Info] [Services] Connected to dashboard at: http://localhost:5000
+[2026-01-18 12:35:01.190] [Info] [Services] Agent registered with dashboard successfully
+[2026-01-18 12:35:01.209] [Info] [] Starting device monitoring (interval: 5s)
+[2026-01-18 12:35:01.285] [Info] [] New device detected: Hub radice USB (USB 3.0)
+[2026-01-18 12:35:01.294] [Info] [] Device connected: Hub radice USB (USB 3.0)
+[2026-01-18 12:35:01.294] [Info] [] New device detected: Hub radice USB (USB 3.0)
+[2026-01-18 12:35:01.296] [Info] [] Device connected: Hub radice USB (USB 3.0)
+[2026-01-18 12:35:01.297] [Info] [] New device detected: Dispositivo USB composito
+[2026-01-18 12:35:01.298] [Info] [] Device connected: Dispositivo USB composito
+[2026-01-18 12:35:01.300] [Info] [] New device detected: Hub radice USB (USB 3.0)
+[2026-01-18 12:35:01.300] [Info] [] Device connected: Hub radice USB (USB 3.0)
+[2026-01-18 12:35:01.302] [Info] [] New device detected: Dispositivo USB composito
+[2026-01-18 12:35:01.302] [Info] [] Device connected: Dispositivo USB composito
+[2026-01-18 12:35:01.313] [Info] [] Device monitoring started successfully
+[2026-01-18 12:35:01.314] [Info] [Services] Device monitoring started (interval: 5s)
+[2026-01-18 12:35:01.334] [Info] [] Loaded 4 software configurations
+[2026-01-18 12:35:01.338] [Info] [] Starting software monitoring (interval: 10s)
+[2026-01-18 12:35:01.364] [Info] [] Software monitoring started successfully
+[2026-01-18 12:35:01.366] [Info] [Services] Software monitoring started (interval: 10s)
+[2026-01-18 12:35:01.403] [Info] [] Loaded 3 automation rules
+[2026-01-18 12:35:01.407] [Info] [] Starting automation engine
+[2026-01-18 12:35:01.411] [Info] [] Automation engine started successfully
+[2026-01-18 12:35:01.412] [Info] [Services] Automation engine started
+[2026-01-18 12:35:01.414] [Info] [Logger] Log outputs configured: Console, File, Dashboard
+[2026-01-18 12:35:01.420] [Info] [Services] All services started successfully
+[2026-01-18 12:35:01.421] [Info] [Main] SimRacing Agent started successfully
+[2026-01-18 12:35:01.423] [Info] [Main] Agent ID: 0f8d8156-228f-41e0-94bd-c90667826c93
+[2026-01-18 12:35:01.429] [Info] [] [DEBUG] Heartbeat POST: http://localhost:5000/api/agents/0f8d8156-228f-41e0-94bd-c90667826c93/heartbeat Body: {
+    "Timestamp":  "2026-01-18T12:35:01.426Z",
+    "Status":  "Active"
+}
+[2026-01-18 12:35:01.435] [Info] [] [DEBUG] Heartbeat response: {"status":"ok","agentId":"0f8d8156-228f-41e0-94bd-c90667826c93"}
+[2026-01-18 18:04:27.972] [Info] [Logger] Log outputs configured: Console, File
+[2026-01-18 18:04:27.991] [Info] [Logger] Log level set to: Info
+[2026-01-18 18:04:27.996] [Info] [Startup] Starting SimRacing Agent v1.0.0
+[2026-01-18 18:04:27.998] [Info] [Startup] Agent ID: 48b9e887-b26c-4ee2-b11e-605b96f8dd92
+[2026-01-18 18:04:28.000] [Info] [Init] Initializing SimRacing Agent...
+[2026-01-18 18:04:28.066] [Info] [ConfigManager] Configuration loaded from: E:\Workspaces\Git\SimRacing\USBDeviceManager\agent\SimRacingAgent\Utils\agent-config.json
+[2026-01-18 18:04:28.068] [Info] [Init] Loading core modules...
+[2026-01-18 18:04:28.104] [Info] [Init] Loading feature modules...
+[2026-01-18 18:04:28.231] [Info] [Init] Loading service modules...
+[2026-01-18 18:04:28.313] [Info] [Init] All modules loaded successfully
+[2026-01-18 18:04:28.316] [Info] [Services] Starting agent services...
+[2026-01-18 18:04:28.408] [Info] [] Connected to dashboard at http://localhost:5000
+[2026-01-18 18:04:28.418] [Info] [Services] Connected to dashboard at: http://localhost:5000
+[2026-01-18 18:04:28.460] [Info] [Services] Agent registered with dashboard successfully
+[2026-01-18 18:04:28.480] [Info] [] Starting device monitoring (interval: 5s)
+[2026-01-18 18:04:28.555] [Info] [] New device detected: Hub radice USB (USB 3.0)
+[2026-01-18 18:04:28.564] [Info] [] Device connected: Hub radice USB (USB 3.0)
+[2026-01-18 18:04:28.565] [Info] [] New device detected: Hub radice USB (USB 3.0)
+[2026-01-18 18:04:28.566] [Info] [] Device connected: Hub radice USB (USB 3.0)
+[2026-01-18 18:04:28.567] [Info] [] New device detected: Dispositivo USB composito
+[2026-01-18 18:04:28.568] [Info] [] Device connected: Dispositivo USB composito
+[2026-01-18 18:04:28.569] [Info] [] New device detected: Hub radice USB (USB 3.0)
+[2026-01-18 18:04:28.571] [Info] [] Device connected: Hub radice USB (USB 3.0)
+[2026-01-18 18:04:28.572] [Info] [] New device detected: Dispositivo USB composito
+[2026-01-18 18:04:28.573] [Info] [] Device connected: Dispositivo USB composito
+[2026-01-18 18:04:28.583] [Info] [] Device monitoring started successfully
+[2026-01-18 18:04:28.584] [Info] [Services] Device monitoring started (interval: 5s)
+[2026-01-18 18:04:28.617] [Info] [] Loaded 4 software configurations
+[2026-01-18 18:04:28.620] [Info] [] Starting software monitoring (interval: 10s)
+[2026-01-18 18:04:28.650] [Info] [] Software monitoring started successfully
+[2026-01-18 18:04:28.651] [Info] [Services] Software monitoring started (interval: 10s)
+[2026-01-18 18:04:28.690] [Info] [] Loaded 3 automation rules
+[2026-01-18 18:04:28.694] [Info] [] Starting automation engine
+[2026-01-18 18:04:28.699] [Info] [] Automation engine started successfully
+[2026-01-18 18:04:28.700] [Info] [Services] Automation engine started
+[2026-01-18 18:04:28.702] [Info] [Logger] Log outputs configured: Console, File, Dashboard
+[2026-01-18 18:04:28.708] [Info] [Services] All services started successfully
+[2026-01-18 18:04:28.709] [Info] [Main] SimRacing Agent started successfully
+[2026-01-18 18:04:28.710] [Info] [Main] Agent ID: 48b9e887-b26c-4ee2-b11e-605b96f8dd92
+[2026-01-18 18:04:28.717] [Info] [] [DEBUG] Heartbeat POST: http://localhost:5000/api/agents/48b9e887-b26c-4ee2-b11e-605b96f8dd92/heartbeat Body: {
+    "Timestamp":  "2026-01-18T18:04:28.714Z",
+    "Status":  "Active"
+}
+[2026-01-18 18:04:28.724] [Info] [] [DEBUG] Heartbeat response: {"status":"ok","agentId":"48b9e887-b26c-4ee2-b11e-605b96f8dd92"}
+[2026-01-18 18:09:18.771] [Info] [Logger] Log outputs configured: Console, File
+[2026-01-18 18:09:18.790] [Info] [Logger] Log level set to: Info
+[2026-01-18 18:09:18.796] [Info] [Startup] Starting SimRacing Agent v1.0.0
+[2026-01-18 18:09:18.798] [Info] [Startup] Agent ID: 9bc4a19d-4d8d-4471-a105-ca59b71a351d
+[2026-01-18 18:09:18.800] [Info] [Init] Initializing SimRacing Agent...
+[2026-01-18 18:09:18.864] [Info] [ConfigManager] Configuration loaded from: E:\Workspaces\Git\SimRacing\USBDeviceManager\agent\SimRacingAgent\Utils\agent-config.json
+[2026-01-18 18:09:18.867] [Info] [Init] Loading core modules...
+[2026-01-18 18:09:18.876] [Info] [Init] Loading feature modules...
+[2026-01-18 18:09:18.920] [Info] [Init] Loading service modules...
+[2026-01-18 18:09:18.943] [Info] [Init] All modules loaded successfully
+[2026-01-18 18:09:18.945] [Info] [Services] Starting agent services...
+[2026-01-18 18:09:19.037] [Info] [] Connected to dashboard at http://localhost:5000
+[2026-01-18 18:09:19.046] [Info] [Services] Connected to dashboard at: http://localhost:5000
+[2026-01-18 18:09:19.087] [Info] [Services] Agent registered with dashboard successfully
+[2026-01-18 18:09:19.106] [Info] [] Starting device monitoring (interval: 5s)
+[2026-01-18 18:09:19.178] [Info] [] New device detected: Hub radice USB (USB 3.0)
+[2026-01-18 18:09:19.187] [Info] [] Device connected: Hub radice USB (USB 3.0)
+[2026-01-18 18:09:19.188] [Info] [] New device detected: Hub radice USB (USB 3.0)
+[2026-01-18 18:09:19.189] [Info] [] Device connected: Hub radice USB (USB 3.0)
+[2026-01-18 18:09:19.190] [Info] [] New device detected: Dispositivo USB composito
+[2026-01-18 18:09:19.191] [Info] [] Device connected: Dispositivo USB composito
+[2026-01-18 18:09:19.191] [Info] [] New device detected: Hub radice USB (USB 3.0)
+[2026-01-18 18:09:19.193] [Info] [] Device connected: Hub radice USB (USB 3.0)
+[2026-01-18 18:09:19.193] [Info] [] New device detected: Dispositivo USB composito
+[2026-01-18 18:09:19.195] [Info] [] Device connected: Dispositivo USB composito
+[2026-01-18 18:09:19.205] [Info] [] Device monitoring started successfully
+[2026-01-18 18:09:19.206] [Info] [Services] Device monitoring started (interval: 5s)
+[2026-01-18 18:09:19.225] [Info] [] Loaded 4 software configurations
+[2026-01-18 18:09:19.229] [Info] [] Starting software monitoring (interval: 10s)
+[2026-01-18 18:09:19.256] [Info] [] Software monitoring started successfully
+[2026-01-18 18:09:19.257] [Info] [Services] Software monitoring started (interval: 10s)
+[2026-01-18 18:09:19.293] [Info] [] Loaded 3 automation rules
+[2026-01-18 18:09:19.297] [Info] [] Starting automation engine
+[2026-01-18 18:09:19.301] [Info] [] Automation engine started successfully
+[2026-01-18 18:09:19.302] [Info] [Services] Automation engine started
+[2026-01-18 18:09:19.304] [Info] [Logger] Log outputs configured: Console, File, Dashboard
+[2026-01-18 18:09:19.310] [Info] [Services] All services started successfully
+[2026-01-18 18:09:19.312] [Info] [Main] SimRacing Agent started successfully
+[2026-01-18 18:09:19.314] [Info] [Main] Agent ID: 9bc4a19d-4d8d-4471-a105-ca59b71a351d
+[2026-01-18 18:09:19.319] [Info] [] [DEBUG] Heartbeat POST: http://localhost:5000/api/agents/9bc4a19d-4d8d-4471-a105-ca59b71a351d/heartbeat Body: {
+    "Timestamp":  "2026-01-18T18:09:19.317Z",
+    "Status":  "Active"
+}
+[2026-01-18 18:09:19.326] [Info] [] [DEBUG] Heartbeat response: {"status":"ok","agentId":"9bc4a19d-4d8d-4471-a105-ca59b71a351d"}
+[2026-01-18 18:17:27.909] [Info] [Logger] Log outputs configured: Console, File
+[2026-01-18 18:17:27.928] [Info] [Logger] Log level set to: Info
+[2026-01-18 18:17:27.933] [Info] [Startup] Starting SimRacing Agent v1.0.0
+[2026-01-18 18:17:27.935] [Info] [Startup] Agent ID: 06331802-5f69-42b5-82dd-5c0c54235505
+[2026-01-18 18:17:27.937] [Info] [Init] Initializing SimRacing Agent...
+[2026-01-18 18:17:28.000] [Info] [ConfigManager] Configuration loaded from: E:\Workspaces\Git\SimRacing\USBDeviceManager\agent\SimRacingAgent\Utils\agent-config.json
+[2026-01-18 18:17:28.002] [Info] [Init] Loading core modules...
+[2026-01-18 18:17:28.012] [Info] [Init] Loading feature modules...
+[2026-01-18 18:17:28.058] [Info] [Init] Loading service modules...
+[2026-01-18 18:17:28.081] [Info] [Init] All modules loaded successfully
+[2026-01-18 18:17:28.084] [Info] [Services] Starting agent services...
+[2026-01-18 18:17:30.161] [Info] [] Connected to dashboard at http://localhost:5000
+[2026-01-18 18:17:30.170] [Info] [Services] Connected to dashboard at: http://localhost:5000
+[2026-01-18 18:17:30.217] [Info] [Services] Agent registered with dashboard successfully
+[2026-01-18 18:17:30.235] [Info] [] Starting device monitoring (interval: 5s)
+[2026-01-18 18:17:30.329] [Info] [] New device detected: Hub radice USB (USB 3.0)
+[2026-01-18 18:17:30.338] [Info] [] Device connected: Hub radice USB (USB 3.0)
+[2026-01-18 18:17:30.339] [Info] [] New device detected: Hub radice USB (USB 3.0)
+[2026-01-18 18:17:30.339] [Info] [] Device connected: Hub radice USB (USB 3.0)
+[2026-01-18 18:17:30.341] [Info] [] New device detected: Dispositivo USB composito
+[2026-01-18 18:17:30.342] [Info] [] Device connected: Dispositivo USB composito
+[2026-01-18 18:17:30.342] [Info] [] New device detected: Hub radice USB (USB 3.0)
+[2026-01-18 18:17:30.343] [Info] [] Device connected: Hub radice USB (USB 3.0)
+[2026-01-18 18:17:30.344] [Info] [] New device detected: Dispositivo USB composito
+[2026-01-18 18:17:30.345] [Info] [] Device connected: Dispositivo USB composito
+[2026-01-18 18:17:30.355] [Info] [] Device monitoring started successfully
+[2026-01-18 18:17:30.356] [Info] [Services] Device monitoring started (interval: 5s)
+[2026-01-18 18:17:30.375] [Info] [] Loaded 4 software configurations
+[2026-01-18 18:17:30.379] [Info] [] Starting software monitoring (interval: 10s)
+[2026-01-18 18:17:30.406] [Info] [] Software monitoring started successfully
+[2026-01-18 18:17:30.407] [Info] [Services] Software monitoring started (interval: 10s)
+[2026-01-18 18:17:30.445] [Info] [] Loaded 3 automation rules
+[2026-01-18 18:17:30.448] [Info] [] Starting automation engine
+[2026-01-18 18:17:30.452] [Info] [] Automation engine started successfully
+[2026-01-18 18:17:30.453] [Info] [Services] Automation engine started
+[2026-01-18 18:17:30.454] [Info] [Logger] Log outputs configured: Console, File, Dashboard
+[2026-01-18 18:17:30.460] [Info] [Services] All services started successfully
+[2026-01-18 18:17:30.462] [Info] [Main] SimRacing Agent started successfully
+[2026-01-18 18:17:30.463] [Info] [Main] Agent ID: 06331802-5f69-42b5-82dd-5c0c54235505
+[2026-01-18 18:17:30.470] [Info] [] [DEBUG] Heartbeat POST: http://localhost:5000/api/agents/06331802-5f69-42b5-82dd-5c0c54235505/heartbeat Body: {
+    "Timestamp":  "2026-01-18T18:17:30.467Z",
+    "Status":  "Active"
+}
+[2026-01-18 18:17:30.475] [Info] [] [DEBUG] Heartbeat response: {"status":"ok","agentId":"06331802-5f69-42b5-82dd-5c0c54235505"}

@@ -1,0 +1,28 @@
+﻿
+[2026-01-19 12:49:19] [Info] Starting SimRacing Agent Automated Tests
+[2026-01-19 12:49:19] [Info] Test Configuration: Port 5000, Duration 30s
+[2026-01-19 12:49:19] [Info] Testing health alert suppression...
+[2026-01-19 12:49:19] [Success] Started Dashboard Server process (PID: 24860)
+[2026-01-19 12:49:22] [Success] Started SimRacing Agent process (PID: 25952)
+[2026-01-19 12:49:52] [Success] ✅ No health alerts found - suppression working correctly
+[2026-01-19 12:49:52] [Info] Testing interactive mode functionality...
+[2026-01-19 12:49:52] [Success] Started Dashboard Server process (PID: 9268)
+[2026-01-19 12:49:57] [Success] ✅ Interactive mode test passed - agent wrote interactive marker to E:\Workspaces\Git\SimRacing\USBDeviceManager\agent\SimRacingAgent.Tests\Integration\logs\agent-interactive-out.txt
+[2026-01-19 12:49:57] [Info] Testing agent startup for clean execution...
+[2026-01-19 12:49:57] [Success] Started Dashboard Server process (PID: 21544)
+[2026-01-19 12:50:00] [Success] Started SimRacing Agent process (PID: 26380)
+[2026-01-19 12:50:15] [Success] ✅ Clean startup test passed
+[2026-01-19 12:50:15] [Info] Testing agent-dashboard connectivity...
+[2026-01-19 12:50:15] [Success] Started Dashboard Server process (PID: 26920)
+[2026-01-19 12:50:18] [Success] ✅ Dashboard server responding correctly
+[2026-01-19 12:50:18] [Info] === TEST RESULTS ===
+[2026-01-19 12:50:18] [Info] === SUMMARY ===
+[2026-01-19 12:50:18] [Success] Tests Passed: 4 / 4
+[2026-01-19 12:50:18] [Success] ✅ All tests passed! Agent is working correctly.
+[2026-01-19 12:50:18] [Info] Testing interactive mode functionality...
+[2026-01-19 12:50:18] [Success] Started Dashboard Server process (PID: 25916)
+[2026-01-19 12:50:22] [Success] ✅ Interactive mode test passed - agent wrote interactive marker to E:\Workspaces\Git\SimRacing\USBDeviceManager\agent\SimRacingAgent.Tests\Integration\logs\agent-interactive-out.txt
+[2026-01-19 12:50:22] [Info] Testing health alert suppression...
+[2026-01-19 12:50:22] [Success] Started Dashboard Server process (PID: 31152)
+[2026-01-19 12:50:25] [Success] Started SimRacing Agent process (PID: 6692)
+[2026-01-19 12:50:55] [Success] ✅ No health alerts found - suppression working correctly
