@@ -1,5 +1,7 @@
 ﻿Validation run: 2026-01-29T13:58:06.6967702+01:00
 
+Note: legacy imported artifacts under `.continue/imported_from_USBManager` were consolidated into `.continue/tool/` during session recovery. The entries below reflect the scanned sources; delete the legacy folder after confirming docs updated.
+
 JSON files:
  - .continue/config.agent : OK
  - E:\Workspaces\Git\AILocalModelLibrary\.continue\config.example.json : OK

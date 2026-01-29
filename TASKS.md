@@ -10,8 +10,8 @@ Priority steps (automatable)
 - Validate models in `.continue/models.json` and download preferred model (e.g., `qwen2.5-coder:32b` for `TurboAgent`).
 
 2. Tooling import & reuse
-- Audit `.continue/imported_from_USBManager/extracted` to find reusable scripts (`.tools/*`, `agent-runner.ps1`, `export-continue.ps1`).
-- Vendor or refactor helpers into `.continue/tool/` and remove duplicates.
+- Audit `.continue/tool/` to find reusable scripts (e.g., `.tools/*`, `agent-runner.ps1`, `export-continue.ps1`).
+- Note: legacy imported artifacts from `.continue/imported_from_USBManager` have been consolidated into `.continue/tool/` and can be removed after docs are updated.
 
 3. Code/Repo hygiene
 - Run `.continue/tool/validate-repo.ps1` and fix analyzer findings (logging var init, empty catch blocks, global vars).
@@ -57,7 +57,7 @@ Expanded actionable checklist (automatable, do in order):
  - Tasks performed: detect/install `ollama`, `git`, model pulls, optional package managers.
 
 2) Consolidate `.continue` tooling
- - Copy reusable helpers from `.continue/imported_from_USBManager/extracted` into `.continue/tool/`.
+ - Move or copy reusable helpers from legacy imported artifacts into `.continue/tool/` (previously under `.continue/imported_from_USBManager/extracted`).
  - Ensure `export-continue.ps1` excludes runtime artifacts (it already does).
  - Run `powershell -NoProfile -ExecutionPolicy Bypass -File .\.continue\tool\validate-repo-fast.ps1` after changes.
 
@@ -67,7 +67,7 @@ Expanded actionable checklist (automatable, do in order):
  - Validate models list in `.continue/models.json` and update if you want different defaults.
 
 4) Fix analyzer findings (priority)
- - Identify top analyzer issues from `.continue/imported_from_USBManager/extracted/psa-summary.json`.
+ - Identify top analyzer issues from the consolidated PSA summary under `.continue/tool/` (legacy details originated from the imported folder).
  - Apply small, safe fixes (initialize variables, avoid global vars, avoid empty catch blocks).
  - Run `validate-repo.ps1` and unit tests after each fix.
 
