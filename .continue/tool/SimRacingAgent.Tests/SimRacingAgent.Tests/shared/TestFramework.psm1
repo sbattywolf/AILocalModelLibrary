@@ -144,6 +144,10 @@ try {
 try {
     Export-ModuleMember -Function * -ErrorAction Stop
 } catch {
-    # Running outside a module (dot-sourced) — Export-ModuleMember is module-only.
-    Write-Verbose "Export-ModuleMember skipped (not running inside a module): $($_.Exception.Message)"
+        if ($PSModuleInfo) {
+            Export-ModuleMember -Function * -ErrorAction Stop
+        } else {
+            # Running outside a module (dot-sourced) — Export-ModuleMember is module-only.
+            Write-Verbose "Export-ModuleMember skipped (not running inside a module)"
+        }
 }

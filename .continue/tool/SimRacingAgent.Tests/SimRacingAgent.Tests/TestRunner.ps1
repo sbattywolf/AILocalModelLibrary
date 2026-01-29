@@ -26,6 +26,35 @@ $moduleRelativePaths = @(
 # Ensure `$PSScriptRoot` is defined when running interactively or via dot-sourcing
 if (-not $PSScriptRoot) { $PSScriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition }
 
+# Resolve repository root by walking up until we find markers (.git or agent folder)
+$RepoRoot = $PSScriptRoot
+while ($true) {
+    if ((Test-Path (Join-Path $RepoRoot '.git')) -or (Test-Path (Join-Path $RepoRoot 'agent'))) { break }
+    $parent = Split-Path -Parent $RepoRoot
+    if ($parent -eq $RepoRoot -or [string]::IsNullOrEmpty($parent)) { break }
+    $RepoRoot = $parent
+}
+
+# Locate TestFramework.psm1 from a set of likely locations (prefer local shared/ then repo-level .continue/tool)
+$tfCandidates = @(
+    (Join-Path $PSScriptRoot 'shared\TestFramework.psm1'),
+    (Join-Path $RepoRoot '.continue\tool\shared\TestFramework.psm1'),
+    (Join-Path $RepoRoot 'agent\SimRacingAgent.Tests\shared\TestFramework.psm1'),
+    (Join-Path $RepoRoot 'agent\shared\TestFramework.psm1')
+)
+
+$TestFrameworkPath = $null
+foreach ($c in $tfCandidates) {
+    if (Test-Path $c) { $TestFrameworkPath = $c; break }
+}
+
+if ($TestFrameworkPath) {
+    Write-Verbose "Importing shared test framework from $TestFrameworkPath"
+    try { Import-Module $TestFrameworkPath -Force } catch { Write-Warning -Message ("Failed importing TestFramework from {0}: {1}" -f $TestFrameworkPath, $_) }
+} else {
+    Write-Verbose "No TestFramework.psm1 found in expected locations; continuing and tests may dot-source relative paths."
+}
+
 # Dot-source regression tests explicitly so their functions are available in this session
 $regressionFull = Join-Path $PSScriptRoot 'Regression\AgentRegressionTests.ps1'
 if (Test-Path $regressionFull) { . $regressionFull }
@@ -37,7 +66,7 @@ foreach ($rel in $moduleRelativePaths) {
         try {
             Import-Module $full -Force
         } catch {
-            Write-Warning "Failed to import $full : $_"
+            Write-Warning -Message ("Failed to import {0}: {1}" -f $full, $_)
         }
     } else {
         Write-Verbose "Skipping missing module: $full"

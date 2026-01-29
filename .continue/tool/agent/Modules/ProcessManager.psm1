@@ -45,4 +45,8 @@ function Calculate-ProcessHealth {
     return [math]::Max(0,[math]::Min(100,$score))
 }
 
-Export-ModuleMember -Function Get-ProcessHealthCheck,Test-ManagedProcess,Start-ManagedProcess,Get-ProcessMetrics,Calculate-ProcessHealth
+if ($PSModuleInfo) {
+    Export-ModuleMember -Function Get-ProcessHealthCheck,Test-ManagedProcess,Start-ManagedProcess,Get-ProcessMetrics,Calculate-ProcessHealth -ErrorAction Stop
+} else {
+    Write-Verbose "Export-ModuleMember skipped (not running inside a module)"
+}

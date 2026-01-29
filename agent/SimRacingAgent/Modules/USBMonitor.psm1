@@ -37,4 +37,8 @@ function Initialize-USBMonitoring {
     try { Get-USBDevices | Out-Null; return $true } catch { return $false }
 }
 
-Export-ModuleMember -Function Get-USBDevices,Get-USBHealthCheck,Initialize-USBMonitoring
+if ($PSModuleInfo) {
+    Export-ModuleMember -Function Get-USBDevices,Get-USBHealthCheck,Initialize-USBMonitoring -ErrorAction Stop
+} else {
+    Write-Verbose "Export-ModuleMember skipped (not running inside a module)"
+}

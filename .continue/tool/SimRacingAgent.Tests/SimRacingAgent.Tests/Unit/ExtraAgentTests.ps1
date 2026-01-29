@@ -9,13 +9,17 @@
 Import-Module "$PSScriptRoot\..\..\shared\TestFramework.psm1" -Force
 
 # Import modules under test (use src adapter modules)
-# Compute repository root by walking up until a .git folder is found (robust across nested tool locations)
-$current = $PSScriptRoot
-while (-not (Test-Path (Join-Path $current '.git')) -and ($current -ne (Split-Path $current -Parent))) {
-    $current = Split-Path $current -Parent
+if ($Global:AgentPath) {
+    $AgentPath = $Global:AgentPath
+} else {
+    # Compute repository root by walking up until a .git folder is found (robust across nested tool locations)
+    $current = $PSScriptRoot
+    while (-not (Test-Path (Join-Path $current '.git')) -and ($current -ne (Split-Path $current -Parent))) {
+        $current = Split-Path $current -Parent
+    }
+    if (Test-Path (Join-Path $current '.git')) { $RepoRoot = $current } else { $RepoRoot = Resolve-Path -Path (Join-Path $PSScriptRoot '..\..\..\..') }
+    $AgentPath = Join-Path $RepoRoot 'agent'
 }
-if (Test-Path (Join-Path $current '.git')) { $RepoRoot = $current } else { $RepoRoot = Resolve-Path -Path (Join-Path $PSScriptRoot '..\..\..\..') }
-$AgentPath = Join-Path $RepoRoot 'agent'
 Import-Module "$AgentPath\SimRacingAgent\Modules\USBMonitor.psm1" -Force -ErrorAction SilentlyContinue
 Import-Module "$AgentPath\SimRacingAgent\Modules\ProcessManager.psm1" -Force -ErrorAction SilentlyContinue
 

@@ -53,4 +53,8 @@ function Get-AgentStatus {
     }
 }
 
-Export-ModuleMember -Function Test-AgentRunning,Set-AgentLock,Clear-AgentLock,Write-AgentLog,Get-AgentStatus
+if ($PSModuleInfo) {
+    Export-ModuleMember -Function Test-AgentRunning,Set-AgentLock,Clear-AgentLock,Write-AgentLog,Get-AgentStatus -ErrorAction Stop
+} else {
+    Write-Verbose "Export-ModuleMember skipped (not running inside a module)"
+}

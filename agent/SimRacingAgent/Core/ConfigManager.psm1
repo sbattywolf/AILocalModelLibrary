@@ -48,4 +48,8 @@ function Export-Configuration {
     return @{ FileName = $fileName; Path = $path }
 }
 
-Export-ModuleMember -Function Get-DefaultConfiguration,Test-Configuration,Save-Configuration,Load-Configuration,Export-Configuration
+if ($PSModuleInfo) {
+    Export-ModuleMember -Function Get-DefaultConfiguration,Test-Configuration,Save-Configuration,Load-Configuration,Export-Configuration -ErrorAction Stop
+} else {
+    Write-Verbose "Export-ModuleMember skipped (not running inside a module)"
+}

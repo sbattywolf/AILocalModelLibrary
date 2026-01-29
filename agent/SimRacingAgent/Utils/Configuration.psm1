@@ -26,4 +26,8 @@ function Load-Configuration {
     return Get-Content -Path $Path -Raw | ConvertFrom-Json
 }
 
-Export-ModuleMember -Function Get-DefaultConfiguration,Save-Configuration,Load-Configuration
+if ($PSModuleInfo) {
+    Export-ModuleMember -Function Get-DefaultConfiguration,Save-Configuration,Load-Configuration -ErrorAction Stop
+} else {
+    Write-Verbose "Export-ModuleMember skipped (not running inside a module)"
+}

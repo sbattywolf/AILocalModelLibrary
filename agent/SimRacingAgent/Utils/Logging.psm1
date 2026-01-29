@@ -21,4 +21,8 @@ function Write-AgentLog {
     return Write-Log -Message $Message -Level $Level -Component $Component -Path $LogPath
 }
 
-Export-ModuleMember -Function Write-Log,Write-AgentLog
+if ($PSModuleInfo) {
+    Export-ModuleMember -Function Write-Log,Write-AgentLog -ErrorAction Stop
+} else {
+    Write-Verbose "Export-ModuleMember skipped (not running inside a module)"
+}

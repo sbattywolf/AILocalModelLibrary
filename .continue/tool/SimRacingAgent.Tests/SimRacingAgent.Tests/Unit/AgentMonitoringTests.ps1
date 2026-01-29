@@ -9,19 +9,26 @@
     Tests focus on agent monitoring capabilities without external system dependencies.
 #>
 
-# Import shared test framework (dot-source to expose helpers into this scope)
-# Ensure TestFramework helpers are available in this scope; import module or dot-source as fallback
-Import-Module "$PSScriptRoot\..\..\shared\TestFramework.psm1" -ErrorAction SilentlyContinue
-if (-not (Get-Command -Name Start-TestSession -ErrorAction SilentlyContinue)) { . "$PSScriptRoot\..\..\shared\TestFramework.psm1" }
+# Import shared test framework (robust path resolution)
+$tfPath = Join-Path $PSScriptRoot '..\..\shared\TestFramework.psm1'
+try { Import-Module (Resolve-Path $tfPath -ErrorAction Stop).Path -ErrorAction SilentlyContinue } catch {}
+if (-not (Get-Command -Name Start-TestSession -ErrorAction SilentlyContinue)) {
+    $resolved = Resolve-Path $tfPath -ErrorAction SilentlyContinue
+    if ($resolved) { . $resolved.Path } else { Write-Warning "TestFramework not found at $tfPath" }
+}
 
 # Import agent monitoring modules
-# Compute repository root by walking up until a .git folder is found (robust across nested tool locations)
-$current = $PSScriptRoot
-while (-not (Test-Path (Join-Path $current '.git')) -and ($current -ne (Split-Path $current -Parent))) {
-    $current = Split-Path $current -Parent
+if ($Global:AgentPath) {
+    $AgentPath = $Global:AgentPath
+} else {
+    # Compute repository root by walking up until a .git folder is found (robust across nested tool locations)
+    $current = $PSScriptRoot
+    while (-not (Test-Path (Join-Path $current '.git')) -and ($current -ne (Split-Path $current -Parent))) {
+        $current = Split-Path $current -Parent
+    }
+    if (Test-Path (Join-Path $current '.git')) { $RepoRoot = $current } else { $RepoRoot = Resolve-Path -Path (Join-Path $PSScriptRoot '..\..\..\..') }
+    $AgentPath = Join-Path $RepoRoot 'agent'
 }
-if (Test-Path (Join-Path $current '.git')) { $RepoRoot = $current } else { $RepoRoot = Resolve-Path -Path (Join-Path $PSScriptRoot '..\..\..\..') }
-$AgentPath = Join-Path $RepoRoot 'agent'
 Import-Module "$AgentPath\SimRacingAgent\Modules\USBMonitor.psm1" -Force
 Import-Module "$AgentPath\SimRacingAgent\Modules\ProcessManager.psm1" -Force
 
