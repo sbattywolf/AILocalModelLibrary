@@ -31,7 +31,8 @@ param(
   [switch]$Confirm,
   [string]$TracePath = '.continue/install-trace.log',
   [switch]$ApplyPath,
-  [string]$RuntimePath
+  [string]$RuntimePath,
+  [string]$PathBackup = '.continue/path-backup.txt'
 )
 
 function Test-CommandExists { param([string]$cmd) return (Get-Command $cmd -ErrorAction SilentlyContinue) -ne $null }
@@ -98,11 +99,22 @@ if ($PullModel) {
           if ($ans -notin @('Y','y')) { Write-Trace 'Skipping PATH update.' }
         }
         try {
-          $current = [Environment]::GetEnvironmentVariable('Path',[EnvironmentVariableTarget]::User)
+          # Backup current user PATH before any changes
+          try {
+            $current = [Environment]::GetEnvironmentVariable('Path',[EnvironmentVariableTarget]::User)
+            if ($null -ne $current) { $current | Out-File -FilePath $PathBackup -Encoding utf8 -Force }
+            Write-Trace "Backed up current user PATH to $PathBackup"
+          } catch { Write-Trace "Warning: failed to write PATH backup: $($_.Exception.Message)" }
+
           if ($current -notlike "*${RuntimePath}*") {
             $new = "$current;${RuntimePath}"
-            setx PATH "$new" | Out-Null
-            Write-Trace "User PATH updated with $RuntimePath (setx applied)."
+            # setx modifies user PATH and does not require admin; note length limitations
+            if ($new.Length -gt 1000) {
+              Write-Trace "New PATH length is large (>$($new.Length) chars). setx may truncate values. Please update PATH manually or use an admin script to update System PATH. Backup at: $PathBackup"
+            } else {
+              setx PATH "$new" | Out-Null
+              Write-Trace "User PATH updated with $RuntimePath (setx applied)."
+            }
           } else { Write-Trace "RuntimePath already in user PATH." }
         } catch { Write-Trace "Failed to update PATH: $($_.Exception.Message)" }
       }
