@@ -46,3 +46,41 @@ git rebase origin/main
 # run quick-setup dry-run
 powershell -NoProfile -ExecutionPolicy Bypass -File .\.continue\tool\quick-setup.ps1 -DryRun
 ```
+
+---
+
+Expanded actionable checklist (automatable, do in order):
+
+1) Environment bootstrap (safe, dry-run first)
+ - Run: `powershell -NoProfile -ExecutionPolicy Bypass -File .\.continue\tool\quick-setup.ps1 -DryRun`
+ - Inspect printed actions, then run without `-DryRun` if you agree.
+ - Tasks performed: detect/install `ollama`, `git`, model pulls, optional package managers.
+
+2) Consolidate `.continue` tooling
+ - Copy reusable helpers from `.continue/imported_from_USBManager/extracted` into `.continue/tool/`.
+ - Ensure `export-continue.ps1` excludes runtime artifacts (it already does).
+ - Run `powershell -NoProfile -ExecutionPolicy Bypass -File .\.continue\tool\validate-repo-fast.ps1` after changes.
+
+3) Local agent configuration
+ - Ensure `selected_agent.txt` is set to a local agent (currently `TurboAgent`).
+ - Verify `.continue/config.json` and `.continue/config.agent` reference only local providers (ollama/local models).
+ - Validate models list in `.continue/models.json` and update if you want different defaults.
+
+4) Fix analyzer findings (priority)
+ - Identify top analyzer issues from `.continue/imported_from_USBManager/extracted/psa-summary.json`.
+ - Apply small, safe fixes (initialize variables, avoid global vars, avoid empty catch blocks).
+ - Run `validate-repo.ps1` and unit tests after each fix.
+
+5) Editor integration and tasks
+ - Ensure `.vscode/tasks.json` contains a `Chat With Agent` task using `.continue/agent-runner.ps1`.
+ - Replace any Copilot-specific tasks/configs with local runner calls.
+
+6) CI adjustments
+ - Add `validate-repo-fast` as an early CI job.
+ - If CI referenced remote models, add mock fallbacks or run model pulls in CI runner.
+
+7) Documentation & export
+ - Create `docs/local-setup.md` with exact commands for Windows (powershell), macOS, Linux.
+ - Use `.continue/tool/export-continue.ps1` to create a zip of `.continue` for reuse.
+
+If you'd like, I can now run the `quick-setup.ps1 -DryRun` and capture results, then start applying the highest-priority analyzer fix (initialize logging fallback variable) if the target file exists in this workspace. Proceed? 
