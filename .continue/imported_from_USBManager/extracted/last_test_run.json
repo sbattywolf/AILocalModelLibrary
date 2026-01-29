@@ -1,9 +1,0 @@
-﻿{
-    "timestamp":  "2026-01-29T03:49:30.9273593+01:00",
-    "tests":  [
-                  "unit,integration"
-              ],
-    "status":  "passed",
-    "durationSeconds":  42,
-    "resultsPath":  ".continue/test-results.json"
-}
