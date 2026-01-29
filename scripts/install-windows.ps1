@@ -24,16 +24,26 @@
 #>
 
 param(
-    [switch]$DryRun,
-    [switch]$PullModel,
-    [string]$Model = 'codellama/7b-instruct',
-    [string]$Runtime = 'ollama',
-    [switch]$Confirm
+  [switch]$DryRun,
+  [switch]$PullModel,
+  [string]$Model = 'codellama/7b-instruct',
+  [string]$Runtime = 'ollama',
+  [switch]$Confirm,
+  [string]$TracePath = '.continue/install-trace.log',
+  [switch]$ApplyPath,
+  [string]$RuntimePath
 )
 
 function Test-CommandExists { param([string]$cmd) return (Get-Command $cmd -ErrorAction SilentlyContinue) -ne $null }
 
-Write-Host "Install helper: checking environment..." -ForegroundColor Cyan
+function Write-Trace {
+  param([string]$msg)
+  $line = "[$((Get-Date).ToString('o'))] $msg"
+  try { Add-Content -Path $TracePath -Value $line -Encoding utf8 -ErrorAction SilentlyContinue } catch {}
+  Write-Host $msg -ForegroundColor Cyan
+}
+
+Write-Trace "Install helper: checking environment..."
 
 $checks = [ordered]@{
     ollama = Test-CommandExists 'ollama'
@@ -44,50 +54,66 @@ $checks = [ordered]@{
     '7z'   = Test-CommandExists '7z'
 }
 
-Write-Host "Environment results:" -ForegroundColor Gray
-foreach ($k in $checks.Keys) { Write-Host ("  {0} : {1}" -f $k, (if ($checks[$k]) { 'OK' } else { 'MISSING' })) }
+Write-Trace "Environment results:"
+foreach ($k in $checks.Keys) { $s = ("  {0} : {1}" -f $k, (if ($checks[$k]) { 'OK' } else { 'MISSING' })); Write-Trace $s }
 
-if ($DryRun) {
-    Write-Host "Dry-run: no changes will be made." -ForegroundColor Yellow
-}
+if ($DryRun) { Write-Trace "Dry-run: no changes will be made." }
 
 # Recommended install commands (non-destructive guidance)
-Write-Host "`nRecommended commands (copy & run locally):" -ForegroundColor Gray
-Write-Host "  - Install Ollama: https://ollama.com/docs/installation" -ForegroundColor Gray
-Write-Host "    Example (Windows): download installer from Ollama website and run it as admin." -ForegroundColor Gray
-Write-Host "  - Install Chocolatey (optional): Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" -ForegroundColor Gray
-Write-Host "  - Install 7-Zip: choco install 7zip -y" -ForegroundColor Gray
-Write-Host "  - Install Git: choco install git -y  OR use https://git-scm.com/download/win" -ForegroundColor Gray
-Write-Host "  - Install Docker (optional): https://docs.docker.com/desktop/windows/install/" -ForegroundColor Gray
+Write-Trace "`nRecommended commands (copy & run locally):"
+Write-Trace "  - Install Ollama: https://ollama.com/docs/installation"
+Write-Trace "    Example (Windows): download installer from Ollama website and run it as admin."
+Write-Trace "  - Install Chocolatey (optional): Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"
+Write-Trace "  - Install 7-Zip: choco install 7zip -y"
+Write-Trace "  - Install Git: choco install git -y  OR use https://git-scm.com/download/win"
+Write-Trace "  - Install Docker (optional): https://docs.docker.com/desktop/windows/install/"
 
 if ($PullModel) {
-    if (-not $checks[$Runtime]) {
-        Write-Host "Runtime '$Runtime' not found. Cannot pull model. Install $Runtime first." -ForegroundColor Red
-        exit 2
+  if (-not $checks[$Runtime]) {
+    Write-Trace "Runtime '$Runtime' not found. Cannot pull model. Install $Runtime first." 
+    exit 2
+  }
+
+  $pullCmd = "$Runtime pull $Model"
+  if ($DryRun) { Write-Trace "Dry-run: would run: $pullCmd" ; exit 0 }
+
+  if (-not $Confirm) {
+    $answer = Read-Host "About to run: $pullCmd  — proceed? (Y/N)"
+    if ($answer -notin @('Y','y')) { Write-Trace 'Aborting model pull.' ; exit 3 }
+  }
+
+  try {
+    Write-Trace "Running: $pullCmd"
+    $proc = Start-Process -FilePath $Runtime -ArgumentList @('pull',$Model) -NoNewWindow -PassThru -Wait
+    if ($proc.ExitCode -ne 0) { Write-Trace "Model pull failed (exit $($proc.ExitCode))" ; exit 4 }
+    Write-Trace "Model pulled: $Model"
+
+    # Optionally apply PATH for runtime if requested
+    if ($ApplyPath -and $RuntimePath) {
+      Write-Trace "ApplyPath requested. RuntimePath=$RuntimePath"
+      if ($DryRun) { Write-Trace "Dry-run: would add $RuntimePath to user PATH" }
+      else {
+        if (-not $Confirm) {
+          $ans = Read-Host "About to add '$RuntimePath' to user PATH via setx (requires new session to take effect). Proceed? (Y/N)"
+          if ($ans -notin @('Y','y')) { Write-Trace 'Skipping PATH update.' }
+        }
+        try {
+          $current = [Environment]::GetEnvironmentVariable('Path',[EnvironmentVariableTarget]::User)
+          if ($current -notlike "*${RuntimePath}*") {
+            $new = "$current;${RuntimePath}"
+            setx PATH "$new" | Out-Null
+            Write-Trace "User PATH updated with $RuntimePath (setx applied)."
+          } else { Write-Trace "RuntimePath already in user PATH." }
+        } catch { Write-Trace "Failed to update PATH: $($_.Exception.Message)" }
+      }
     }
 
-    $pullCmd = "$Runtime pull $Model"
-    if ($DryRun) {
-        Write-Host "Dry-run: would run: $pullCmd" -ForegroundColor Yellow
-        exit 0
-    }
-
-    if (-not $Confirm) {
-        $answer = Read-Host "About to run: $pullCmd  — proceed? (Y/N)"
-        if ($answer -notin @('Y','y')) { Write-Host 'Aborting model pull.' -ForegroundColor Yellow; exit 3 }
-    }
-
-    try {
-        Write-Host "Running: $pullCmd" -ForegroundColor Cyan
-        & $Runtime pull $Model
-        if ($LASTEXITCODE -ne 0) { Write-Host "Model pull failed (exit $LASTEXITCODE)" -ForegroundColor Red ; exit 4 }
-        Write-Host "Model pulled: $Model" -ForegroundColor Green
-        exit 0
-    } catch {
-        Write-Host "Model pull exception: $($_.Exception.Message)" -ForegroundColor Red
-        exit 5
-    }
+    exit 0
+  } catch {
+    Write-Trace "Model pull exception: $($_.Exception.Message)"
+    exit 5
+  }
 }
 
-Write-Host "Done. Run with -PullModel to pull the default model using Ollama if installed." -ForegroundColor Green
+Write-Trace "Done. Run with -PullModel to pull the default model using Ollama if installed." 
 exit 0
