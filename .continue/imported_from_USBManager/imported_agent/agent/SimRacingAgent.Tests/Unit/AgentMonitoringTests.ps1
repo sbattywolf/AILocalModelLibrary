@@ -17,7 +17,7 @@ if (-not (Get-Command -Name Start-TestSession -ErrorAction SilentlyContinue)) { 
 # Import agent monitoring modules
 $AgentPath = "$PSScriptRoot\..\..\..\agent"
 Import-Module "$AgentPath\SimRacingAgent\Modules\USBMonitor.psm1" -Force
-Import-Module "$AgentPath\src\modules\ProcessManager.psm1" -Force
+Import-Module "$AgentPath\SimRacingAgent\Modules\ProcessManager.psm1" -Force
 
 function Test-AgentUSBMonitoring {
     [CmdletBinding()]

@@ -20,7 +20,7 @@ $AgentPath = "$PSScriptRoot\..\..\..\agent"
 Import-Module (Join-Path $AgentPath 'src\core\ConfigManager.psm1') -ErrorAction SilentlyContinue
 Import-Module (Join-Path $AgentPath 'src\core\AgentCore.psm1') -ErrorAction SilentlyContinue
 Import-Module (Join-Path $AgentPath 'SimRacingAgent\Modules\USBMonitor.psm1') -ErrorAction SilentlyContinue
-Import-Module (Join-Path $AgentPath 'src\modules\ProcessManager.psm1') -ErrorAction SilentlyContinue
+Import-Module (Join-Path $AgentPath 'SimRacingAgent\Modules\ProcessManager.psm1') -ErrorAction SilentlyContinue
 
 function Test-AgentHealthCheckWorkflow {
     [CmdletBinding()]

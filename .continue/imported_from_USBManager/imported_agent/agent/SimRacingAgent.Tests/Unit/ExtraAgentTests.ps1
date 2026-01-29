@@ -11,7 +11,7 @@ Import-Module "$PSScriptRoot\..\..\shared\TestFramework.psm1" -Force
 # Import modules under test (use src adapter modules)
 $AgentPath = "$PSScriptRoot\..\..\..\agent"
 Import-Module "$AgentPath\SimRacingAgent\Modules\USBMonitor.psm1" -Force -ErrorAction SilentlyContinue
-Import-Module "$AgentPath\src\modules\ProcessManager.psm1" -Force -ErrorAction SilentlyContinue
+Import-Module "$AgentPath\SimRacingAgent\Modules\ProcessManager.psm1" -Force -ErrorAction SilentlyContinue
 
 function Test-DeviceNormalization {
     [CmdletBinding()]
