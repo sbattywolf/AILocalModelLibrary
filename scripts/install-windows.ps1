@@ -56,7 +56,11 @@ $checks = [ordered]@{
 }
 
 Write-Trace "Environment results:"
-foreach ($k in $checks.Keys) { $s = ("  {0} : {1}" -f $k, (if ($checks[$k]) { 'OK' } else { 'MISSING' })); Write-Trace $s }
+foreach ($k in $checks.Keys) {
+  if ($checks[$k]) { $status = 'OK' } else { $status = 'MISSING' }
+  $s = ("  {0} : {1}" -f $k, $status)
+  Write-Trace $s
+}
 
 if ($DryRun) { Write-Trace "Dry-run: no changes will be made." }
 
@@ -78,8 +82,8 @@ if ($PullModel) {
   $pullCmd = "$Runtime pull $Model"
   if ($DryRun) { Write-Trace "Dry-run: would run: $pullCmd" ; exit 0 }
 
-  if (-not $Confirm) {
-    $answer = Read-Host "About to run: $pullCmd  — proceed? (Y/N)"
+    if (-not $Confirm) {
+    $answer = Read-Host "About to run: $pullCmd  - proceed? (Y/N)"
     if ($answer -notin @('Y','y')) { Write-Trace 'Aborting model pull.' ; exit 3 }
   }
 

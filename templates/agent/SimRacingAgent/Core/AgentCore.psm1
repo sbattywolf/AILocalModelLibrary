@@ -3,7 +3,7 @@ function Test-AgentRunning {
     param()
     try {
         $procs = Get-Process -ErrorAction SilentlyContinue
-        return ($procs | Where-Object { $_.ProcessName -like 'SimRacingAgent*' }).Count -gt 0
+        return ($procs | Where-Object { $_.ProcessName -like 'TemplateAgent*' }).Count -gt 0
     } catch { return $false }
 }
 

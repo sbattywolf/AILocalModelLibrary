@@ -11,7 +11,7 @@ function Get-DefaultConfiguration {
         try { return Get-Content -Path $jsonPath -Raw | ConvertFrom-Json } catch {}
     }
 
-    return @{ Agent = @{ Name = 'SimRacingAgent'; DataPath = "C:\\ProgramData\\SimRacingAgent" }; Logging = @{ LogFilePath = "C:\\ProgramData\\SimRacingAgent\\logs\\agent.log" } }
+    return @{ Agent = @{ Name = 'TemplateAgent'; DataPath = "C:\\ProgramData\\TemplateAgent" }; Logging = @{ LogFilePath = "C:\\ProgramData\\TemplateAgent\\logs\\agent.log" } }
 }
 
 function Save-Configuration {
