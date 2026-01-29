@@ -1,51 +1,42 @@
-﻿Validation run: 2026-01-29T13:58:06.6967702+01:00
-
-Note: legacy imported artifacts under `.continue/imported_from_USBManager` were consolidated into `.continue/tool/` during session recovery. The entries below reflect the scanned sources; delete the legacy folder after confirming docs updated.
+﻿Validation run: 2026-01-29T16:24:49.8228587+01:00
 
 JSON files:
  - .continue/config.agent : OK
  - E:\Workspaces\Git\AILocalModelLibrary\.continue\config.example.json : OK
  - E:\Workspaces\Git\AILocalModelLibrary\.continue\config.json : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\config.example.json : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\config.json : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\extracted\config.json : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\extracted\last_test_run.json : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\extracted\models.json : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\extracted\psa-results.json : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\extracted\psa-summary.json : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\extracted\validation_report.json : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\last_test_run.json : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\models.json : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\validation_report.json : OK
  - E:\Workspaces\Git\AILocalModelLibrary\.continue\last_test_run.json : OK
  - E:\Workspaces\Git\AILocalModelLibrary\.continue\models.json : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\Unit\unit-results.json : OK
  - E:\Workspaces\Git\AILocalModelLibrary\.continue\validation_fast.json : OK
  - E:\Workspaces\Git\AILocalModelLibrary\.continue\validation_report.json : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\agent\SimRacingAgent\Utils\agent-config.json : OK
 
 PowerShell syntax:
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\extracted\save_session.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\tool\check-model-updates.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\tool\check-start-stop.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\tool\cleanup-old-scripts.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\tool\export-continue.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\tool\install-deps.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\tool\measure-parse.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\tool\pull-model-run.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\tool\pull-model.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\tool\quick-setup.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\tool\record-last-test-run.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\tool\relocate-ollama-models.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\tool\Setup-AI-Models.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\tool\setup-ollama.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\tool\Start-AI-Orchestrator.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\tool\Start-Local-AI.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\tool\start-model.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\tool\Stop-AI-Env.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\tool\stop-model.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\tool\validate-repo-fast.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\tool\validate-repo.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\agent-runner.ps1 : OK
- - E:\Workspaces\Git\AILocalModelLibrary\.continue\imported_from_USBManager\select-agent.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\agent\SimRacingAgent.Tests\Integration\run-integration-tests.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\application\api\ApplicationAPITests.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\application\integration\ApplicationIntegrationTests.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\Functional\run-functional-tests.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\Integration\Helpers\test-dashboard-server.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\Integration\AgentWorkflowTests.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\Integration\parse-integration-test.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\Integration\run-integration-tests.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\Integration\test-agent-integration-run-specific.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\Integration\test-agent-integration.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\Regression\AgentRegressionTests.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\Regression\run-heartbeat-debug.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\Regression\run-regression-tests.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\Regression\test-heartbeat-regression.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\Unit\AgentCoreTests.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\Unit\AgentMonitoringTests.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\Unit\ExtraAgentTests.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\Unit\run-unit-tests.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\Validation\quick-validation.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\ensure_bom.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\parse-testrunner.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\run_startproc_wrapper.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\run_tests_sanitized.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\TestFramework_clean.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\TestRunner.ps1 : OK
  - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\check-model-updates.ps1 : OK
  - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\check-start-stop.ps1 : OK
  - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\cleanup-old-scripts.ps1 : OK
@@ -57,6 +48,7 @@ PowerShell syntax:
  - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\quick-setup.ps1 : OK
  - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\record-last-test-run.ps1 : OK
  - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\relocate-ollama-models.ps1 : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\run_agentcore_tests.ps1 : OK
  - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\Setup-AI-Models.ps1 : OK
  - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\setup-ollama.ps1 : OK
  - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\Start-AI-Orchestrator.ps1 : OK
