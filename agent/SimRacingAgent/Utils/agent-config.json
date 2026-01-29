@@ -1,0 +1,9 @@
+{
+  "Agent": {
+    "Name": "SimRacingAgent",
+    "DataPath": "C:\\ProgramData\\SimRacingAgent"
+  },
+  "Logging": {
+    "LogFilePath": "C:\\ProgramData\\SimRacingAgent\\logs\\agent.log"
+  }
+}
