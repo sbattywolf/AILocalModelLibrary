@@ -15,7 +15,13 @@ Import-Module "$PSScriptRoot\..\..\shared\TestFramework.psm1" -ErrorAction Silen
 if (-not (Get-Command -Name Start-TestSession -ErrorAction SilentlyContinue)) { . "$PSScriptRoot\..\..\shared\TestFramework.psm1" }
 
 # Import agent modules
-$AgentPath = "$PSScriptRoot\..\..\..\agent"
+# Compute repository root by walking up until a .git folder is found (robust across nested tool locations)
+$current = $PSScriptRoot
+while (-not (Test-Path (Join-Path $current '.git')) -and ($current -ne (Split-Path $current -Parent))) {
+    $current = Split-Path $current -Parent
+}
+if (Test-Path (Join-Path $current '.git')) { $RepoRoot = $current } else { $RepoRoot = Resolve-Path -Path (Join-Path $PSScriptRoot '..\..\..\..') }
+$AgentPath = Join-Path $RepoRoot 'agent'
 Import-Module "$AgentPath\SimRacingAgent\Core\ConfigManager.psm1" -Force
 Import-Module "$AgentPath\SimRacingAgent\Core\AgentCore.psm1" -Force
 
