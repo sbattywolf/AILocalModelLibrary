@@ -1,4 +1,4 @@
-﻿Validation run: 2026-01-29T16:24:49.8228587+01:00
+﻿Validation run: 2026-01-29T16:36:47.8494093+01:00
 
 JSON files:
  - .continue/config.agent : OK
@@ -9,7 +9,7 @@ JSON files:
  - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\Unit\unit-results.json : OK
  - E:\Workspaces\Git\AILocalModelLibrary\.continue\validation_fast.json : OK
  - E:\Workspaces\Git\AILocalModelLibrary\.continue\validation_report.json : OK
- - E:\Workspaces\Git\AILocalModelLibrary\agent\SimRacingAgent\Utils\agent-config.json : OK
+ - E:\Workspaces\Git\AILocalModelLibrary\templates\agent\SimRacingAgent\Utils\agent-config.json : OK
 
 PowerShell syntax:
  - E:\Workspaces\Git\AILocalModelLibrary\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\agent\SimRacingAgent.Tests\Integration\run-integration-tests.ps1 : OK

@@ -17,8 +17,15 @@ try { Remove-Item $Global:TestLogFile -ErrorAction SilentlyContinue } catch { }
 '' | Out-File -FilePath $Global:TestLogFile -Encoding utf8
 
 # Test configuration
+$candidate1 = 'agent\SimRacingAgent\SimRacingAgent.ps1'
+$candidate2 = 'templates\agent\SimRacingAgent\SimRacingAgent.ps1'
+$workspaceRoot = Join-Path $PSScriptRoot '..\..\..'
+if (Test-Path (Join-Path $workspaceRoot $candidate1)) { $agentPathResolved = $candidate1 }
+elseif (Test-Path (Join-Path $workspaceRoot $candidate2)) { $agentPathResolved = $candidate2 }
+else { $agentPathResolved = $candidate1 }
+
 $TestConfig = @{
-    AgentPath = "agent\SimRacingAgent\SimRacingAgent.ps1"
+    AgentPath = $agentPathResolved
     DashboardPath = "Helpers/test-dashboard-server.ps1"
     Port = 5000
     TestDuration = 30 # seconds

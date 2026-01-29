@@ -1,5 +1,5 @@
 ﻿{
-    "timestamp":  "2026-01-29T16:24:49.8228587+01:00",
+    "timestamp":  "2026-01-29T16:36:47.8494093+01:00",
     "json":  [
                  {
                      "ok":  true,
@@ -35,7 +35,7 @@
                  },
                  {
                      "ok":  true,
-                     "file":  "E:\\Workspaces\\Git\\AILocalModelLibrary\\agent\\SimRacingAgent\\Utils\\agent-config.json"
+                     "file":  "E:\\Workspaces\\Git\\AILocalModelLibrary\\templates\\agent\\SimRacingAgent\\Utils\\agent-config.json"
                  }
              ],
     "ps1_syntax":  [

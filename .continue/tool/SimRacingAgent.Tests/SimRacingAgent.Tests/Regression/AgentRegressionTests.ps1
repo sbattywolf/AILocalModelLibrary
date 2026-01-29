@@ -25,7 +25,11 @@ if ($Global:AgentPath) {
         $current = Split-Path $current -Parent
     }
     if (Test-Path (Join-Path $current '.git')) { $RepoRoot = $current } else { $RepoRoot = Resolve-Path -Path (Join-Path $PSScriptRoot '..\..\..\..') }
-    $AgentPath = Join-Path $RepoRoot 'agent'
+    $agentCandidate = Join-Path $RepoRoot 'agent'
+    $templateCandidate = Join-Path $RepoRoot 'templates\agent'
+    if (Test-Path $agentCandidate) { $AgentPath = $agentCandidate }
+    elseif (Test-Path $templateCandidate) { $AgentPath = $templateCandidate }
+    else { $AgentPath = $agentCandidate }
 }
 Import-Module (Join-Path $AgentPath 'SimRacingAgent\Core\ConfigManager.psm1') -ErrorAction SilentlyContinue
 Import-Module (Join-Path $AgentPath 'SimRacingAgent\Core\AgentCore.psm1') -ErrorAction SilentlyContinue
