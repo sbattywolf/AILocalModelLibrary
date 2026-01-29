@@ -5,7 +5,7 @@ function Write-Log {
         [string]$Component = 'Agent',
         [string]$Path = $null
     )
-    if (-not $Path) { $Path = Join-Path $env:TEMP 'simracing_agent.log' }
+    if (-not $Path) { $Path = Join-Path $env:TEMP 'template_agent.log' }
     $line = "[$((Get-Date).ToString('o'))] [$Level] [$Component] $Message"
     $line | Out-File -FilePath $Path -Append -Encoding UTF8
     return $true

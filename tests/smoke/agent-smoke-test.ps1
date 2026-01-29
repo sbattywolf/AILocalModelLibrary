@@ -1,9 +1,9 @@
 <#
 .SYNOPSIS
-  Smoke test for SimRacingAgent core modules.
+    Smoke test for TemplateAgent core modules.
 
 .DESCRIPTION
-  Attempts to locate the agent code (agent/SimRacingAgent or templates/agent/SimRacingAgent),
+    Attempts to locate the agent code (agent/TemplateAgent or templates/agent/TemplateAgent),
   imports core modules and invokes `Get-USBHealthCheck` if available. Exits with
   code 0 on success, non-zero otherwise.
 #>
@@ -20,18 +20,18 @@ while ($true) {
     $RepoRoot = $parent
 }
 
-# Determine agent base path (prefer agent if it contains SimRacingAgent, otherwise templates/agent)
+# Determine agent base path (prefer agent if it contains TemplateAgent, otherwise templates/agent)
 $agentCandidate = Join-Path $RepoRoot 'agent'
 $templateCandidate = Join-Path $RepoRoot 'templates\agent'
-if (Test-Path (Join-Path $agentCandidate 'SimRacingAgent')) { $AgentPath = $agentCandidate }
-elseif (Test-Path (Join-Path $templateCandidate 'SimRacingAgent')) { $AgentPath = $templateCandidate }
+if (Test-Path (Join-Path $agentCandidate 'TemplateAgent')) { $AgentPath = $agentCandidate }
+elseif (Test-Path (Join-Path $templateCandidate 'TemplateAgent')) { $AgentPath = $templateCandidate }
 else { $AgentPath = $templateCandidate }
 
 Write-Host "Using AgentPath: $AgentPath" -ForegroundColor Cyan
 
 try {
-    $cfgPath = Join-Path $AgentPath 'SimRacingAgent\Core\ConfigManager.psm1'
-    $usbPath = Join-Path $AgentPath 'SimRacingAgent\Modules\USBMonitor.psm1'
+    $cfgPath = Join-Path $AgentPath 'TemplateAgent\Core\ConfigManager.psm1'
+    $usbPath = Join-Path $AgentPath 'TemplateAgent\Modules\USBMonitor.psm1'
 
     if (-not (Test-Path $cfgPath)) { Write-Host "Missing module: $cfgPath" -ForegroundColor Yellow }
     else { Import-Module $cfgPath -Force -ErrorAction Stop ; Write-Host "Imported ConfigManager" -ForegroundColor Green }

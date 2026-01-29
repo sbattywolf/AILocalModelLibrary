@@ -25,16 +25,16 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\.continue\tool\validate-re
 4) Run the PowerShell test suite (unit + integration quick run):
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\.continue\tool\SimRacingAgent.Tests\SimRacingAgent.Tests\TestRunner.ps1 -Verbose
+powershell -NoProfile -ExecutionPolicy Bypass -File .\.continue\tool\TemplateAgent.Tests\TemplateAgent.Tests\TestRunner.ps1 -Verbose
 ```
 
 5) Installation smoke test (basic commands):
 
 ```powershell
 # ensure agent code imports
-Import-Module .\agent\SimRacingAgent\Core\ConfigManager.psm1 -ErrorAction Stop
-Import-Module .\agent\SimRacingAgent\Core\AgentCore.psm1 -ErrorAction Stop
-Import-Module .\agent\SimRacingAgent\Modules\USBMonitor.psm1 -ErrorAction Stop
+Import-Module .\agent\TemplateAgent\Core\ConfigManager.psm1 -ErrorAction Stop
+Import-Module .\agent\TemplateAgent\Core\AgentCore.psm1 -ErrorAction Stop
+Import-Module .\agent\TemplateAgent\Modules\USBMonitor.psm1 -ErrorAction Stop
 # quick health check
 (Get-USBHealthCheck).OverallHealth
 ```

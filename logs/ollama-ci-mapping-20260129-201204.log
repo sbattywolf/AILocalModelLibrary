@@ -1,0 +1,8 @@
+﻿ollama : Error: listen tcp 127.0.0.1:11434: bind: Only one usage of each socket address (protocol/network 
+address/port) is normally permitted.
+In riga:1 car:78
++ ... \.ollama'; $env:OLLAMA_ROLE = 'ci-mapping'; ollama serve 2>&1 | Out-F ...
++                                                 ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Error: listen t...ally permitted.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

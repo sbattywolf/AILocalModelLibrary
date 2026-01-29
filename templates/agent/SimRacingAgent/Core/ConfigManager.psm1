@@ -2,7 +2,7 @@ function Get-DefaultConfiguration {
     [CmdletBinding()]
     param()
 
-    $agentName = "SimRacingAgent"
+    $agentName = "TemplateAgent"
     return @{
         Agent = @{ Name = $agentName; DataPath = "C:\ProgramData\$agentName" }
         Logging = @{ LogFilePath = "C:\ProgramData\$agentName\logs\agent.log" }

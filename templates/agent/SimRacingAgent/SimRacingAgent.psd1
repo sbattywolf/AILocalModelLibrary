@@ -4,10 +4,10 @@
     Author = 'AILocalModelLibrary'
     CompanyName = ''
     Copyright = '(c) 2026'
-    Description = 'SimRacingAgent library module (template) — exposes core APIs for importing as a library.'
+    Description = 'TemplateAgent library module (template) — exposes core APIs for importing as a library.'
     PowerShellVersion = '5.1'
     FileList = @(
-        'SimRacingAgent.psm1',
+        'TemplateAgent.psm1',
         'Core\ConfigManager.psm1',
         'Core\AgentCore.psm1',
         'Modules\USBMonitor.psm1',
@@ -18,7 +18,7 @@
     RequiredModules = @()
     PrivateData = @{
         PSData = @{
-            Tags = @('agent','simracing','library')
+            Tags = @('agent','template','library')
             LicenseUri = ''
             ProjectUri = ''
             ReleaseNotes = 'Initial template module manifest.'

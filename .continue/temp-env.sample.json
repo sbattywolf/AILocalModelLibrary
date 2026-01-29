@@ -1,0 +1,5 @@
+{
+  "OLLAMA_HOME": "E:\\llm-models\\.ollama",
+  "TEMPLATE_AGENT_DATA": "C:\\ProgramData\\TemplateAgent",
+  "AGENT_LOG_DIR": ".\\logs"
+}

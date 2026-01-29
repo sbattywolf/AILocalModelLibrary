@@ -2,7 +2,7 @@
 
 This file was generated from imported validation artifacts and lists high-priority files and suggested small, safe fixes I can apply automatically when the target files exist in this repository. Many artifacts were consolidated into `.continue/tool/`.
 
-1) `agent/SimRacingAgent/Utils/Logging.psm1` — Uninitialized variable / fallback logging
+1) `agent/TemplateAgent/Utils/Logging.psm1` — Uninitialized variable / fallback logging
    - Suggested fix: ensure fallback logging variable(s) are initialized before use, e.g.:
      ```powershell
      if (-not (Test-Path Variable:FallbackLog)) { $FallbackLog = $null }
