@@ -29,4 +29,6 @@ def test_release_and_complete(tmp_path):
     assert claimed2 is not None
     ok = ctrl.complete(claimed2.id)
     assert ok
-    assert store.get(claimed2.id).status == "done"
+    # reload store to observe persisted state
+    store2 = BacklogStore(path=db)
+    assert store2.get(claimed2.id).status == "done"
