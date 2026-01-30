@@ -19,5 +19,14 @@ if command -v powershell.exe >/dev/null 2>&1; then
     echo "Pre-commit secret scan failed. Commit aborted."
     exit $rc
   fi
+  # Run lightweight JSON schema validator to prevent invalid .continue JSON commits
+  if [ -f "$REPO_ROOT/scripts/validate-json.py" ]; then
+    powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "& '$REPO_ROOT\\scripts\\validate-json.py'"
+    rc2=$?
+    if [ $rc2 -ne 0 ]; then
+      echo "JSON validation failed. Commit aborted."
+      exit $rc2
+    fi
+  fi
 fi
 exit 0

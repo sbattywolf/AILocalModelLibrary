@@ -14,4 +14,21 @@
     "custom_agent_key": "<PUT_CUSTOM_AGENT_KEY_HERE>"
   },
   "user_notes": "replace-with-personal-settings (do NOT commit)"
+  ,
+  "agent_defaults": {
+    "vramGB": 2,
+    "memoryGB": 4,
+    "cpus": 2
+  }
+  ,
+  "skills_schema": {
+    "description": "Per-agent skill tags used for capability matching and composite agent composition.",
+    "examples": ["nlp:code-review", "nlp:unit-test-gen", "vision:ocr", "ops:monitoring", "analysis:data-summary"],
+    "note": "Skills are free-form strings namespaced with a category (category:capability). Use '-' for multi-word. Keep short tags."
+  },
+  "monitor": {
+    "MemoryPressureThresholdGB": 6,
+    "CpuPressurePercent": 80,
+    "RollingWindow": 60
+  }
 }
