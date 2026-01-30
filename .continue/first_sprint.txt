@@ -1,0 +1,158 @@
+﻿Backlog Proposal
+================
+116. [high] (2pt) Review run_single_agent_backlog.ps1: if ($lines[$i] -match '\b(TODO|FIXME)\b') { -- scripts\run_single_agent_backlog.ps1
+127. [high] (2pt) Review single_agent_backlog.py: 'type': 'todo' -- scripts\single_agent_backlog.py
+126. [high] (2pt) Review single_agent_backlog.py: if re.search(r'\b(TODO|FIXME)\b', line, re.IGNORECASE): -- scripts\single_agent_backlog.py
+16. [high] (2pt) Review role-models.json: "low": { "model": "qwen2.5-coder:1.5b", "vramGB": 2, "notes": "kanban/todo management" }, -- .continue\role-models.json
+130. [high] (2pt) Review single_agent_backlog.py: 'priority': 'high' if it.get('type') == 'todo' else 'medium' -- scripts\single_agent_backlog.py
+129. [high] (2pt) Review single_agent_backlog.py: if item.get('type') == 'todo': -- scripts\single_agent_backlog.py
+61. [high] (2pt) Review SESSION_SUMMARY_AND_EPICS.md: 4. Groom backlog per team/role and assign owners for each epic (see backlog management task in TODO list). -- docs\SESSION_SUMMARY_AND_EPICS.md
+118. [high] (2pt) Review run_single_agent_backlog.ps1: 'todo' { $base = 2 } -- scripts\run_single_agent_backlog.ps1
+119. [high] (2pt) Review run_single_agent_backlog.ps1: $priority = if ($it.type -eq 'todo') { 'high' } else { 'medium' } -- scripts\run_single_agent_backlog.ps1
+125. [high] (2pt) Review single_agent_backlog.py: # find TODO/FIXME lines -- scripts\single_agent_backlog.py
+124. [high] (2pt) Review single_agent_backlog.py: Scans the repository for TODO/FIXME markers and source files to produce -- scripts\single_agent_backlog.py
+117. [high] (2pt) Review run_single_agent_backlog.ps1: $items += [pscustomobject]@{ source = $rel; line = $i+1; text = $lines[$i].Trim(); type='todo' } -- scripts\run_single_agent_backlog.ps1
+52. [high] (2pt) Review BACKLOG_MANAGEMENT.md: - Todo items are small actions that can be picked up by agents or developers. -- docs\BACKLOG_MANAGEMENT.md
+53. [high] (2pt) Review BACKLOG_MANAGEMENT.md: - Tag todo items with `team` and `role` fields so agent selectors can pick them. -- docs\BACKLOG_MANAGEMENT.md
+128. [high] (2pt) Review single_agent_backlog.py: # Simple heuristics: TODO=1-3, doc/code based on file size -- scripts\single_agent_backlog.py
+51. [high] (2pt) Review BACKLOG_MANAGEMENT.md: - Task -> 1..k Todo items (fine-grained actionable work) -- docs\BACKLOG_MANAGEMENT.md
+83. [high] (2pt) Review export-todos-dashboard.ps1: The script reads a JSON array of todo items with optional fields: id, title, description, status, team, role. -- scripts\export-todos-dashboard.ps1
+84. [high] (2pt) Review export-todos-dashboard.ps1: if (-not (Test-Path $p)) { throw "Todo JSON not found: $p" } -- scripts\export-todos-dashboard.ps1
+85. [high] (2pt) Review export-todos-dashboard.ps1: $md += "# Todo Dashboard" -- scripts\export-todos-dashboard.ps1
+67. [high] (2pt) Review TODO_DASHBOARD_SAMPLE.md: # Todo Dashboard -- docs\TODO_DASHBOARD_SAMPLE.md
+54. [high] (2pt) Review BACKLOG_MANAGEMENT.md: - The `scripts/export-todos-dashboard.ps1` (added) reads a todo JSON and produces a Markdown dashboard grouped by `team` and `role` for easy review. -- docs\BACKLOG_MANAGEMENT.md
+20. [high] (13pt) Review skill-candidates.json: "kanban/todo management", -- .continue\skill-candidates.json
+18. [high] (13pt) Review skill-candidates.json: "notes":  "kanban/todo management" -- .continue\skill-candidates.json
+21. [high] (13pt) Review skill-candidates.json: "kanban/todo management", -- .continue\skill-candidates.json
+19. [high] (13pt) Review skill-candidates.json: "kanban/todo management", -- .continue\skill-candidates.json
+101. [medium] (1pt) Review monitor-local-llama.ps1: Contains headings/documentation -- scripts\monitor-local-llama.ps1
+103. [medium] (1pt) Review package-module.ps1: Contains headings/documentation -- scripts\package-module.ps1
+104. [medium] (1pt) Review pre-commit-scan.ps1: Contains headings/documentation -- scripts\pre-commit-scan.ps1
+102. [medium] (1pt) Review monitor-ollama.ps1: Contains headings/documentation -- scripts\monitor-ollama.ps1
+98. [medium] (1pt) Review kill-ollama-role.ps1: Contains headings/documentation -- scripts\kill-ollama-role.ps1
+100. [medium] (1pt) Review monitor-background.ps1: Contains headings/documentation -- scripts\monitor-background.ps1
+99. [medium] (1pt) Review monitor-agents-epic.ps1: Contains headings/documentation -- scripts\monitor-agents-epic.ps1
+88. [medium] (1pt) Review install-7zip-auto.ps1: Contains headings/documentation -- scripts\install-7zip-auto.ps1
+89. [medium] (1pt) Review install-7zip-winget.ps1: Contains headings/documentation -- scripts\install-7zip-winget.ps1
+90. [medium] (1pt) Review install-choco-7zip.ps1: Contains headings/documentation -- scripts\install-choco-7zip.ps1
+87. [medium] (1pt) Review find-python.ps1: Contains headings/documentation -- scripts\find-python.ps1
+81. [medium] (1pt) Review create-personal-config.ps1: Contains headings/documentation -- scripts\create-personal-config.ps1
+82. [medium] (1pt) Review elevated-runbook.md: Contains headings/documentation -- scripts\elevated-runbook.md
+86. [medium] (1pt) Review export-todos-dashboard.ps1: Contains headings/documentation -- scripts\export-todos-dashboard.ps1
+91. [medium] (1pt) Review install-git-filter-repo-retry.ps1: Contains headings/documentation -- scripts\install-git-filter-repo-retry.ps1
+95. [medium] (1pt) Review install-ollama-aider.ps1: Contains headings/documentation -- scripts\install-ollama-aider.ps1
+96. [medium] (1pt) Review install-windows.ps1: Contains headings/documentation -- scripts\install-windows.ps1
+97. [medium] (1pt) Review install-winget.ps1: Contains headings/documentation -- scripts\install-winget.ps1
+80. [medium] (1pt) Review clean-hkcu-environment.ps1: Contains headings/documentation -- scripts\clean-hkcu-environment.ps1
+92. [medium] (1pt) Review install-git-filter-repo.ps1: Contains headings/documentation -- scripts\install-git-filter-repo.ps1
+93. [medium] (1pt) Review install-git-hooks.ps1: Contains headings/documentation -- scripts\install-git-hooks.ps1
+94. [medium] (1pt) Review install-missing.ps1: Contains headings/documentation -- scripts\install-missing.ps1
+137. [medium] (1pt) Review validate-local-llama-model.ps1: Contains headings/documentation -- scripts\validate-local-llama-model.ps1
+138. [medium] (1pt) Review verify-ollama-home-e-drive.ps1: Contains headings/documentation -- scripts\verify-ollama-home-e-drive.ps1
+139. [medium] (1pt) Review stress-parallel.ps1: Contains headings/documentation -- scripts\stress\stress-parallel.ps1
+136. [medium] (1pt) Review update-system-path.ps1: Contains headings/documentation -- scripts\update-system-path.ps1
+133. [medium] (1pt) Review start-local-llama-role.ps1: Contains headings/documentation -- scripts\start-local-llama-role.ps1
+134. [medium] (1pt) Review start-ollama-role.ps1: Contains headings/documentation -- scripts\start-ollama-role.ps1
+135. [medium] (1pt) Review stop-ollama-role.ps1: Contains headings/documentation -- scripts\stop-ollama-role.ps1
+140. [medium] (1pt) Review run-team-3-dev.ps1: Contains headings/documentation -- scripts\teams\run-team-3-dev.ps1
+145. [medium] (1pt) Review set-local-llama-defaults.ps1: Contains headings/documentation -- templates\agents\local-llama\set-local-llama-defaults.ps1
+146. [medium] (1pt) Review start-ollama-agent.ps1: Contains headings/documentation -- templates\agents\ollama\start-ollama-agent.ps1
+147. [medium] (1pt) Review model-store.ps1: Contains headings/documentation -- templates\install\model-store.ps1
+144. [medium] (1pt) Review run-local-llama-agent.ps1: Contains headings/documentation -- templates\agents\local-llama\run-local-llama-agent.ps1
+141. [medium] (1pt) Review SimRacingAgent.psm1: Contains headings/documentation -- templates\agent\SimRacingAgent\SimRacingAgent.psm1
+142. [medium] (1pt) Review TemplateAgent.psm1: Contains headings/documentation -- templates\agent\SimRacingAgent\TemplateAgent.psm1
+143. [medium] (1pt) Review load-local-llama-session.ps1: Contains headings/documentation -- templates\agents\local-llama\load-local-llama-session.ps1
+132. [medium] (1pt) Review skill-monitor.ps1: Contains headings/documentation -- scripts\skill-monitor.ps1
+109. [medium] (1pt) Review review-skill-candidates.ps1: Contains headings/documentation -- scripts\review-skill-candidates.ps1
+110. [medium] (1pt) Review run-agents-epic.ps1: Contains headings/documentation -- scripts\run-agents-epic.ps1
+111. [medium] (1pt) Review run-long-sampler-monitor.ps1: Contains headings/documentation -- scripts\run-long-sampler-monitor.ps1
+108. [medium] (1pt) Review pull-qwen-to-e.ps1: Contains headings/documentation -- scripts\pull-qwen-to-e.ps1
+105. [medium] (1pt) Review preload-session.ps1: Contains headings/documentation -- scripts\preload-session.ps1
+106. [medium] (1pt) Review probe-agents.ps1: Contains headings/documentation -- scripts\probe-agents.ps1
+107. [medium] (1pt) Review provision-server.ps1: Contains headings/documentation -- scripts\provision-server.ps1
+112. [medium] (1pt) Review run-ollama-check-and-list.ps1: Contains headings/documentation -- scripts\run-ollama-check-and-list.ps1
+121. [medium] (1pt) Review scan-secrets.ps1: Contains headings/documentation -- scripts\scan-secrets.ps1
+122. [medium] (1pt) Review scheduler-prefer-skill.ps1: Contains headings/documentation -- scripts\scheduler-prefer-skill.ps1
+123. [medium] (1pt) Review set-ollama-home.ps1: Contains headings/documentation -- scripts\set-ollama-home.ps1
+120. [medium] (1pt) Review run_single_agent_backlog.ps1: Contains headings/documentation -- scripts\run_single_agent_backlog.ps1
+113. [medium] (1pt) Review run-ollama-serve-detached.ps1: Contains headings/documentation -- scripts\run-ollama-serve-detached.ps1
+114. [medium] (1pt) Review run-team-dryrun.ps1: Contains headings/documentation -- scripts\run-team-dryrun.ps1
+115. [medium] (1pt) Review run-tests.ps1: Contains headings/documentation -- scripts\run-tests.ps1
+79. [medium] (1pt) Review ci-gemini-analyze.ps1: Contains headings/documentation -- scripts\ci-gemini-analyze.ps1
+27. [medium] (1pt) Review README.md: Contains headings/documentation -- .continue\python\README.md
+30. [medium] (1pt) Review .gitignore: Contains headings/documentation -- .continue\python\.pytest_cache\.gitignore
+31. [medium] (1pt) Review CACHEDIR.TAG: Contains headings/documentation -- .continue\python\.pytest_cache\CACHEDIR.TAG
+25. [medium] (1pt) Review tmp_repro_enforcer.ps1: Contains headings/documentation -- .continue\tmp_repro_enforcer.ps1
+22. [medium] (1pt) Review skills-trace.md: Contains headings/documentation -- .continue\skills-trace.md
+23. [medium] (1pt) Review stop-ollama-on-11434-and-restart.ps1: Contains headings/documentation -- .continue\stop-ollama-on-11434-and-restart.ps1
+24. [medium] (1pt) Review tmp_debug_enforcer.ps1: Contains headings/documentation -- .continue\tmp_debug_enforcer.ps1
+32. [medium] (1pt) Review README.md: Contains headings/documentation -- .continue\python\.pytest_cache\README.md
+39. [medium] (1pt) Review quick-setup.ps1: Contains headings/documentation -- .continue\tool\quick-setup.ps1
+40. [medium] (1pt) Review run_agentcore_tests.ps1: Contains headings/documentation -- .continue\tool\run_agentcore_tests.ps1
+41. [medium] (1pt) Review Setup-AI-Models.ps1: Contains headings/documentation -- .continue\tool\Setup-AI-Models.ps1
+38. [medium] (1pt) Review pull-model.ps1: Contains headings/documentation -- .continue\tool\pull-model.ps1
+35. [medium] (1pt) Review README.md: Contains headings/documentation -- .continue\stress\README.md
+36. [medium] (1pt) Review check-model-updates.ps1: Contains headings/documentation -- .continue\tool\check-model-updates.ps1
+37. [medium] (1pt) Review install-deps.ps1: Contains headings/documentation -- .continue\tool\install-deps.ps1
+17. [medium] (1pt) Review session-history.md: Contains headings/documentation -- .continue\session-history.md
+5. [medium] (1pt) Review TASKS.md: Contains headings/documentation -- TASKS.md
+6. [medium] (1pt) Review TODO_FIXES.md: Contains headings/documentation -- TODO_FIXES.md
+7. [medium] (1pt) Review agent-runner.ps1: Contains headings/documentation -- .continue\agent-runner.ps1
+4. [medium] (1pt) Review run-sequence.ps1: Contains headings/documentation -- run-sequence.ps1
+1. [medium] (1pt) Review .gitattributes: Contains headings/documentation -- .gitattributes
+2. [medium] (1pt) Review .gitignore: Contains headings/documentation -- .gitignore
+3. [medium] (1pt) Review README.md: Contains headings/documentation -- README.md
+8. [medium] (1pt) Review check-port-11434.ps1: Contains headings/documentation -- .continue\check-port-11434.ps1
+13. [medium] (1pt) Review README.md: Contains headings/documentation -- .continue\README.md
+14. [medium] (1pt) Review repro_coordinator_it.ps1: Contains headings/documentation -- .continue\repro_coordinator_it.ps1
+15. [medium] (1pt) Review repro_tester_it.ps1: Contains headings/documentation -- .continue\repro_tester_it.ps1
+12. [medium] (1pt) Review PATH-update-instructions.md: Contains headings/documentation -- .continue\PATH-update-instructions.md
+9. [medium] (1pt) Review cleanup_procs.ps1: Contains headings/documentation -- .continue\cleanup_procs.ps1
+10. [medium] (1pt) Review do-add-user-path.ps1: Contains headings/documentation -- .continue\do-add-user-path.ps1
+11. [medium] (1pt) Review monitor-dashboard.md: Contains headings/documentation -- .continue\monitor-dashboard.md
+66. [medium] (1pt) Review TESTING_GUIDE.md: Contains headings/documentation -- docs\TESTING_GUIDE.md
+65. [medium] (1pt) Review TEAM_SKILLS_MATRIX.md: Contains headings/documentation -- docs\TEAM_SKILLS_MATRIX.md
+69. [medium] (1pt) Review TRAINING_PLAN.md: Contains headings/documentation -- docs\TRAINING_PLAN.md
+68. [medium] (1pt) Review TODO_DASHBOARD_SAMPLE.md: Contains headings/documentation -- docs\TODO_DASHBOARD_SAMPLE.md
+64. [medium] (1pt) Review TEAM_SETUP_PROPOSAL.md: Contains headings/documentation -- docs\TEAM_SETUP_PROPOSAL.md
+60. [medium] (1pt) Review SECRETS_SETUP.md: Contains headings/documentation -- docs\SECRETS_SETUP.md
+59. [medium] (1pt) Review MONITOR_BACKGROUND.md: Contains headings/documentation -- docs\MONITOR_BACKGROUND.md
+63. [medium] (1pt) Review skills-schema.md: Contains headings/documentation -- docs\skills-schema.md
+62. [medium] (1pt) Review SESSION_SUMMARY_AND_EPICS.md: Contains headings/documentation -- docs\SESSION_SUMMARY_AND_EPICS.md
+76. [medium] (1pt) Review check-installs.ps1: Contains headings/documentation -- scripts\check-installs.ps1
+75. [medium] (1pt) Review check-environment.ps1: Contains headings/documentation -- scripts\check-environment.ps1
+78. [medium] (1pt) Review check-tools.ps1: Contains headings/documentation -- scripts\check-tools.ps1
+77. [medium] (1pt) Review check-port-listener.ps1: Contains headings/documentation -- scripts\check-port-listener.ps1
+148. [medium] (1pt) Review agent-smoke-test.ps1: Contains headings/documentation -- tests\smoke\agent-smoke-test.ps1
+71. [medium] (1pt) Review agent-runtime-monitor-single-sample.ps1: Contains headings/documentation -- scripts\agent-runtime-monitor-single-sample.ps1
+70. [medium] (1pt) Review llama-cli.ps1: Contains headings/documentation -- sandbox\local-llama-test\llama-cli.ps1
+73. [medium] (1pt) Review apply-aider-suggestion.ps1: Contains headings/documentation -- scripts\apply-aider-suggestion.ps1
+72. [medium] (1pt) Review agent_stub.ps1: Contains headings/documentation -- scripts\agent_stub.ps1
+47. [medium] (1pt) Review validate-repo.ps1: Contains headings/documentation -- .continue\tool\validate-repo.ps1
+46. [medium] (1pt) Review validate-repo-fast.ps1: Contains headings/documentation -- .continue\tool\validate-repo-fast.ps1
+49. [medium] (1pt) Review imported_save_session.ps1: Contains headings/documentation -- .tools\imported_save_session.ps1
+48. [medium] (1pt) Review pre-commit: Contains headings/documentation -- .githooks\pre-commit
+43. [medium] (1pt) Review Start-Local-AI.ps1: Contains headings/documentation -- .continue\tool\Start-Local-AI.ps1
+42. [medium] (1pt) Review Start-AI-Orchestrator.ps1: Contains headings/documentation -- .continue\tool\Start-AI-Orchestrator.ps1
+45. [medium] (1pt) Review Stop-AI-Env.ps1: Contains headings/documentation -- .continue\tool\Stop-AI-Env.ps1
+44. [medium] (1pt) Review start-model.ps1: Contains headings/documentation -- .continue\tool\start-model.ps1
+50. [medium] (1pt) Review agent-resource-monitoring.md: Contains headings/documentation -- docs\agent-resource-monitoring.md
+56. [medium] (1pt) Review ENVIRONMENT.md: Contains headings/documentation -- docs\ENVIRONMENT.md
+57. [medium] (1pt) Review INSTALLER_CI.md: Contains headings/documentation -- docs\INSTALLER_CI.md
+58. [medium] (1pt) Review local-setup.md: Contains headings/documentation -- docs\local-setup.md
+55. [medium] (1pt) Review BACKLOG_MANAGEMENT.md: Contains headings/documentation -- docs\BACKLOG_MANAGEMENT.md
+131. [medium] (3pt) Review single_agent_backlog.py: Contains code definitions -- scripts\single_agent_backlog.py
+33. [medium] (3pt) Review test_agent_runner.py: Contains code definitions -- .continue\python\tests\test_agent_runner.py
+74. [medium] (3pt) Review autoscale_controller.py: Contains code definitions -- scripts\autoscale_controller.py
+28. [medium] (3pt) Review start_model.py: Contains code definitions -- .continue\python\start_model.py
+29. [medium] (3pt) Review stop_model.py: Contains code definitions -- .continue\python\stop_model.py
+26. [medium] (3pt) Review agent_runner.py: Contains code definitions -- .continue\python\agent_runner.py
+34. [medium] (3pt) Review test_agent_runner_usbmanager.py: Contains code definitions -- .continue\python\tests\test_agent_runner_usbmanager.py
+
+First sprint (capacity 8):
+-------------------------
+- 116. Review run_single_agent_backlog.ps1: if ($lines[$i] -match '\b(TODO|FIXME)\b') { (2pt)
+- 127. Review single_agent_backlog.py: 'type': 'todo' (2pt)
+- 126. Review single_agent_backlog.py: if re.search(r'\b(TODO|FIXME)\b', line, re.IGNORECASE): (2pt)
+- 16. Review role-models.json: "low": { "model": "qwen2.5-coder:1.5b", "vramGB": 2, "notes": "kanban/todo management" }, (2pt)
+Total points: 8/8

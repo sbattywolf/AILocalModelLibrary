@@ -1,82 +1,69 @@
 ﻿[
-    {
-        "name":  "Low-7",
-        "entry":  ".continue/python/agent_runner.py",
-        "model":  "qwen2.5-coder:1.5b",
-        "log":  "logs/agent-Low-7.log",
-        "status":  "scheduled",
-        "vram":  0
-    },
-    {
-        "name":  "Low-6",
-        "entry":  ".continue/python/agent_runner.py",
-        "model":  "qwen2.5-coder:1.5b",
-        "log":  "logs/agent-Low-6.log",
-        "status":  "scheduled",
-        "vram":  0
-    },
-    {
-        "name":  "Low-8",
-        "entry":  ".continue/python/agent_runner.py",
-        "model":  "qwen2.5-coder:1.5b",
-        "log":  "logs/agent-Low-8.log",
-        "status":  "scheduled",
-        "vram":  0
-    },
-    {
-        "name":  "Low-10",
-        "entry":  ".continue/python/agent_runner.py",
-        "model":  "qwen2.5-coder:1.5b",
-        "log":  "logs/agent-Low-10.log",
-        "status":  "scheduled",
-        "vram":  0
-    },
-    {
-        "name":  "Low-9",
-        "entry":  ".continue/python/agent_runner.py",
-        "model":  "qwen2.5-coder:1.5b",
-        "log":  "logs/agent-Low-9.log",
-        "status":  "scheduled",
-        "vram":  0
-    },
-    {
-        "name":  "Low-2",
-        "entry":  ".continue/python/agent_runner.py",
-        "model":  "qwen2.5-coder:1.5b",
-        "log":  "logs/agent-Low-2.log",
-        "status":  "scheduled",
-        "vram":  0
-    },
-    {
-        "name":  "Low-1",
-        "entry":  ".continue/python/agent_runner.py",
-        "model":  "qwen2.5-coder:1.5b",
-        "log":  "logs/agent-Low-1.log",
-        "status":  "scheduled",
-        "vram":  0
-    },
-    {
-        "name":  "Low-3",
-        "entry":  ".continue/python/agent_runner.py",
-        "model":  "qwen2.5-coder:1.5b",
-        "log":  "logs/agent-Low-3.log",
-        "status":  "scheduled",
-        "vram":  0
-    },
-    {
-        "name":  "Low-5",
-        "entry":  ".continue/python/agent_runner.py",
-        "model":  "qwen2.5-coder:1.5b",
-        "log":  "logs/agent-Low-5.log",
-        "status":  "scheduled",
-        "vram":  0
-    },
-    {
-        "name":  "Low-4",
-        "entry":  ".continue/python/agent_runner.py",
-        "model":  "qwen2.5-coder:1.5b",
-        "log":  "logs/agent-Low-4.log",
-        "status":  "scheduled",
-        "vram":  0
-    }
-]
+  {
+    "name": "infra-specialist-1",
+    "primaryRole": "Infra",
+    "skills": [
+      { "name": "gpu-admin", "weight": 5 },
+      { "name": "vram-heavy", "weight": 5 },
+      "container",
+      "vm-orchestration",
+      "network",
+      "monitoring",
+      "telemetry",
+      "cli",
+      "ansible",
+      "terraform"
+    ],
+    "vramGB": 12,
+    "memoryGB": 64
+  },
+  {
+    "name": "ops-monitor-1",
+    "primaryRole": "Infra",
+    "skills": ["prometheus","grafana","elk","monitoring","telemetry","log-collector"],
+    "vramGB": 4,
+    "memoryGB": 24
+  },
+  {
+    "name": "runtime-engine-1",
+    "primaryRole": "Runtime",
+    "skills": ["inference","fast-response","low-latency","prompt-engineering","fewshot","vram-heavy","model-serve"],
+    "vramGB": 16,
+    "memoryGB": 96
+  },
+  {
+    "name": "dev-frontend-1",
+    "primaryRole": "Dev",
+    "skills": ["html","css","react","typescript","web-dev"],
+    "vramGB": 2,
+    "memoryGB": 12
+  },
+  {
+    "name": "dev-backend-1",
+    "primaryRole": "Dev",
+    "skills": ["nodejs","spring-boot","rest-api","postgresql","mysql","graphql"],
+    "vramGB": 6,
+    "memoryGB": 24
+  },
+  {
+    "name": "qa-engineer-1",
+    "primaryRole": "QA",
+    "skills": ["selenium","jest","junit","api-testing","functional-testing","regression-testing"],
+    "vramGB": 2,
+    "memoryGB": 12
+  },
+  {
+    "name": "ci-engineer-1",
+    "primaryRole": "QA",
+    "skills": ["jenkins","github-actions","ci-cd","jmeter","docker"],
+    "vramGB": 2,
+    "memoryGB": 12
+  },
+  {
+    "name": "security-specialist-1",
+    "primaryRole": "Infra",
+    "skills": ["basic-security","firewall","security-testing","owasp","vulnerability-scan"],
+    "vramGB": 2,
+    "memoryGB": 16
+  }
+  ]

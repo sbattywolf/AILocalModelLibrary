@@ -1,0 +1,46 @@
+﻿{
+    "first_sprint":  [
+                         {
+                             "id":  116,
+                             "title":  "Review run_single_agent_backlog.ps1: if ($lines[$i] -match \u0027\\b(TODO|FIXME)\\b\u0027) {",
+                             "description":  "Source: scripts\\run_single_agent_backlog.ps1 (line 29)",
+                             "source":  "scripts\\run_single_agent_backlog.ps1",
+                             "type":  "todo",
+                             "estimate_points":  2,
+                             "priority":  "high"
+                         },
+                         {
+                             "id":  127,
+                             "title":  "Review single_agent_backlog.py: \u0027type\u0027: \u0027todo\u0027",
+                             "description":  "Source: scripts\\single_agent_backlog.py (line 51)",
+                             "source":  "scripts\\single_agent_backlog.py",
+                             "type":  "todo",
+                             "estimate_points":  2,
+                             "priority":  "high"
+                         },
+                         {
+                             "id":  126,
+                             "title":  "Review single_agent_backlog.py: if re.search(r\u0027\\b(TODO|FIXME)\\b\u0027, line, re.IGNORECASE):",
+                             "description":  "Source: scripts\\single_agent_backlog.py (line 46)",
+                             "source":  "scripts\\single_agent_backlog.py",
+                             "type":  "todo",
+                             "estimate_points":  2,
+                             "priority":  "high"
+                         },
+                         {
+                             "id":  16,
+                             "title":  "Review role-models.json: \"low\": { \"model\": \"qwen2.5-coder:1.5b\", \"vramGB\": 2, \"notes\": \"kanban/todo management\" },",
+                             "description":  "Source: .continue\\role-models.json (line 16)",
+                             "source":  ".continue\\role-models.json",
+                             "type":  "todo",
+                             "estimate_points":  2,
+                             "priority":  "high"
+                         }
+                     ],
+    "summary":  {
+                    "sprint_total_points":  8,
+                    "sprint_capacity":  8,
+                    "backlog_count":  148,
+                    "sprint_selected":  4
+                }
+}

@@ -5,13 +5,13 @@ import json
 
 def test_select_numeric_option(tmp_path, monkeypatch):
     dm = DialogManager()
-    res = dm.select_option(["A", "B", "C"], responses=["2"])
+    res = dm.select_option(["A", "B", "C"], responses=["2"], human_origin=False)
     assert res == "B"
 
 
 def test_short_code_reply(tmp_path):
     dm = DialogManager()
-    res = dm.select_option(["A", "B"], responses=["y"])
+    res = dm.select_option(["A", "B"], responses=["y"], human_origin=False)
     assert res == "y"
 
 
@@ -22,7 +22,7 @@ def test_impediment_written(tmp_path):
     imp = Path.cwd() / ".continue" / "impediments.json"
     if imp.exists():
         imp.unlink()
-    res = dm.select_option(["A", "B"], responses=["x", "", ""])  # 2 invalid then third triggers
+    res = dm.select_option(["A", "B"], responses=["x", "", ""], human_origin=False)  # 2 invalid then third triggers
     assert res is None
     assert imp.exists()
     data = json.loads(imp.read_text())

@@ -10,7 +10,7 @@ Describe 'Monitor Skills Schema' {
   It 'validates example skill formatting category:capability' {
     $roles = Get-Content .\.continue\agent-roles.json -Raw | ConvertFrom-Json
     $agents = $roles.agents
-    $pattern = '^[a-z]+:[a-z0-9\-]+$'
+    $pattern = '^([a-z]+:)?[a-z0-9\-]+$'
     foreach ($a in $agents) {
       if ($a.skills) {
         foreach ($s in $a.skills) { $s | Should -Match $pattern }

@@ -1,0 +1,4 @@
+[
+  { "id": "T1", "title": "Task 1", "points": 2, "skills": ["nlp"] },
+  { "id": "T2", "title": "Task 2", "points": 4, "skills": ["other"] }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "reason": "too_many_invalid_replies",
+    "weight": 3,
+    "context": {
+      "options": [
+        "A",
+        "B"
+      ],
+      "recent_replies": [
+        "nope",
+        "<REDACTED>",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "timestamp": "2026-01-30T23:33:15.999244+00:00"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "generated_from": ".continue/system_inventory.json",
+  "paths": {
+    "ollama": "C:\\Users\\sbatt\\AppData\\Local\\Programs\\Ollama\\ollama.exe",
+    "gh": "C:\\Program Files\\GitHub CLI\\gh.exe",
+    "git": "C:\\Program Files\\Git\\cmd\\git.exe",
+    "nvidia_smi": "C:\\Windows\\system32\\nvidia-smi.exe"
+  },
+  "secrets": {
+    "GITHUB_PAT": {"source":"env_or_ci","env_var":"GITHUB_PAT","gh_secret_name":"GH_PAT"},
+    "OLLAMA_API_KEY": {"source":"env_or_ci","env_var":"OLLAMA_API_KEY","note":"Set if using Ollama remote API"},
+    "BW_SESSION": {"source":"env_or_local","env_var":"BW_SESSION","note":"Bitwarden session token for CLI (optional)"}
+  },
+  "comm_channel": {
+    "default": "public",
+    "available": ["public", "lan-secret"]
+  },
+  "network": {
+    "internet_access": false,
+    "internet_allowed_roles": ["controller"]
+  },
+  "secret_mode": false,
+  "secret_mode_policy": {
+    "mask_recent_replies": true,
+    "store_cleartext_in_continue": false,
+    "allowed_profiling": false
+  },
+  "notes": "Do NOT store secret values in this file. Use environment variables or CI secrets. See .continue/USER_CONFIG_README.md for commands."
+}

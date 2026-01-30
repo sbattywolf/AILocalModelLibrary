@@ -1,0 +1,186 @@
+﻿{
+    "timestamp":  "2026-01-30T20:14:34.5214690+01:00",
+    "summary":  "monitor suggestions",
+    "topSkills":  [
+                      {
+                          "name":  "telemetry",
+                          "weight":  2
+                      },
+                      {
+                          "name":  "vram-heavy",
+                          "weight":  2
+                      },
+                      {
+                          "name":  "monitoring",
+                          "weight":  2
+                      },
+                      {
+                          "name":  "web-dev",
+                          "weight":  1
+                      },
+                      {
+                          "name":  "functional-testing",
+                          "weight":  1
+                      },
+                      {
+                          "name":  "elk",
+                          "weight":  1
+                      },
+                      {
+                          "name":  "nodejs",
+                          "weight":  1
+                      },
+                      {
+                          "name":  "gpu-admin",
+                          "weight":  1
+                      },
+                      {
+                          "name":  "cli",
+                          "weight":  1
+                      },
+                      {
+                          "name":  "html",
+                          "weight":  1
+                      }
+                  ],
+    "roleSuggestions":  [
+                            {
+                                "role":  "agents",
+                                "missingTopSkills":  [
+                                                         {
+                                                             "name":  "telemetry",
+                                                             "weight":  2
+                                                         },
+                                                         {
+                                                             "name":  "vram-heavy",
+                                                             "weight":  2
+                                                         },
+                                                         {
+                                                             "name":  "monitoring",
+                                                             "weight":  2
+                                                         },
+                                                         {
+                                                             "name":  "web-dev",
+                                                             "weight":  1
+                                                         },
+                                                         {
+                                                             "name":  "functional-testing",
+                                                             "weight":  1
+                                                         },
+                                                         {
+                                                             "name":  "elk",
+                                                             "weight":  1
+                                                         },
+                                                         {
+                                                             "name":  "nodejs",
+                                                             "weight":  1
+                                                         },
+                                                         {
+                                                             "name":  "gpu-admin",
+                                                             "weight":  1
+                                                         },
+                                                         {
+                                                             "name":  "cli",
+                                                             "weight":  1
+                                                         },
+                                                         {
+                                                             "name":  "html",
+                                                             "weight":  1
+                                                         }
+                                                     ]
+                            },
+                            {
+                                "role":  "generated",
+                                "missingTopSkills":  [
+                                                         {
+                                                             "name":  "telemetry",
+                                                             "weight":  2
+                                                         },
+                                                         {
+                                                             "name":  "vram-heavy",
+                                                             "weight":  2
+                                                         },
+                                                         {
+                                                             "name":  "monitoring",
+                                                             "weight":  2
+                                                         },
+                                                         {
+                                                             "name":  "web-dev",
+                                                             "weight":  1
+                                                         },
+                                                         {
+                                                             "name":  "functional-testing",
+                                                             "weight":  1
+                                                         },
+                                                         {
+                                                             "name":  "elk",
+                                                             "weight":  1
+                                                         },
+                                                         {
+                                                             "name":  "nodejs",
+                                                             "weight":  1
+                                                         },
+                                                         {
+                                                             "name":  "gpu-admin",
+                                                             "weight":  1
+                                                         },
+                                                         {
+                                                             "name":  "cli",
+                                                             "weight":  1
+                                                         },
+                                                         {
+                                                             "name":  "html",
+                                                             "weight":  1
+                                                         }
+                                                     ]
+                            },
+                            {
+                                "role":  "notes",
+                                "missingTopSkills":  [
+                                                         {
+                                                             "name":  "telemetry",
+                                                             "weight":  2
+                                                         },
+                                                         {
+                                                             "name":  "vram-heavy",
+                                                             "weight":  2
+                                                         },
+                                                         {
+                                                             "name":  "monitoring",
+                                                             "weight":  2
+                                                         },
+                                                         {
+                                                             "name":  "web-dev",
+                                                             "weight":  1
+                                                         },
+                                                         {
+                                                             "name":  "functional-testing",
+                                                             "weight":  1
+                                                         },
+                                                         {
+                                                             "name":  "elk",
+                                                             "weight":  1
+                                                         },
+                                                         {
+                                                             "name":  "nodejs",
+                                                             "weight":  1
+                                                         },
+                                                         {
+                                                             "name":  "gpu-admin",
+                                                             "weight":  1
+                                                         },
+                                                         {
+                                                             "name":  "cli",
+                                                             "weight":  1
+                                                         },
+                                                         {
+                                                             "name":  "html",
+                                                             "weight":  1
+                                                         }
+                                                     ]
+                            }
+                        ],
+    "heavyWeights":  [
+
+                     ]
+}

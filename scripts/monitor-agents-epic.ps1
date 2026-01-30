@@ -22,7 +22,7 @@ function Read-Roles {
         $r = Get-Content $path -Raw | ConvertFrom-Json
         $m = @{}
         foreach ($a in $r.agents) {
-            $m[$a.name] = @{ primaryRole = $a.primaryRole; priority = $a.priority; vram = ($a.resources.vramGB -as [int]) }
+            $m[$a.name] = @{ primaryRole = $a.primaryRole; priority = $a.priority; vram = ($a.resources.vramGB -as [int]); memory = ($a.resources.memoryGB -as [int]); cpus = ($a.resources.cpus -as [int]) }
         }
         return $m
     } catch { return @{} }
@@ -83,6 +83,34 @@ function Is-ProcessAlive {
     try { return Get-Process -Id $pid -ErrorAction Stop | Out-Null; return $true } catch { return $false }
 }
 
+# Return basic process stats: total CPU seconds and working set (MB)
+function Get-ProcessStats {
+    param($pid)
+    try {
+        $p = Get-Process -Id $pid -ErrorAction Stop
+        $cpuSec = 0
+        try { $cpuSec = [math]::Round($p.CPU,3) } catch { $cpuSec = 0 }
+        $wsMB = [math]::Round(($p.WorkingSet64 / 1MB),2)
+        return @{ cpuSec = $cpuSec; workingSetMB = $wsMB }
+    } catch { return @{ cpuSec = 0; workingSetMB = 0 } }
+}
+
+# Normalize agent resource access (handles legacy flat vram or nested resources)
+function Get-AgentResources {
+    param($agent)
+    $v=0; $m=0; $c=0
+    if ($agent -and $agent.resources) {
+        $v = ($agent.resources.vramGB -as [int])
+        $m = ($agent.resources.memoryGB -as [int])
+        $c = ($agent.resources.cpus -as [int])
+    } else {
+        if ($agent.vram) { $v = ($agent.vram -as [int]) }
+        if ($agent.memoryGB) { $m = ($agent.memoryGB -as [int]) }
+        if ($agent.cpus) { $c = ($agent.cpus -as [int]) }
+    }
+    return @{ vram = $v; memory = $m; cpus = $c }
+}
+
 Write-Output ("[Monitor] Watching {0} (interval {1}s)" -f $MappingFile, $IntervalSeconds)
 
 # Setup graceful shutdown for Ctrl-C
@@ -91,6 +119,10 @@ $null = Register-EngineEvent Console.CancelKeyPress -Action {
     Write-Output "[Monitor] SIGINT received — stopping monitor and leaving mapping as-is."
     $global:scriptStopping = $true
 }
+
+# In-memory rolling sampler for per-agent stats used to compute rolling averages
+$agentSamples = @{}
+$RollingWindow = 60 # number of samples to keep (e.g., 60 samples * IntervalSeconds => 5m at 5s interval)
 
 while ($true) {
     if ($global:scriptStopping) { Write-Output '[Monitor] Exiting due to SIGINT'; break }
@@ -111,6 +143,12 @@ while ($true) {
             $newVram = $sugg.MaxVramGB -as [int]
             if ($null -ne $newParallel -and $newParallel -gt 0 -and $null -ne $newVram -and $newVram -ge 0) {
                 Write-Output ("[Monitor] Autoscale apply request detected: MaxParallel={0}, MaxVramGB={1}" -f $newParallel, $newVram)
+                # Require manual approval file before applying to production runtimes
+                $approvePath = '.continue/autoscale-approve'
+                if (-not (Test-Path $approvePath)) {
+                    Write-Output '[Monitor] Autoscale request present but no approval file (.continue/autoscale-approve) found; skipping apply.'
+                    continue
+                }
                 if (-not $DryRun) {
                     # apply atomically by writing an applied file and removing request
                     $applied = @{ appliedAt = (Get-Date).ToString('o'); MaxParallel = $newParallel; MaxVramGB = $newVram; source = 'autoscale' }
@@ -121,8 +159,9 @@ while ($true) {
                     # Set runtime variables
                     $MaxParallel = $newParallel
                     $MaxVramGB = $newVram
-                    # remove request
+                    # remove request and approval token (single-use)
                     Remove-Item $applyPath -Force
+                    Remove-Item $approvePath -Force
                     Write-Output ("[Monitor] Applied autoscale suggestion; new MaxParallel={0}, MaxVramGB={1}" -f $MaxParallel, $MaxVramGB)
                 } else {
                     Write-Output ("[Monitor] DryRun - would apply autoscale suggestion: MaxParallel={0}, MaxVramGB={1}" -f $newParallel, $newVram)
@@ -149,6 +188,8 @@ while ($true) {
             }
         }
     } catch { }
+
+    
     foreach ($a in $agents) {
         $name = $a.name
         $agentPid = $a.pid
@@ -160,6 +201,20 @@ while ($true) {
             $probe = Check-AgentHealth -agentEntry $a -def $def -timeoutSec $HealthTimeoutSec
             $a.health = if ($probe.ok) { 'healthy' } else { 'unhealthy' }
             $a.lastHealthCheck = (Get-Date).ToString('o')
+            # collect runtime stats and append to telemetry
+            $stats = Get-ProcessStats -pid $agentPid
+            $tele = @{ ts = (Get-Date).ToString('o'); name = $name; pid = $agentPid; cpuSec = $stats.cpuSec; workingSetMB = $stats.workingSetMB }
+            try { $tele | ConvertTo-Json -Compress | Add-Content -Path '.continue/agent-runtime-telemetry.log' -Encoding UTF8 } catch { }
+            # maintain in-memory rolling samples for this agent
+            if (-not $agentSamples.ContainsKey($name)) { $agentSamples[$name] = New-Object System.Collections.ArrayList }
+            $prevCpu = $null
+            if ($agentSamples[$name].Count -gt 0) { $prev = $agentSamples[$name][$agentSamples[$name].Count - 1]; $prevCpu = $prev.cpuSec }
+            $cpuRate = 0
+            if ($prevCpu -ne $null) { try { $cpuRate = [math]::Round((($stats.cpuSec - $prevCpu) / [double]$IntervalSeconds),4) } catch { $cpuRate = 0 } }
+            $sample = @{ ts = (Get-Date).ToString('o'); cpuSec = $stats.cpuSec; cpuRate = $cpuRate; workingSetMB = $stats.workingSetMB }
+            $null = $agentSamples[$name].Add($sample)
+            while ($agentSamples[$name].Count -gt $RollingWindow) { $agentSamples[$name].RemoveAt(0) }
+            # also write mapping (with latest probe info)
             Write-Mapping -m $agents
 
             if (-not $probe.ok) {
@@ -230,17 +285,27 @@ while ($true) {
         $currentVram = 0
         foreach ($ag in $agents) {
             if ($global:scriptStopping) { break }
-            if ($ag.vram -and $ag.pid -and (Is-ProcessAlive -pid $ag.pid)) { $currentVram += ($ag.vram -as [int]) }
+            $ares = Get-AgentResources -agent $ag
+            if ($ares.vram -and $ag.pid -and (Is-ProcessAlive -pid $ag.pid)) { $currentVram += $ares.vram }
         }
+
+        # sample overall system resources to influence eviction heuristics
+        $sysFreeKB = 0
+        try { $os = Get-CimInstance -ClassName Win32_OperatingSystem -ErrorAction SilentlyContinue; if ($os) { $sysFreeKB = ($os.FreePhysicalMemory -as [int]) } } catch { }
+        $sysFreeGB = [math]::Round(($sysFreeKB/1024/1024),2)
+        $cpuLoad = 0
+        try { $cpuLoad = (Get-Counter '\Processor(_Total)\% Processor Time').CounterSamples.CookedValue } catch { }
 
         $queued = $agents | Where-Object { ($_.status -eq 'queued') -or (-not $_.status) }
         # If requested, prefer starting queued agents with highest estimated vram first
         if ($PreferMaxAgent) {
-            $queued = $queued | Sort-Object @{ Expression = { ($_ .vram -as [int]) } } -Descending
+            $queued = $queued | Sort-Object @{ Expression = { (Get-AgentResources -agent $_).vram } } -Descending
             Write-Output "[Monitor] PreferMaxAgent enabled: ordering queued agents by vram desc"
         }
         foreach ($q in $queued) {
-            $qv = ($q.vram -as [int])
+            $qres = Get-AgentResources -agent $q
+            $qv = $qres.vram
+            $qmem = $qres.memory
 
             # Enforce MaxParallel: count alive running agents and defer if limit reached
             $runningCount = 0
@@ -249,7 +314,6 @@ while ($true) {
                 Write-Output ("[Monitor] MaxParallel limit reached ({0}) - deferring start of {1}" -f $MaxParallel, $q.name)
                 continue
             }
-
             if ($currentVram + $qv -le $MaxVramGB) {
                 # Enough capacity, start normally
             } else {
@@ -268,19 +332,33 @@ while ($true) {
                     $rPriority = 'medium'
                     if ($info -and $info.priority) { $rPriority = $info.priority }
                     $rWeight = $prioWeight[$rPriority] -as [int]
-                    $rVram = ($r.vram -as [int])
+                    $rres = Get-AgentResources -agent $r
+                    $rVram = $rres.vram
+                    $rMem = $rres.memory
+                    # compute rolling averages if available
+                    $avgCpuRate = 0
+                    $avgMem = $rMem
+                    if ($agentSamples.ContainsKey($r.name) -and $agentSamples[$r.name].Count -gt 0) {
+                        $arr = $agentSamples[$r.name]
+                        try { $avgCpuRate = [math]::Round((($arr | Measure-Object -Property cpuRate -Average).Average),4) } catch { $avgCpuRate = 0 }
+                        try { $avgMem = [math]::Round((($arr | Measure-Object -Property workingSetMB -Average).Average),2) } catch { $avgMem = $rMem }
+                    }
                     $rPrimary = $null
                     if ($info -and $info.primaryRole) { $rPrimary = $info.primaryRole }
                     if ($rPrimary -eq 'coordinator') { continue }
-                    # Candidate only if its priority weight is lower than queued agent
-                    if ($rWeight -lt $qWeight) {
-                        $candidates += [PSCustomObject]@{ name=$r.name; pid=$r.pid; vram=$rVram; weight=$rWeight; startedAt=$r.startedAt }
+                    # Candidate only if its priority weight is lower than queued agent (or if system under pressure, consider all)
+                    if ($rWeight -lt $qWeight -or ($sysFreeGB -lt 6 -or $cpuLoad -gt 80)) {
+                        $candidates += [PSCustomObject]@{ name=$r.name; pid=$r.pid; vram=$rVram; memory=$rMem; avgMem=$avgMem; avgCpuRate=$avgCpuRate; weight=$rWeight; startedAt=$r.startedAt }
                     }
                 }
 
                 if ($candidates.Count -gt 0) {
-                    # Sort candidates by weight asc, then by startedAt oldest first
-                    $candidates = $candidates | Sort-Object weight, startedAt
+                    # Sort candidates by weight asc. If system under memory/CPU pressure prefer evicting high-memory or high-cpu agents.
+                    if ($sysFreeGB -lt 4 -or $cpuLoad -gt 85) {
+                        $candidates = $candidates | Sort-Object @{ Expression = { $_.weight } }, @{ Expression = { -($_.avgMem) } }, @{ Expression = { -($_.avgCpuRate) } }
+                    } else {
+                        $candidates = $candidates | Sort-Object weight, startedAt
+                    }
                     $freed = 0
                     $toStop = @()
                     foreach ($cand in $candidates) {
@@ -292,7 +370,7 @@ while ($true) {
                     if ($toStop.Count -gt 0) {
                         Write-Output ("[Monitor] Evicting {0} lower-priority agents to make room for {1}" -f $toStop.Count, $q.name)
                         foreach ($s in $toStop) {
-                            Write-Output ("[Monitor] Evict candidate {0} pid {1} vram {2}" -f $s.name, $s.pid, $s.vram)
+                            Write-Output ("[Monitor] Evict candidate {0} pid {1} vram {2} memory {3}" -f $s.name, $s.pid, $s.vram, $s.memory)
                             if (-not $DryRun) {
                                 Try { Stop-Process -Id $s.pid -Force -ErrorAction Stop; Write-Output ("[Monitor] Stopped {0}" -f $s.name) } Catch { Write-Output ("[Monitor] Failed to stop {0}: {1}" -f $s.name, $_) }
                                 # Update mapping to clear pid and mark stopped

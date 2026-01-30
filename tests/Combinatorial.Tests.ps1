@@ -1,18 +1,32 @@
+function SimulateSchedule {
+  param($agents, $MaxVramGB, $PreferMaxAgent, $MaxParallel)
+  $list = $agents
+  if ($PreferMaxAgent) { $list = $list | Sort-Object -Property { [int]$_.vram } -Descending }
+  $scheduled = @(); $currentVram = 0
+  foreach ($a in $list) {
+    if ($MaxParallel -gt 0 -and $scheduled.Count -ge $MaxParallel) { break }
+    $v = [int]$a.vram
+    if ($currentVram + $v -le $MaxVramGB) { $scheduled += $a; $currentVram += $v }
+  }
+  return ,$scheduled
+}
+
 Describe 'Combinatorial scheduling behaviors' {
 
-  function SimulateSchedule {
-    param($agents, $MaxVramGB, $PreferMaxAgent, $MaxParallel)
-    $list = $agents
-    if ($PreferMaxAgent) { $list = $list | Sort-Object -Property { [int]$_.vram } -Descending }
-    $scheduled = @(); $currentVram = 0
-    foreach ($a in $list) {
-      if ($MaxParallel -gt 0 -and $scheduled.Count -ge $MaxParallel) { break }
-      $v = [int]$a.vram
-      if ($currentVram + $v -le $MaxVramGB) { $scheduled += $a; $currentVram += $v }
+  BeforeAll {
+    Set-Item -Path Function:\SimulateSchedule -Value {
+      param($agents, $MaxVramGB, $PreferMaxAgent, $MaxParallel)
+      $list = $agents
+      if ($PreferMaxAgent) { $list = $list | Sort-Object -Property { [int]$_.vram } -Descending }
+      $scheduled = @(); $currentVram = 0
+      foreach ($a in $list) {
+        if ($MaxParallel -gt 0 -and $scheduled.Count -ge $MaxParallel) { break }
+        $v = [int]$a.vram
+        if ($currentVram + $v -le $MaxVramGB) { $scheduled += $a; $currentVram += $v }
+      }
+      return ,$scheduled
     }
-    return $scheduled
   }
-
   Context 'PreferMaxAgent ordering influences scheduling' {
     It 'schedules highest-vram agents first when preference enabled' {
       $agents = @(
@@ -27,24 +41,64 @@ Describe 'Combinatorial scheduling behaviors' {
   }
 
   Context 'Combinatorial matrix over thresholds' {
-    $matrixVram = @(5,10)
-    $matrixParallel = @(1,2)
-    foreach ($mv in $matrixVram) {
-      foreach ($mp in $matrixParallel) {
-        It ("schedules <= MaxParallel and <= MaxVram (Vram=$mv,Par=$mp)") {
-          $agents = @(
-            [PSCustomObject]@{ name='a1'; vram=3 },
-            [PSCustomObject]@{ name='a2'; vram=4 },
-            [PSCustomObject]@{ name='a3'; vram=5 }
-          )
-          $s = SimulateSchedule -agents $agents -MaxVramGB $mv -PreferMaxAgent $false -MaxParallel $mp
-          # Ensure scheduled count <= MaxParallel and total vram <= MaxVramGB
-          ($s.Count -le $mp) | Should -BeTrue
-          $totalV = ($s | Measure-Object -Property vram -Sum).Sum
-          if (-not $totalV) { $totalV = 0 }
-          ($totalV -le $mv) | Should -BeTrue
-        }
-      }
+    It 'schedules <= MaxParallel and <= MaxVram (Vram=5,Par=1)' {
+      $agents = @(
+        [PSCustomObject]@{ name='a1'; vram=3 },
+        [PSCustomObject]@{ name='a2'; vram=4 },
+        [PSCustomObject]@{ name='a3'; vram=5 }
+      )
+      $s = SimulateSchedule -agents $agents -MaxVramGB 5 -PreferMaxAgent $false -MaxParallel 1
+      $dbgCount = (@($s)).Count
+      $dbgTotal = ($s | Measure-Object -Property vram -Sum).Sum; if (-not $dbgTotal) { $dbgTotal = 0 }
+      $dbgNames = if ($s) { ($s | ForEach-Object { $_.name }) -join ',' } else { '' }
+      Write-Host "DEBUG: mv=5 mp=1 scheduled=($dbgNames) count=$dbgCount total=$dbgTotal"
+      ($dbgCount -le 1) | Should -BeTrue
+      ($dbgTotal -le 5) | Should -BeTrue
+    }
+
+    It 'schedules <= MaxParallel and <= MaxVram (Vram=5,Par=2)' {
+      $agents = @(
+        [PSCustomObject]@{ name='a1'; vram=3 },
+        [PSCustomObject]@{ name='a2'; vram=4 },
+        [PSCustomObject]@{ name='a3'; vram=5 }
+      )
+      $s = SimulateSchedule -agents $agents -MaxVramGB 5 -PreferMaxAgent $false -MaxParallel 2
+      $dbgCount = (@($s)).Count
+      $dbgTotal = ($s | Measure-Object -Property vram -Sum).Sum; if (-not $dbgTotal) { $dbgTotal = 0 }
+      $dbgNames = if ($s) { ($s | ForEach-Object { $_.name }) -join ',' } else { '' }
+      Write-Host "DEBUG: mv=5 mp=2 scheduled=($dbgNames) count=$dbgCount total=$dbgTotal"
+      ($dbgCount -le 2) | Should -BeTrue
+      ($dbgTotal -le 5) | Should -BeTrue
+    }
+
+    It 'schedules <= MaxParallel and <= MaxVram (Vram=10,Par=1)' {
+      $agents = @(
+        [PSCustomObject]@{ name='a1'; vram=3 },
+        [PSCustomObject]@{ name='a2'; vram=4 },
+        [PSCustomObject]@{ name='a3'; vram=5 }
+      )
+      $s = SimulateSchedule -agents $agents -MaxVramGB 10 -PreferMaxAgent $false -MaxParallel 1
+      $dbgCount = (@($s)).Count
+      $dbgTotal = ($s | Measure-Object -Property vram -Sum).Sum; if (-not $dbgTotal) { $dbgTotal = 0 }
+      $dbgNames = if ($s) { ($s | ForEach-Object { $_.name }) -join ',' } else { '' }
+      Write-Host "DEBUG: mv=10 mp=1 scheduled=($dbgNames) count=$dbgCount total=$dbgTotal"
+      ($dbgCount -le 1) | Should -BeTrue
+      ($dbgTotal -le 10) | Should -BeTrue
+    }
+
+    It 'schedules <= MaxParallel and <= MaxVram (Vram=10,Par=2)' {
+      $agents = @(
+        [PSCustomObject]@{ name='a1'; vram=3 },
+        [PSCustomObject]@{ name='a2'; vram=4 },
+        [PSCustomObject]@{ name='a3'; vram=5 }
+      )
+      $s = SimulateSchedule -agents $agents -MaxVramGB 10 -PreferMaxAgent $false -MaxParallel 2
+      $dbgCount = (@($s)).Count
+      $dbgTotal = ($s | Measure-Object -Property vram -Sum).Sum; if (-not $dbgTotal) { $dbgTotal = 0 }
+      $dbgNames = if ($s) { ($s | ForEach-Object { $_.name }) -join ',' } else { '' }
+      Write-Host "DEBUG: mv=10 mp=2 scheduled=($dbgNames) count=$dbgCount total=$dbgTotal"
+      ($dbgCount -le 2) | Should -BeTrue
+      ($dbgTotal -le 10) | Should -BeTrue
     }
   }
 

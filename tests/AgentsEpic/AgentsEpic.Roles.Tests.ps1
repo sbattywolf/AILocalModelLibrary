@@ -1,15 +1,17 @@
 Describe 'Agents Epic Roles and Coordination' {
 
     It 'Has an agent roles mapping file' {
+        Import-Module (Resolve-Path (Join-Path $PSScriptRoot '..\TestHelpers.psm1')).Path -Force
         $path = '.continue/agent-roles.json'
         Test-Path $path | Should -BeTrue
-        $roles = Get-Content $path -Raw | ConvertFrom-Json
+        $roles = Load-JsonDefensive $path
         $roles.agents.Count | Should -BeGreaterThan 0
     }
 
     It 'All role entries map to configured agents and include required fields' {
-        $roles = Get-Content '.continue/agent-roles.json' -Raw | ConvertFrom-Json
-        $cfg = Get-Content '.continue/config.agent' -Raw | ConvertFrom-Json
+        Import-Module (Resolve-Path (Join-Path $PSScriptRoot '..\TestHelpers.psm1')).Path -Force
+        $roles = Load-JsonDefensive '.continue/agent-roles.json'
+        $cfg = Load-JsonDefensive '.continue/config.agent'
         $agentNames = $cfg.agents | ForEach-Object { $_.name }
 
         foreach ($a in $roles.agents) {

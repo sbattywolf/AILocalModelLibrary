@@ -1,0 +1,30 @@
+﻿{
+    "Generated":  "2026-01-30T19:41:22.5439939+01:00",
+    "Agents":  [
+                   {
+                       "Name":  "agent-A",
+                       "CapacityPoints":  8,
+                       "AssignedPoints":  0,
+                       "Assignments":  [
+
+                                       ]
+                   },
+                   {
+                       "Name":  "agent-B",
+                       "CapacityPoints":  8,
+                       "AssignedPoints":  6,
+                       "Assignments":  [
+                                           {
+                                               "Id":  "T1",
+                                               "Title":  "Task 1",
+                                               "Points":  2
+                                           },
+                                           {
+                                               "Id":  "T2",
+                                               "Title":  "Task 2",
+                                               "Points":  4
+                                           }
+                                       ]
+                   }
+               ]
+}

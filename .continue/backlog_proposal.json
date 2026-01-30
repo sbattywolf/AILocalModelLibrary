@@ -1,0 +1,1342 @@
+﻿{
+    "summary":  {
+                    "sprint_total_points":  8,
+                    "sprint_capacity":  8,
+                    "backlog_count":  148,
+                    "sprint_selected":  4
+                },
+    "backlog":  [
+                    {
+                        "id":  116,
+                        "title":  "Review run_single_agent_backlog.ps1: if ($lines[$i] -match \u0027\\b(TODO|FIXME)\\b\u0027) {",
+                        "description":  "Source: scripts\\run_single_agent_backlog.ps1 (line 29)",
+                        "source":  "scripts\\run_single_agent_backlog.ps1",
+                        "type":  "todo",
+                        "estimate_points":  2,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  127,
+                        "title":  "Review single_agent_backlog.py: \u0027type\u0027: \u0027todo\u0027",
+                        "description":  "Source: scripts\\single_agent_backlog.py (line 51)",
+                        "source":  "scripts\\single_agent_backlog.py",
+                        "type":  "todo",
+                        "estimate_points":  2,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  126,
+                        "title":  "Review single_agent_backlog.py: if re.search(r\u0027\\b(TODO|FIXME)\\b\u0027, line, re.IGNORECASE):",
+                        "description":  "Source: scripts\\single_agent_backlog.py (line 46)",
+                        "source":  "scripts\\single_agent_backlog.py",
+                        "type":  "todo",
+                        "estimate_points":  2,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  16,
+                        "title":  "Review role-models.json: \"low\": { \"model\": \"qwen2.5-coder:1.5b\", \"vramGB\": 2, \"notes\": \"kanban/todo management\" },",
+                        "description":  "Source: .continue\\role-models.json (line 16)",
+                        "source":  ".continue\\role-models.json",
+                        "type":  "todo",
+                        "estimate_points":  2,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  130,
+                        "title":  "Review single_agent_backlog.py: \u0027priority\u0027: \u0027high\u0027 if it.get(\u0027type\u0027) == \u0027todo\u0027 else \u0027medium\u0027",
+                        "description":  "Source: scripts\\single_agent_backlog.py (line 102)",
+                        "source":  "scripts\\single_agent_backlog.py",
+                        "type":  "todo",
+                        "estimate_points":  2,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  129,
+                        "title":  "Review single_agent_backlog.py: if item.get(\u0027type\u0027) == \u0027todo\u0027:",
+                        "description":  "Source: scripts\\single_agent_backlog.py (line 70)",
+                        "source":  "scripts\\single_agent_backlog.py",
+                        "type":  "todo",
+                        "estimate_points":  2,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  61,
+                        "title":  "Review SESSION_SUMMARY_AND_EPICS.md: 4. Groom backlog per team/role and assign owners for each epic (see backlog management task in TODO list).",
+                        "description":  "Source: docs\\SESSION_SUMMARY_AND_EPICS.md (line 36)",
+                        "source":  "docs\\SESSION_SUMMARY_AND_EPICS.md",
+                        "type":  "todo",
+                        "estimate_points":  2,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  118,
+                        "title":  "Review run_single_agent_backlog.ps1: \u0027todo\u0027 { $base = 2 }",
+                        "description":  "Source: scripts\\run_single_agent_backlog.ps1 (line 46)",
+                        "source":  "scripts\\run_single_agent_backlog.ps1",
+                        "type":  "todo",
+                        "estimate_points":  2,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  119,
+                        "title":  "Review run_single_agent_backlog.ps1: $priority = if ($it.type -eq \u0027todo\u0027) { \u0027high\u0027 } else { \u0027medium\u0027 }",
+                        "description":  "Source: scripts\\run_single_agent_backlog.ps1 (line 65)",
+                        "source":  "scripts\\run_single_agent_backlog.ps1",
+                        "type":  "todo",
+                        "estimate_points":  2,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  125,
+                        "title":  "Review single_agent_backlog.py: # find TODO/FIXME lines",
+                        "description":  "Source: scripts\\single_agent_backlog.py (line 44)",
+                        "source":  "scripts\\single_agent_backlog.py",
+                        "type":  "todo",
+                        "estimate_points":  2,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  124,
+                        "title":  "Review single_agent_backlog.py: Scans the repository for TODO/FIXME markers and source files to produce",
+                        "description":  "Source: scripts\\single_agent_backlog.py (line 5)",
+                        "source":  "scripts\\single_agent_backlog.py",
+                        "type":  "todo",
+                        "estimate_points":  2,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  117,
+                        "title":  "Review run_single_agent_backlog.ps1: $items += [pscustomobject]@{ source = $rel; line = $i+1; text = $lines[$i].Trim(); type=\u0027todo\u0027 }",
+                        "description":  "Source: scripts\\run_single_agent_backlog.ps1 (line 30)",
+                        "source":  "scripts\\run_single_agent_backlog.ps1",
+                        "type":  "todo",
+                        "estimate_points":  2,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  52,
+                        "title":  "Review BACKLOG_MANAGEMENT.md: - Todo items are small actions that can be picked up by agents or developers.",
+                        "description":  "Source: docs\\BACKLOG_MANAGEMENT.md (line 16)",
+                        "source":  "docs\\BACKLOG_MANAGEMENT.md",
+                        "type":  "todo",
+                        "estimate_points":  2,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  53,
+                        "title":  "Review BACKLOG_MANAGEMENT.md: - Tag todo items with `team` and `role` fields so agent selectors can pick them.",
+                        "description":  "Source: docs\\BACKLOG_MANAGEMENT.md (line 19)",
+                        "source":  "docs\\BACKLOG_MANAGEMENT.md",
+                        "type":  "todo",
+                        "estimate_points":  2,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  128,
+                        "title":  "Review single_agent_backlog.py: # Simple heuristics: TODO=1-3, doc/code based on file size",
+                        "description":  "Source: scripts\\single_agent_backlog.py (line 63)",
+                        "source":  "scripts\\single_agent_backlog.py",
+                        "type":  "todo",
+                        "estimate_points":  2,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  51,
+                        "title":  "Review BACKLOG_MANAGEMENT.md: - Task -\u003e 1..k Todo items (fine-grained actionable work)",
+                        "description":  "Source: docs\\BACKLOG_MANAGEMENT.md (line 9)",
+                        "source":  "docs\\BACKLOG_MANAGEMENT.md",
+                        "type":  "todo",
+                        "estimate_points":  2,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  83,
+                        "title":  "Review export-todos-dashboard.ps1: The script reads a JSON array of todo items with optional fields: id, title, description, status, team, role.",
+                        "description":  "Source: scripts\\export-todos-dashboard.ps1 (line 4)",
+                        "source":  "scripts\\export-todos-dashboard.ps1",
+                        "type":  "todo",
+                        "estimate_points":  2,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  84,
+                        "title":  "Review export-todos-dashboard.ps1: if (-not (Test-Path $p)) { throw \"Todo JSON not found: $p\" }",
+                        "description":  "Source: scripts\\export-todos-dashboard.ps1 (line 16)",
+                        "source":  "scripts\\export-todos-dashboard.ps1",
+                        "type":  "todo",
+                        "estimate_points":  2,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  85,
+                        "title":  "Review export-todos-dashboard.ps1: $md += \"# Todo Dashboard\"",
+                        "description":  "Source: scripts\\export-todos-dashboard.ps1 (line 35)",
+                        "source":  "scripts\\export-todos-dashboard.ps1",
+                        "type":  "todo",
+                        "estimate_points":  2,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  67,
+                        "title":  "Review TODO_DASHBOARD_SAMPLE.md: # Todo Dashboard",
+                        "description":  "Source: docs\\TODO_DASHBOARD_SAMPLE.md (line 1)",
+                        "source":  "docs\\TODO_DASHBOARD_SAMPLE.md",
+                        "type":  "todo",
+                        "estimate_points":  2,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  54,
+                        "title":  "Review BACKLOG_MANAGEMENT.md: - The `scripts/export-todos-dashboard.ps1` (added) reads a todo JSON and produces a Markdown dashboard grouped by `team` and `role` for easy review.",
+                        "description":  "Source: docs\\BACKLOG_MANAGEMENT.md (line 28)",
+                        "source":  "docs\\BACKLOG_MANAGEMENT.md",
+                        "type":  "todo",
+                        "estimate_points":  2,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  20,
+                        "title":  "Review skill-candidates.json: \"kanban/todo management\",",
+                        "description":  "Source: .continue\\skill-candidates.json (line 5685)",
+                        "source":  ".continue\\skill-candidates.json",
+                        "type":  "todo",
+                        "estimate_points":  13,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  18,
+                        "title":  "Review skill-candidates.json: \"notes\":  \"kanban/todo management\"",
+                        "description":  "Source: .continue\\skill-candidates.json (line 2377)",
+                        "source":  ".continue\\skill-candidates.json",
+                        "type":  "todo",
+                        "estimate_points":  13,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  21,
+                        "title":  "Review skill-candidates.json: \"kanban/todo management\",",
+                        "description":  "Source: .continue\\skill-candidates.json (line 6396)",
+                        "source":  ".continue\\skill-candidates.json",
+                        "type":  "todo",
+                        "estimate_points":  13,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  19,
+                        "title":  "Review skill-candidates.json: \"kanban/todo management\",",
+                        "description":  "Source: .continue\\skill-candidates.json (line 5103)",
+                        "source":  ".continue\\skill-candidates.json",
+                        "type":  "todo",
+                        "estimate_points":  13,
+                        "priority":  "high"
+                    },
+                    {
+                        "id":  101,
+                        "title":  "Review monitor-local-llama.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\monitor-local-llama.ps1",
+                        "source":  "scripts\\monitor-local-llama.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  103,
+                        "title":  "Review package-module.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\package-module.ps1",
+                        "source":  "scripts\\package-module.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  104,
+                        "title":  "Review pre-commit-scan.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\pre-commit-scan.ps1",
+                        "source":  "scripts\\pre-commit-scan.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  102,
+                        "title":  "Review monitor-ollama.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\monitor-ollama.ps1",
+                        "source":  "scripts\\monitor-ollama.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  98,
+                        "title":  "Review kill-ollama-role.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\kill-ollama-role.ps1",
+                        "source":  "scripts\\kill-ollama-role.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  100,
+                        "title":  "Review monitor-background.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\monitor-background.ps1",
+                        "source":  "scripts\\monitor-background.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  99,
+                        "title":  "Review monitor-agents-epic.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\monitor-agents-epic.ps1",
+                        "source":  "scripts\\monitor-agents-epic.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  88,
+                        "title":  "Review install-7zip-auto.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\install-7zip-auto.ps1",
+                        "source":  "scripts\\install-7zip-auto.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  89,
+                        "title":  "Review install-7zip-winget.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\install-7zip-winget.ps1",
+                        "source":  "scripts\\install-7zip-winget.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  90,
+                        "title":  "Review install-choco-7zip.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\install-choco-7zip.ps1",
+                        "source":  "scripts\\install-choco-7zip.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  87,
+                        "title":  "Review find-python.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\find-python.ps1",
+                        "source":  "scripts\\find-python.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  81,
+                        "title":  "Review create-personal-config.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\create-personal-config.ps1",
+                        "source":  "scripts\\create-personal-config.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  82,
+                        "title":  "Review elevated-runbook.md: Contains headings/documentation",
+                        "description":  "Source: scripts\\elevated-runbook.md",
+                        "source":  "scripts\\elevated-runbook.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  86,
+                        "title":  "Review export-todos-dashboard.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\export-todos-dashboard.ps1",
+                        "source":  "scripts\\export-todos-dashboard.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  91,
+                        "title":  "Review install-git-filter-repo-retry.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\install-git-filter-repo-retry.ps1",
+                        "source":  "scripts\\install-git-filter-repo-retry.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  95,
+                        "title":  "Review install-ollama-aider.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\install-ollama-aider.ps1",
+                        "source":  "scripts\\install-ollama-aider.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  96,
+                        "title":  "Review install-windows.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\install-windows.ps1",
+                        "source":  "scripts\\install-windows.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  97,
+                        "title":  "Review install-winget.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\install-winget.ps1",
+                        "source":  "scripts\\install-winget.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  80,
+                        "title":  "Review clean-hkcu-environment.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\clean-hkcu-environment.ps1",
+                        "source":  "scripts\\clean-hkcu-environment.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  92,
+                        "title":  "Review install-git-filter-repo.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\install-git-filter-repo.ps1",
+                        "source":  "scripts\\install-git-filter-repo.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  93,
+                        "title":  "Review install-git-hooks.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\install-git-hooks.ps1",
+                        "source":  "scripts\\install-git-hooks.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  94,
+                        "title":  "Review install-missing.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\install-missing.ps1",
+                        "source":  "scripts\\install-missing.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  137,
+                        "title":  "Review validate-local-llama-model.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\validate-local-llama-model.ps1",
+                        "source":  "scripts\\validate-local-llama-model.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  138,
+                        "title":  "Review verify-ollama-home-e-drive.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\verify-ollama-home-e-drive.ps1",
+                        "source":  "scripts\\verify-ollama-home-e-drive.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  139,
+                        "title":  "Review stress-parallel.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\stress\\stress-parallel.ps1",
+                        "source":  "scripts\\stress\\stress-parallel.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  136,
+                        "title":  "Review update-system-path.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\update-system-path.ps1",
+                        "source":  "scripts\\update-system-path.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  133,
+                        "title":  "Review start-local-llama-role.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\start-local-llama-role.ps1",
+                        "source":  "scripts\\start-local-llama-role.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  134,
+                        "title":  "Review start-ollama-role.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\start-ollama-role.ps1",
+                        "source":  "scripts\\start-ollama-role.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  135,
+                        "title":  "Review stop-ollama-role.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\stop-ollama-role.ps1",
+                        "source":  "scripts\\stop-ollama-role.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  140,
+                        "title":  "Review run-team-3-dev.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\teams\\run-team-3-dev.ps1",
+                        "source":  "scripts\\teams\\run-team-3-dev.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  145,
+                        "title":  "Review set-local-llama-defaults.ps1: Contains headings/documentation",
+                        "description":  "Source: templates\\agents\\local-llama\\set-local-llama-defaults.ps1",
+                        "source":  "templates\\agents\\local-llama\\set-local-llama-defaults.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  146,
+                        "title":  "Review start-ollama-agent.ps1: Contains headings/documentation",
+                        "description":  "Source: templates\\agents\\ollama\\start-ollama-agent.ps1",
+                        "source":  "templates\\agents\\ollama\\start-ollama-agent.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  147,
+                        "title":  "Review model-store.ps1: Contains headings/documentation",
+                        "description":  "Source: templates\\install\\model-store.ps1",
+                        "source":  "templates\\install\\model-store.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  144,
+                        "title":  "Review run-local-llama-agent.ps1: Contains headings/documentation",
+                        "description":  "Source: templates\\agents\\local-llama\\run-local-llama-agent.ps1",
+                        "source":  "templates\\agents\\local-llama\\run-local-llama-agent.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  141,
+                        "title":  "Review SimRacingAgent.psm1: Contains headings/documentation",
+                        "description":  "Source: templates\\agent\\SimRacingAgent\\SimRacingAgent.psm1",
+                        "source":  "templates\\agent\\SimRacingAgent\\SimRacingAgent.psm1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  142,
+                        "title":  "Review TemplateAgent.psm1: Contains headings/documentation",
+                        "description":  "Source: templates\\agent\\SimRacingAgent\\TemplateAgent.psm1",
+                        "source":  "templates\\agent\\SimRacingAgent\\TemplateAgent.psm1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  143,
+                        "title":  "Review load-local-llama-session.ps1: Contains headings/documentation",
+                        "description":  "Source: templates\\agents\\local-llama\\load-local-llama-session.ps1",
+                        "source":  "templates\\agents\\local-llama\\load-local-llama-session.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  132,
+                        "title":  "Review skill-monitor.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\skill-monitor.ps1",
+                        "source":  "scripts\\skill-monitor.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  109,
+                        "title":  "Review review-skill-candidates.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\review-skill-candidates.ps1",
+                        "source":  "scripts\\review-skill-candidates.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  110,
+                        "title":  "Review run-agents-epic.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\run-agents-epic.ps1",
+                        "source":  "scripts\\run-agents-epic.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  111,
+                        "title":  "Review run-long-sampler-monitor.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\run-long-sampler-monitor.ps1",
+                        "source":  "scripts\\run-long-sampler-monitor.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  108,
+                        "title":  "Review pull-qwen-to-e.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\pull-qwen-to-e.ps1",
+                        "source":  "scripts\\pull-qwen-to-e.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  105,
+                        "title":  "Review preload-session.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\preload-session.ps1",
+                        "source":  "scripts\\preload-session.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  106,
+                        "title":  "Review probe-agents.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\probe-agents.ps1",
+                        "source":  "scripts\\probe-agents.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  107,
+                        "title":  "Review provision-server.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\provision-server.ps1",
+                        "source":  "scripts\\provision-server.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  112,
+                        "title":  "Review run-ollama-check-and-list.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\run-ollama-check-and-list.ps1",
+                        "source":  "scripts\\run-ollama-check-and-list.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  121,
+                        "title":  "Review scan-secrets.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\scan-secrets.ps1",
+                        "source":  "scripts\\scan-secrets.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  122,
+                        "title":  "Review scheduler-prefer-skill.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\scheduler-prefer-skill.ps1",
+                        "source":  "scripts\\scheduler-prefer-skill.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  123,
+                        "title":  "Review set-ollama-home.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\set-ollama-home.ps1",
+                        "source":  "scripts\\set-ollama-home.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  120,
+                        "title":  "Review run_single_agent_backlog.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\run_single_agent_backlog.ps1",
+                        "source":  "scripts\\run_single_agent_backlog.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  113,
+                        "title":  "Review run-ollama-serve-detached.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\run-ollama-serve-detached.ps1",
+                        "source":  "scripts\\run-ollama-serve-detached.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  114,
+                        "title":  "Review run-team-dryrun.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\run-team-dryrun.ps1",
+                        "source":  "scripts\\run-team-dryrun.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  115,
+                        "title":  "Review run-tests.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\run-tests.ps1",
+                        "source":  "scripts\\run-tests.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  79,
+                        "title":  "Review ci-gemini-analyze.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\ci-gemini-analyze.ps1",
+                        "source":  "scripts\\ci-gemini-analyze.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  27,
+                        "title":  "Review README.md: Contains headings/documentation",
+                        "description":  "Source: .continue\\python\\README.md",
+                        "source":  ".continue\\python\\README.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  30,
+                        "title":  "Review .gitignore: Contains headings/documentation",
+                        "description":  "Source: .continue\\python\\.pytest_cache\\.gitignore",
+                        "source":  ".continue\\python\\.pytest_cache\\.gitignore",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  31,
+                        "title":  "Review CACHEDIR.TAG: Contains headings/documentation",
+                        "description":  "Source: .continue\\python\\.pytest_cache\\CACHEDIR.TAG",
+                        "source":  ".continue\\python\\.pytest_cache\\CACHEDIR.TAG",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  25,
+                        "title":  "Review tmp_repro_enforcer.ps1: Contains headings/documentation",
+                        "description":  "Source: .continue\\tmp_repro_enforcer.ps1",
+                        "source":  ".continue\\tmp_repro_enforcer.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  22,
+                        "title":  "Review skills-trace.md: Contains headings/documentation",
+                        "description":  "Source: .continue\\skills-trace.md",
+                        "source":  ".continue\\skills-trace.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  23,
+                        "title":  "Review stop-ollama-on-11434-and-restart.ps1: Contains headings/documentation",
+                        "description":  "Source: .continue\\stop-ollama-on-11434-and-restart.ps1",
+                        "source":  ".continue\\stop-ollama-on-11434-and-restart.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  24,
+                        "title":  "Review tmp_debug_enforcer.ps1: Contains headings/documentation",
+                        "description":  "Source: .continue\\tmp_debug_enforcer.ps1",
+                        "source":  ".continue\\tmp_debug_enforcer.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  32,
+                        "title":  "Review README.md: Contains headings/documentation",
+                        "description":  "Source: .continue\\python\\.pytest_cache\\README.md",
+                        "source":  ".continue\\python\\.pytest_cache\\README.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  39,
+                        "title":  "Review quick-setup.ps1: Contains headings/documentation",
+                        "description":  "Source: .continue\\tool\\quick-setup.ps1",
+                        "source":  ".continue\\tool\\quick-setup.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  40,
+                        "title":  "Review run_agentcore_tests.ps1: Contains headings/documentation",
+                        "description":  "Source: .continue\\tool\\run_agentcore_tests.ps1",
+                        "source":  ".continue\\tool\\run_agentcore_tests.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  41,
+                        "title":  "Review Setup-AI-Models.ps1: Contains headings/documentation",
+                        "description":  "Source: .continue\\tool\\Setup-AI-Models.ps1",
+                        "source":  ".continue\\tool\\Setup-AI-Models.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  38,
+                        "title":  "Review pull-model.ps1: Contains headings/documentation",
+                        "description":  "Source: .continue\\tool\\pull-model.ps1",
+                        "source":  ".continue\\tool\\pull-model.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  35,
+                        "title":  "Review README.md: Contains headings/documentation",
+                        "description":  "Source: .continue\\stress\\README.md",
+                        "source":  ".continue\\stress\\README.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  36,
+                        "title":  "Review check-model-updates.ps1: Contains headings/documentation",
+                        "description":  "Source: .continue\\tool\\check-model-updates.ps1",
+                        "source":  ".continue\\tool\\check-model-updates.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  37,
+                        "title":  "Review install-deps.ps1: Contains headings/documentation",
+                        "description":  "Source: .continue\\tool\\install-deps.ps1",
+                        "source":  ".continue\\tool\\install-deps.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  17,
+                        "title":  "Review session-history.md: Contains headings/documentation",
+                        "description":  "Source: .continue\\session-history.md",
+                        "source":  ".continue\\session-history.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  5,
+                        "title":  "Review TASKS.md: Contains headings/documentation",
+                        "description":  "Source: TASKS.md",
+                        "source":  "TASKS.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  6,
+                        "title":  "Review TODO_FIXES.md: Contains headings/documentation",
+                        "description":  "Source: TODO_FIXES.md",
+                        "source":  "TODO_FIXES.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  7,
+                        "title":  "Review agent-runner.ps1: Contains headings/documentation",
+                        "description":  "Source: .continue\\agent-runner.ps1",
+                        "source":  ".continue\\agent-runner.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  4,
+                        "title":  "Review run-sequence.ps1: Contains headings/documentation",
+                        "description":  "Source: run-sequence.ps1",
+                        "source":  "run-sequence.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  1,
+                        "title":  "Review .gitattributes: Contains headings/documentation",
+                        "description":  "Source: .gitattributes",
+                        "source":  ".gitattributes",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  2,
+                        "title":  "Review .gitignore: Contains headings/documentation",
+                        "description":  "Source: .gitignore",
+                        "source":  ".gitignore",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  3,
+                        "title":  "Review README.md: Contains headings/documentation",
+                        "description":  "Source: README.md",
+                        "source":  "README.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  8,
+                        "title":  "Review check-port-11434.ps1: Contains headings/documentation",
+                        "description":  "Source: .continue\\check-port-11434.ps1",
+                        "source":  ".continue\\check-port-11434.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  13,
+                        "title":  "Review README.md: Contains headings/documentation",
+                        "description":  "Source: .continue\\README.md",
+                        "source":  ".continue\\README.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  14,
+                        "title":  "Review repro_coordinator_it.ps1: Contains headings/documentation",
+                        "description":  "Source: .continue\\repro_coordinator_it.ps1",
+                        "source":  ".continue\\repro_coordinator_it.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  15,
+                        "title":  "Review repro_tester_it.ps1: Contains headings/documentation",
+                        "description":  "Source: .continue\\repro_tester_it.ps1",
+                        "source":  ".continue\\repro_tester_it.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  12,
+                        "title":  "Review PATH-update-instructions.md: Contains headings/documentation",
+                        "description":  "Source: .continue\\PATH-update-instructions.md",
+                        "source":  ".continue\\PATH-update-instructions.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  9,
+                        "title":  "Review cleanup_procs.ps1: Contains headings/documentation",
+                        "description":  "Source: .continue\\cleanup_procs.ps1",
+                        "source":  ".continue\\cleanup_procs.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  10,
+                        "title":  "Review do-add-user-path.ps1: Contains headings/documentation",
+                        "description":  "Source: .continue\\do-add-user-path.ps1",
+                        "source":  ".continue\\do-add-user-path.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  11,
+                        "title":  "Review monitor-dashboard.md: Contains headings/documentation",
+                        "description":  "Source: .continue\\monitor-dashboard.md",
+                        "source":  ".continue\\monitor-dashboard.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  66,
+                        "title":  "Review TESTING_GUIDE.md: Contains headings/documentation",
+                        "description":  "Source: docs\\TESTING_GUIDE.md",
+                        "source":  "docs\\TESTING_GUIDE.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  65,
+                        "title":  "Review TEAM_SKILLS_MATRIX.md: Contains headings/documentation",
+                        "description":  "Source: docs\\TEAM_SKILLS_MATRIX.md",
+                        "source":  "docs\\TEAM_SKILLS_MATRIX.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  69,
+                        "title":  "Review TRAINING_PLAN.md: Contains headings/documentation",
+                        "description":  "Source: docs\\TRAINING_PLAN.md",
+                        "source":  "docs\\TRAINING_PLAN.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  68,
+                        "title":  "Review TODO_DASHBOARD_SAMPLE.md: Contains headings/documentation",
+                        "description":  "Source: docs\\TODO_DASHBOARD_SAMPLE.md",
+                        "source":  "docs\\TODO_DASHBOARD_SAMPLE.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  64,
+                        "title":  "Review TEAM_SETUP_PROPOSAL.md: Contains headings/documentation",
+                        "description":  "Source: docs\\TEAM_SETUP_PROPOSAL.md",
+                        "source":  "docs\\TEAM_SETUP_PROPOSAL.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  60,
+                        "title":  "Review SECRETS_SETUP.md: Contains headings/documentation",
+                        "description":  "Source: docs\\SECRETS_SETUP.md",
+                        "source":  "docs\\SECRETS_SETUP.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  59,
+                        "title":  "Review MONITOR_BACKGROUND.md: Contains headings/documentation",
+                        "description":  "Source: docs\\MONITOR_BACKGROUND.md",
+                        "source":  "docs\\MONITOR_BACKGROUND.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  63,
+                        "title":  "Review skills-schema.md: Contains headings/documentation",
+                        "description":  "Source: docs\\skills-schema.md",
+                        "source":  "docs\\skills-schema.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  62,
+                        "title":  "Review SESSION_SUMMARY_AND_EPICS.md: Contains headings/documentation",
+                        "description":  "Source: docs\\SESSION_SUMMARY_AND_EPICS.md",
+                        "source":  "docs\\SESSION_SUMMARY_AND_EPICS.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  76,
+                        "title":  "Review check-installs.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\check-installs.ps1",
+                        "source":  "scripts\\check-installs.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  75,
+                        "title":  "Review check-environment.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\check-environment.ps1",
+                        "source":  "scripts\\check-environment.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  78,
+                        "title":  "Review check-tools.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\check-tools.ps1",
+                        "source":  "scripts\\check-tools.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  77,
+                        "title":  "Review check-port-listener.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\check-port-listener.ps1",
+                        "source":  "scripts\\check-port-listener.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  148,
+                        "title":  "Review agent-smoke-test.ps1: Contains headings/documentation",
+                        "description":  "Source: tests\\smoke\\agent-smoke-test.ps1",
+                        "source":  "tests\\smoke\\agent-smoke-test.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  71,
+                        "title":  "Review agent-runtime-monitor-single-sample.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\agent-runtime-monitor-single-sample.ps1",
+                        "source":  "scripts\\agent-runtime-monitor-single-sample.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  70,
+                        "title":  "Review llama-cli.ps1: Contains headings/documentation",
+                        "description":  "Source: sandbox\\local-llama-test\\llama-cli.ps1",
+                        "source":  "sandbox\\local-llama-test\\llama-cli.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  73,
+                        "title":  "Review apply-aider-suggestion.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\apply-aider-suggestion.ps1",
+                        "source":  "scripts\\apply-aider-suggestion.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  72,
+                        "title":  "Review agent_stub.ps1: Contains headings/documentation",
+                        "description":  "Source: scripts\\agent_stub.ps1",
+                        "source":  "scripts\\agent_stub.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  47,
+                        "title":  "Review validate-repo.ps1: Contains headings/documentation",
+                        "description":  "Source: .continue\\tool\\validate-repo.ps1",
+                        "source":  ".continue\\tool\\validate-repo.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  46,
+                        "title":  "Review validate-repo-fast.ps1: Contains headings/documentation",
+                        "description":  "Source: .continue\\tool\\validate-repo-fast.ps1",
+                        "source":  ".continue\\tool\\validate-repo-fast.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  49,
+                        "title":  "Review imported_save_session.ps1: Contains headings/documentation",
+                        "description":  "Source: .tools\\imported_save_session.ps1",
+                        "source":  ".tools\\imported_save_session.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  48,
+                        "title":  "Review pre-commit: Contains headings/documentation",
+                        "description":  "Source: .githooks\\pre-commit",
+                        "source":  ".githooks\\pre-commit",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  43,
+                        "title":  "Review Start-Local-AI.ps1: Contains headings/documentation",
+                        "description":  "Source: .continue\\tool\\Start-Local-AI.ps1",
+                        "source":  ".continue\\tool\\Start-Local-AI.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  42,
+                        "title":  "Review Start-AI-Orchestrator.ps1: Contains headings/documentation",
+                        "description":  "Source: .continue\\tool\\Start-AI-Orchestrator.ps1",
+                        "source":  ".continue\\tool\\Start-AI-Orchestrator.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  45,
+                        "title":  "Review Stop-AI-Env.ps1: Contains headings/documentation",
+                        "description":  "Source: .continue\\tool\\Stop-AI-Env.ps1",
+                        "source":  ".continue\\tool\\Stop-AI-Env.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  44,
+                        "title":  "Review start-model.ps1: Contains headings/documentation",
+                        "description":  "Source: .continue\\tool\\start-model.ps1",
+                        "source":  ".continue\\tool\\start-model.ps1",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  50,
+                        "title":  "Review agent-resource-monitoring.md: Contains headings/documentation",
+                        "description":  "Source: docs\\agent-resource-monitoring.md",
+                        "source":  "docs\\agent-resource-monitoring.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  56,
+                        "title":  "Review ENVIRONMENT.md: Contains headings/documentation",
+                        "description":  "Source: docs\\ENVIRONMENT.md",
+                        "source":  "docs\\ENVIRONMENT.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  57,
+                        "title":  "Review INSTALLER_CI.md: Contains headings/documentation",
+                        "description":  "Source: docs\\INSTALLER_CI.md",
+                        "source":  "docs\\INSTALLER_CI.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  58,
+                        "title":  "Review local-setup.md: Contains headings/documentation",
+                        "description":  "Source: docs\\local-setup.md",
+                        "source":  "docs\\local-setup.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  55,
+                        "title":  "Review BACKLOG_MANAGEMENT.md: Contains headings/documentation",
+                        "description":  "Source: docs\\BACKLOG_MANAGEMENT.md",
+                        "source":  "docs\\BACKLOG_MANAGEMENT.md",
+                        "type":  "doc",
+                        "estimate_points":  1,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  131,
+                        "title":  "Review single_agent_backlog.py: Contains code definitions",
+                        "description":  "Source: scripts\\single_agent_backlog.py",
+                        "source":  "scripts\\single_agent_backlog.py",
+                        "type":  "code",
+                        "estimate_points":  3,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  33,
+                        "title":  "Review test_agent_runner.py: Contains code definitions",
+                        "description":  "Source: .continue\\python\\tests\\test_agent_runner.py",
+                        "source":  ".continue\\python\\tests\\test_agent_runner.py",
+                        "type":  "code",
+                        "estimate_points":  3,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  74,
+                        "title":  "Review autoscale_controller.py: Contains code definitions",
+                        "description":  "Source: scripts\\autoscale_controller.py",
+                        "source":  "scripts\\autoscale_controller.py",
+                        "type":  "code",
+                        "estimate_points":  3,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  28,
+                        "title":  "Review start_model.py: Contains code definitions",
+                        "description":  "Source: .continue\\python\\start_model.py",
+                        "source":  ".continue\\python\\start_model.py",
+                        "type":  "code",
+                        "estimate_points":  3,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  29,
+                        "title":  "Review stop_model.py: Contains code definitions",
+                        "description":  "Source: .continue\\python\\stop_model.py",
+                        "source":  ".continue\\python\\stop_model.py",
+                        "type":  "code",
+                        "estimate_points":  3,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  26,
+                        "title":  "Review agent_runner.py: Contains code definitions",
+                        "description":  "Source: .continue\\python\\agent_runner.py",
+                        "source":  ".continue\\python\\agent_runner.py",
+                        "type":  "code",
+                        "estimate_points":  3,
+                        "priority":  "medium"
+                    },
+                    {
+                        "id":  34,
+                        "title":  "Review test_agent_runner_usbmanager.py: Contains code definitions",
+                        "description":  "Source: .continue\\python\\tests\\test_agent_runner_usbmanager.py",
+                        "source":  ".continue\\python\\tests\\test_agent_runner_usbmanager.py",
+                        "type":  "code",
+                        "estimate_points":  3,
+                        "priority":  "medium"
+                    }
+                ]
+}

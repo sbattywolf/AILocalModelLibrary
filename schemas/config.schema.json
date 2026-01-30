@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Editor/Tooling config schema",
+  "type": "object",
+  "properties": {
+    "models": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "provider": { "type": "string" },
+          "model": { "type": "string" },
+          "systemMessage": { "type": "string" }
+        },
+        "required": ["title","provider","model","systemMessage"],
+        "additionalProperties": false
+      }
+    },
+    "tabAutocompleteModel": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "provider": { "type": "string" },
+        "model": { "type": "string" }
+      },
+      "required": ["title","provider","model"],
+      "additionalProperties": false
+    },
+    "tabAutocompleteOptions": {
+      "type": "object",
+      "properties": {
+        "disable": { "type": "boolean" },
+        "useFileSuffix": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "embeddingsProvider": {
+      "type": "object",
+      "properties": {
+        "provider": { "type": "string" },
+        "model": { "type": "string" }
+      },
+      "required": ["provider","model"],
+      "additionalProperties": false
+    },
+    "allowAnonymousTelemetry": { "type": "boolean" }
+  },
+  "required": ["models"],
+  "additionalProperties": false
+}
