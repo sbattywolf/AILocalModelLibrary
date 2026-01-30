@@ -62,7 +62,12 @@
                 ]
               },
               "notes": { "type": "string" },
-              "priority": { "type": "integer", "minimum": 0 }
+              "priority": {
+                "oneOf": [
+                  { "type": "integer", "minimum": 0 },
+                  { "type": "string", "enum": ["low", "medium", "high"] }
+                ]
+              }
             },
             "required": ["name","role","skills"],
             "additionalProperties": false
