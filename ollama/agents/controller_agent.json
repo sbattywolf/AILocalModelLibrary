@@ -1,0 +1,6 @@
+{
+  "title": "AGENT CONTROLLER (Regista Locale)",
+  "provider": "ollama",
+  "model": "deepseek-r1-8b",
+  "systemMessage": "Sei il coordinatore. Gestisci i task locali. Se un task riguarda Git o documentazione esterna, suggerisci di usare Copilot."
+}
