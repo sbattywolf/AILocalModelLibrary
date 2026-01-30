@@ -1,0 +1,82 @@
+﻿[
+    {
+        "name":  "Low-7",
+        "entry":  ".continue/python/agent_runner.py",
+        "model":  "qwen2.5-coder:1.5b",
+        "log":  "logs/agent-Low-7.log",
+        "status":  "scheduled",
+        "vram":  0
+    },
+    {
+        "name":  "Low-6",
+        "entry":  ".continue/python/agent_runner.py",
+        "model":  "qwen2.5-coder:1.5b",
+        "log":  "logs/agent-Low-6.log",
+        "status":  "scheduled",
+        "vram":  0
+    },
+    {
+        "name":  "Low-8",
+        "entry":  ".continue/python/agent_runner.py",
+        "model":  "qwen2.5-coder:1.5b",
+        "log":  "logs/agent-Low-8.log",
+        "status":  "scheduled",
+        "vram":  0
+    },
+    {
+        "name":  "Low-10",
+        "entry":  ".continue/python/agent_runner.py",
+        "model":  "qwen2.5-coder:1.5b",
+        "log":  "logs/agent-Low-10.log",
+        "status":  "scheduled",
+        "vram":  0
+    },
+    {
+        "name":  "Low-9",
+        "entry":  ".continue/python/agent_runner.py",
+        "model":  "qwen2.5-coder:1.5b",
+        "log":  "logs/agent-Low-9.log",
+        "status":  "scheduled",
+        "vram":  0
+    },
+    {
+        "name":  "Low-2",
+        "entry":  ".continue/python/agent_runner.py",
+        "model":  "qwen2.5-coder:1.5b",
+        "log":  "logs/agent-Low-2.log",
+        "status":  "scheduled",
+        "vram":  0
+    },
+    {
+        "name":  "Low-1",
+        "entry":  ".continue/python/agent_runner.py",
+        "model":  "qwen2.5-coder:1.5b",
+        "log":  "logs/agent-Low-1.log",
+        "status":  "scheduled",
+        "vram":  0
+    },
+    {
+        "name":  "Low-3",
+        "entry":  ".continue/python/agent_runner.py",
+        "model":  "qwen2.5-coder:1.5b",
+        "log":  "logs/agent-Low-3.log",
+        "status":  "scheduled",
+        "vram":  0
+    },
+    {
+        "name":  "Low-5",
+        "entry":  ".continue/python/agent_runner.py",
+        "model":  "qwen2.5-coder:1.5b",
+        "log":  "logs/agent-Low-5.log",
+        "status":  "scheduled",
+        "vram":  0
+    },
+    {
+        "name":  "Low-4",
+        "entry":  ".continue/python/agent_runner.py",
+        "model":  "qwen2.5-coder:1.5b",
+        "log":  "logs/agent-Low-4.log",
+        "status":  "scheduled",
+        "vram":  0
+    }
+]

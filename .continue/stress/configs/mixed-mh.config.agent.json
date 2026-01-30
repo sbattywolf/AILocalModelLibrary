@@ -1,0 +1,18 @@
+{
+  "generated": "2026-01-30T02:20:20Z",
+  "description": "Mixed Medium(6) / High(2) / Low(2) - High uses qwen2.5-coder:32b",
+  "preference": { "priority": "accuracy" },
+  "agents": [
+    { "name": "High-1", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:32b" }, "quality": "high" },
+    { "name": "High-2", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:32b" }, "quality": "high" },
+    { "name": "Med-1", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "medium" },
+    { "name": "Med-2", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "medium" },
+    { "name": "Med-3", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "medium" },
+    { "name": "Med-4", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "medium" },
+    { "name": "Med-5", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "medium" },
+    { "name": "Med-6", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "medium" },
+    { "name": "Low-1", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "low" },
+    { "name": "Low-2", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "low" }
+  ],
+  "default": "High-1"
+}

@@ -1,0 +1,31 @@
+{
+  "team": "3-Dev Team",
+  "description": "Three-agent development team: Architect (LocalModelB), Developer (LocalModelA), Analyst/Tester (TurboAgent).",
+  "maxParallel": 3,
+  "maxVramGB": 32,
+  "members": [
+    {
+      "role": "Code Architect",
+      "agent": "LocalModelB",
+      "model": "qwen2.5-coder:32b",
+      "priority": "high",
+      "vramEstimateGB": 14
+    },
+    {
+      "role": "Code Developer",
+      "agent": "LocalModelA",
+      "model": "qwen2.5-coder:1.5b",
+      "priority": "medium",
+      "vramEstimateGB": 6
+    },
+    {
+      "role": "Code Analyst/Tester",
+      "agent": "TurboAgent",
+      "model": "qwen2.5-coder:32b",
+      "priority": "low",
+      "vramEstimateGB": 4
+    }
+  ],
+  "created": "2026-01-30T00:00:00Z",
+  "notes": "Blueprint for running a 3-agent parallel development team. Use as a temporary config to run the orchestrator against the selected agents."
+}

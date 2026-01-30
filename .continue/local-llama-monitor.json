@@ -1,37 +1,37 @@
 ﻿{
-    "CollectedAt":  "2026-01-29T22:26:12.7235621+01:00",
+    "CollectedAt":  "2026-01-30T02:41:03.0674782+01:00",
     "Samples":  [
                     {
-                        "Timestamp":  "2026-01-29T22:26:11.6908765+01:00",
-                        "PID":  28032,
+                        "Timestamp":  "2026-01-30T02:41:02.0330349+01:00",
+                        "PID":  17532,
                         "ProcessName":  "powershell",
                         "Role":  "monitor-unit",
                         "CPUPercent":  0,
                         "WorkingSetMB":  84.23,
-                        "PrivateMB":  65.83,
-                        "VirtualMB":  2101935.64,
-                        "Threads":  29,
-                        "Handles":  701,
+                        "PrivateMB":  65.61,
+                        "VirtualMB":  2101935.16,
+                        "Threads":  28,
+                        "Handles":  696,
                         "IOReadBytes":  null,
                         "IOWriteBytes":  null,
                         "Alive":  true,
-                        "StartTime":  "2026-01-29T22:26:10.0540758+01:00"
+                        "StartTime":  "2026-01-30T02:41:00.4020240+01:00"
                     },
                     {
-                        "Timestamp":  "2026-01-29T22:26:12.7162557+01:00",
-                        "PID":  28032,
+                        "Timestamp":  "2026-01-30T02:41:03.0604266+01:00",
+                        "PID":  17532,
                         "ProcessName":  "powershell",
                         "Role":  "monitor-unit",
                         "CPUPercent":  0,
                         "WorkingSetMB":  84.22,
-                        "PrivateMB":  65.8,
-                        "VirtualMB":  2101935.39,
-                        "Threads":  28,
-                        "Handles":  700,
+                        "PrivateMB":  65.58,
+                        "VirtualMB":  2101934.91,
+                        "Threads":  27,
+                        "Handles":  695,
                         "IOReadBytes":  null,
                         "IOWriteBytes":  null,
                         "Alive":  true,
-                        "StartTime":  "2026-01-29T22:26:10.0540758+01:00"
+                        "StartTime":  "2026-01-30T02:41:00.4020240+01:00"
                     }
                 ]
 }

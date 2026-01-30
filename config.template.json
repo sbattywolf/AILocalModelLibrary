@@ -1,7 +1,17 @@
 {
   "openai_api_key": "<PUT_YOUR_OPENAI_API_KEY_HERE>",
-  "ollama_cmd": "ollama",
-  "ollama_model": "llama2",
+  "ollama": {
+    "enabled": true,
+    "cmd": "ollama",
+    "path": "C:\\Users\\sbatt\\AppData\\Local\\Programs\\Ollama\\ollama.exe",
+    "default_model": "llama2",
+    "api_url": "http://localhost:11434"
+  },
+  "python_path": "<PATH_TO_PYTHON_EXE_OR_EMPTY>",
+  "docker_enabled": false,
   "local_llm_path": "<PATH_TO_LOCAL_MODEL_OR_BINARY>",
+  "agent_secrets": {
+    "custom_agent_key": "<PUT_CUSTOM_AGENT_KEY_HERE>"
+  },
   "user_notes": "replace-with-personal-settings (do NOT commit)"
 }

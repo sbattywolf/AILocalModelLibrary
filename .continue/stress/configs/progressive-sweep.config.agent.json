@@ -1,0 +1,29 @@
+{
+  "generated": "2026-01-30T02:20:50Z",
+  "description": "Progressive sweep sample config: 10 Low, 6 Medium, 4 High, 1 Turbo",
+  "preference": { "priority": "balanced" },
+  "agents": [
+    { "name": "TurboAgent", "type": "local-script", "entry": ".continue/agent-runner.ps1", "options": { "model": "qwen2.5-coder:32b", "mode": "turbo" }, "quality": "high" },
+    { "name": "High-1", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:32b" }, "quality": "high" },
+    { "name": "High-2", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:32b" }, "quality": "high" },
+    { "name": "High-3", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:32b" }, "quality": "high" },
+    { "name": "High-4", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:32b" }, "quality": "high" },
+    { "name": "Med-1", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "medium" },
+    { "name": "Med-2", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "medium" },
+    { "name": "Med-3", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "medium" },
+    { "name": "Med-4", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "medium" },
+    { "name": "Med-5", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "medium" },
+    { "name": "Med-6", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "medium" },
+    { "name": "Low-1", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "low" },
+    { "name": "Low-2", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "low" },
+    { "name": "Low-3", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "low" },
+    { "name": "Low-4", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "low" },
+    { "name": "Low-5", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "low" },
+    { "name": "Low-6", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "low" },
+    { "name": "Low-7", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "low" },
+    { "name": "Low-8", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "low" },
+    { "name": "Low-9", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "low" },
+    { "name": "Low-10", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:1.5b" }, "quality": "low" }
+  ],
+  "default": "TurboAgent"
+}

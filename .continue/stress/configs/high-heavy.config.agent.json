@@ -1,0 +1,12 @@
+{
+  "generated": "2026-01-30T02:20:30Z",
+  "description": "High-Heavy (4 High) - stress large models",
+  "preference": { "priority": "accuracy" },
+  "agents": [
+    { "name": "High-1", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:32b" }, "quality": "high" },
+    { "name": "High-2", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:32b" }, "quality": "high" },
+    { "name": "High-3", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:32b" }, "quality": "high" },
+    { "name": "High-4", "type": "local-model", "entry": ".continue/python/agent_runner.py", "options": { "model": "qwen2.5-coder:32b" }, "quality": "high" }
+  ],
+  "default": "High-1"
+}

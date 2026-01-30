@@ -1,0 +1,65 @@
+{
+  "agents": [
+    {
+      "name": "CustomAgent",
+      "primaryRole": "coordinator",
+      "labels": ["orchestrator","smoke-test"],
+      "priority": "high",
+      "resources": { "vramGB": 0, "cpus": 1 }
+    },
+    {
+      "name": "TurboAgent",
+      "primaryRole": "developer",
+      "labels": ["fast-path","low-latency"],
+      "priority": "high",
+      "resources": { "vramGB": 22, "cpus": 2 },
+      "notes": "Turbo profile permitted up to 22GB as requested. Actual model choice should fit this cap."
+    },
+    {
+      "name": "LocalModelA",
+      "primaryRole": "tester",
+      "labels": ["low-resource","smoke"],
+      "priority": "medium",
+      "resources": { "vramGB": 2, "cpus": 2 },
+      "notes": "Start with minimal VRAM for small models (e.g., 1.5b)."
+    },
+    {
+      "name": "LocalModelB",
+      "primaryRole": "developer",
+      "labels": ["quality","accuracy"],
+      "priority": "high",
+      "resources": { "vramGB": 20, "cpus": 8 },
+      "notes": "High-quality agents capped at 20GB as requested. Choose models that fit <=20GB."
+    },
+    {
+      "name": "CodeLlama-7B",
+      "primaryRole": "developer",
+      "labels": ["codegen","instruct"],
+      "priority": "medium",
+      "resources": { "vramGB": 8, "cpus": 4 }
+    },
+    {
+      "name": "StarCoder-15B",
+      "primaryRole": "debugger",
+      "labels": ["codegen","debug"],
+      "priority": "high",
+      "resources": { "vramGB": 16, "cpus": 8 }
+    },
+    {
+      "name": "Mistral-7B",
+      "primaryRole": "analyst",
+      "labels": ["reasoning","general"],
+      "priority": "medium",
+      "resources": { "vramGB": 7, "cpus": 4 }
+    },
+    {
+      "name": "Llama2-13B-Chat",
+      "primaryRole": "analyst",
+      "labels": ["chat","assistant"],
+      "priority": "high",
+      "resources": { "vramGB": 13, "cpus": 6 }
+    }
+  ],
+  "generated": "2026-01-30T01:55:00Z",
+  "notes": "High-priority agents capped at 20GB (except TurboAgent allowed up to 22GB). Adjust after profiling and model selection."
+}

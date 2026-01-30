@@ -37,10 +37,12 @@ if (-not $selected) {
 }
 
 # If a model is configured and ollama is available, try to run the model
-$model = $null
-if ($selected.options -and $selected.options.model) { $model = $selected.options.model }
-$llmOutput = $null
-if ($model -and $model -ne 'none' -and (Get-Command ollama -ErrorAction SilentlyContinue)) {
+ $model = $null
+ if ($selected.options -and $selected.options.model) { $model = $selected.options.model }
+ $llmOutput = $null
+ $ollamaAvailable = $false
+ if ($env:OLLAMA_DISABLED -ne '1') { if (Get-Command ollama -ErrorAction SilentlyContinue) { $ollamaAvailable = $true } }
+ if ($model -and $model -ne 'none' -and $ollamaAvailable) {
     try {
         # Helper to strip ANSI/TTY control sequences
         function Remove-Ansi {

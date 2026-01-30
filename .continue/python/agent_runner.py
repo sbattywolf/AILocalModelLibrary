@@ -34,6 +34,10 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument('--agent', '-a', help='Agent name')
     p.add_argument('--prompt', '-p', help='Prompt text')
+    p.add_argument('--ci', action='store_true', help='CI mode: force no external runtime calls and use echo fallback')
+    p.add_argument('--noop', action='store_true', help='No-op mode: return immediately with stub response')
+    p.add_argument('--short', action='store_true', help='Return a shortened response (good for CI)')
+    p.add_argument('--timeout', type=float, default=10.0, help='Timeout (seconds) for external runtime calls')
     args = p.parse_args()
 
     prompt = args.prompt
@@ -71,16 +75,40 @@ def main():
     llm_result = {'raw': '', 'cleaned': '', 'exitCode': 1}
     ok = False
 
-    if model and model != 'none' and shutil.which('ollama'):
+    # Decide whether to invoke external runtimes.
+    # Priority: explicit flags -> environment gates. In CI we prefer echo fallback.
+    ollama_disabled = os.environ.get('OLLAMA_DISABLED') == '1'
+    run_ollama_flag = os.environ.get('RUN_OLLAMA_INTEGRATION') == '1'
+    if args.ci:
+        ollama_disabled = True
+    if args.noop:
+        # immediate stub response for fast CI tests
+        resp = {
+            'agent': selected.get('name'),
+            'options': selected.get('options'),
+            'prompt': prompt,
+            'response': f"[noop] {prompt}",
+            'rawResponse': f"[noop] {prompt}",
+            'ok': True,
+            'exitCode': 0,
+        }
+        sys.stdout.write(json.dumps(resp, ensure_ascii=True))
+        return
+
+    if model and model != 'none' and (not ollama_disabled) and run_ollama_flag and shutil.which('ollama'):
         cmd = ['ollama', 'run', model, prompt]
         env = os.environ.copy()
         env['TERM'] = 'dumb'
         try:
-            proc = subprocess.run(cmd, capture_output=True, env=env, text=True, encoding='utf-8', errors='replace')
+            # apply timeout from args
+            proc = subprocess.run(cmd, capture_output=True, env=env, text=True, encoding='utf-8', errors='replace', timeout=args.timeout)
             raw = (proc.stdout or '') + '\n' + (proc.stderr or '')
             cleaned = remove_ansi(raw)
             llm_result = {'raw': raw, 'cleaned': cleaned, 'exitCode': proc.returncode}
             ok = proc.returncode == 0
+        except subprocess.TimeoutExpired as te:
+            llm_result = {'raw': f'ollama timeout: {te}', 'cleaned': f'ollama timeout', 'exitCode': 124}
+            ok = False
         except FileNotFoundError:
             llm_result = {'raw': 'ollama not found', 'cleaned': 'ollama not found', 'exitCode': 127}
     else:
@@ -89,11 +117,18 @@ def main():
         llm_result = {'raw': out, 'cleaned': out, 'exitCode': 0}
         ok = True
 
+    # Optionally shorten response for CI
+    final_response = llm_result['cleaned']
+    if args.short and final_response:
+        max_chars = int(os.environ.get('AGENT_RUNNER_SHORT_CHARS', '200'))
+        if len(final_response) > max_chars:
+            final_response = final_response[:max_chars] + '...'
+
     resp = {
         'agent': selected.get('name'),
         'options': selected.get('options'),
         'prompt': prompt,
-        'response': llm_result['cleaned'],
+        'response': final_response,
         'rawResponse': llm_result['raw'],
         'ok': ok,
         'exitCode': llm_result['exitCode'],
