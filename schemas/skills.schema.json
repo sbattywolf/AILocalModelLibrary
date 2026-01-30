@@ -48,10 +48,21 @@
                 "type": "object",
                 "properties": {
                   "maxVramGB": { "type": "number", "minimum": 0 },
-                  "maxCpu": { "type": "number", "minimum": 0 }
+                  "maxCpu": { "type": "number", "minimum": 0 },
+                  "cpus": { "type": "number", "minimum": 0 },
+                  "memoryGB": { "type": "number", "minimum": 0 },
+                  "vramGB": { "type": "number", "minimum": 0 }
                 },
                 "additionalProperties": false
-              }
+              },
+              "labels": {
+                "oneOf": [
+                  { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+                  { "type": "object", "additionalProperties": { "type": "string" } }
+                ]
+              },
+              "notes": { "type": "string" },
+              "priority": { "type": "integer", "minimum": 0 }
             },
             "required": ["name","role","skills"],
             "additionalProperties": false
