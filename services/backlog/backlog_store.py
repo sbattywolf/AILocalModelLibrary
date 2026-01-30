@@ -14,6 +14,7 @@ class BacklogItem:
     title: str
     description: Optional[str] = None
     status: str = "open"
+    owner: Optional[str] = None
 
 
 class BacklogStore:
@@ -38,6 +39,9 @@ class BacklogStore:
     def list(self) -> List[BacklogItem]:
         return list(self._items)
 
+    def list_open(self) -> List[BacklogItem]:
+        return [i for i in self._items if i.status == "open"]
+
     def add(self, title: str, description: Optional[str] = None) -> BacklogItem:
         nid = 1 if not self._items else max(i.id for i in self._items) + 1
         item = BacklogItem(id=nid, title=title, description=description)
@@ -56,5 +60,31 @@ class BacklogStore:
         if not it:
             return False
         it.status = status
+        self._persist()
+        return True
+
+    def claim(self, item_id: int, owner: str) -> bool:
+        it = self.get(item_id)
+        if not it or it.status != "open":
+            return False
+        it.status = "claimed"
+        it.owner = owner
+        self._persist()
+        return True
+
+    def release(self, item_id: int) -> bool:
+        it = self.get(item_id)
+        if not it or it.status != "claimed":
+            return False
+        it.status = "open"
+        it.owner = None
+        self._persist()
+        return True
+
+    def complete(self, item_id: int) -> bool:
+        it = self.get(item_id)
+        if not it:
+            return False
+        it.status = "done"
         self._persist()
         return True

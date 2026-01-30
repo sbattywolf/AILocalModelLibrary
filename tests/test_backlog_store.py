@@ -29,3 +29,25 @@ def test_update_status(tmp_path):
     ok = store.update_status(it.id, "done")
     assert ok
     assert store.get(it.id).status == "done"
+
+
+def test_claim_release_complete(tmp_path):
+    db = tmp_path / "db.json"
+    store = BacklogStore(path=db)
+    it = store.add("t-claim")
+    assert it.status == "open"
+    ok = store.claim(it.id, "worker-1")
+    assert ok
+    got = store.get(it.id)
+    assert got.status == "claimed"
+    assert got.owner == "worker-1"
+    ok = store.release(it.id)
+    assert ok
+    got = store.get(it.id)
+    assert got.status == "open"
+    assert got.owner is None
+    ok = store.claim(it.id, "worker-2")
+    assert ok
+    ok = store.complete(it.id)
+    assert ok
+    assert store.get(it.id).status == "done"
