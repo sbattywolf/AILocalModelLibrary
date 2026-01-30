@@ -17,10 +17,13 @@
     },
     "teamPresets": {
       "type": "object",
+      "minProperties": 0,
       "additionalProperties": {
         "type": "array",
-        "items": { "type": "string" },
-        "uniqueItems": true
+        "items": { "type": "string", "minLength": 1 },
+        "uniqueItems": true,
+        "minItems": 1,
+        "maxItems": 20
       }
     },
     "agentRoles": {
@@ -28,23 +31,50 @@
       "properties": {
         "agents": {
           "type": "array",
+          "minItems": 0,
           "items": {
             "type": "object",
             "properties": {
-              "name": { "type": "string" },
-              "role": { "type": "string" },
+              "name": { "type": "string", "minLength": 1 },
+              "role": { "type": "string", "minLength": 1 },
               "skills": {
                 "type": "array",
-                "items": { "type": "string" },
+                "items": { "type": "string", "minLength": 1 },
                 "uniqueItems": true,
                 "minItems": 1,
-                "maxItems": 4
+                "maxItems": 8
+              },
+              "resources": {
+                "type": "object",
+                "properties": {
+                  "maxVramGB": { "type": "number", "minimum": 0 },
+                  "maxCpu": { "type": "number", "minimum": 0 },
+                  "cpus": { "type": "number", "minimum": 0 },
+                  "memoryGB": { "type": "number", "minimum": 0 },
+                  "vramGB": { "type": "number", "minimum": 0 }
+                },
+                "additionalProperties": false
+              },
+              "labels": {
+                "oneOf": [
+                  { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+                  { "type": "object", "additionalProperties": { "type": "string" } }
+                ]
+              },
+              "notes": { "type": "string" },
+              "priority": {
+                "oneOf": [
+                  { "type": "integer", "minimum": 0 },
+                  { "type": "string", "enum": ["low", "medium", "high"] }
+                ]
               }
             },
-            "required": ["name","skills"]
+            "required": ["name","role","skills"],
+            "additionalProperties": false
           }
         }
-      }
+      },
+      "additionalProperties": false
     }
   },
   "required": ["skills"],
