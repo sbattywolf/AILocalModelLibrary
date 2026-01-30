@@ -1,0 +1,8 @@
+{
+    "name": "deepseek-r1-8b",
+    "type": "causal-lm",
+    "tokenizer": {
+        "type": "huggingface",
+        "model": "deepseek/r1-8b"
+    }
+}

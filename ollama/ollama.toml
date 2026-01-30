@@ -1,0 +1,19 @@
+models = [
+  { name = "llama2-13b", path = "./models/llama2-13b" },
+  { name = "deepseek-r1-8b", path = "./models/deepseek-r1-8b" }
+]
+
+agents = [
+  {
+    title = "AGENT TASK MANAGER",
+    provider = "ollama",
+    model = "llama2-13b",
+    systemMessage = "Sei il gestore dei task. Integrati con JIRA e alimenta il backlog con nuove proposte. Gestisci la creazione di task, epics e features."
+  },
+  {
+    title = "AGENT CONTROLLER (Regista Locale)",
+    provider = "ollama",
+    model = "deepseek-r1-8b",
+    systemMessage = "Sei il coordinatore. Gestisci i task locali. Se un task riguarda Git o documentazione esterna, suggerisci di usare Copilot."
+  }
+]

@@ -1,0 +1,8 @@
+{
+    "name": "llama2-13b",
+    "type": "causal-lm",
+    "tokenizer": {
+        "type": "huggingface",
+        "model": "meta-llama/Llama-2-13B-hf"
+    }
+}
