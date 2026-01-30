@@ -1,0 +1,66 @@
+{
+  "models": [
+    {
+      "title": "AGENT CONTROLLER (Regista)",
+      "provider": "ollama",
+      "model": "deepseek-r1:8b",
+      "systemMessage": "Sei il coordinatore del workflow locale. Scomponi i task e assegnali a: [CODER] per scrivere, [TESTER] per bug/test, [DELEGATOR] per Git/CI-CD. Monitora l'apprendimento dell'utente."
+    },
+    {
+      "title": "CODER & DESIGNER (32B)",
+      "provider": "ollama",
+      "model": "qwen2.5-coder:32b",
+      "systemMessage": "Sei l'implementatore principale. Scrivi codice accurato e segui le best practice. Usa tutta la potenza della RTX 3090 per la precisione."
+    },
+    {
+      "title": "SPEED TESTER & DEBUG (22B)",
+      "provider": "ollama",
+      "model": "codestral:22b",
+      "systemMessage": "Sei l'esperto di QA. Trova bug, scrivi unit test e convalida la sicurezza del codice."
+    },
+    {
+      "title": "TURBO MODE (Solo 32B Q8)",
+      "provider": "ollama",
+      "model": "qwen2.5-coder:32b-instruct-q8_0",
+      "systemMessage": "MODALITÀ TURBO: Massima precisione possibile. Ogni altra attività AI è sospesa per dedicarti 100% della VRAM."
+    },
+    {
+      "title": "LIFECYCLE DELEGATOR (Online)",
+      "provider": "free-trial",
+      "model": "gpt-4o",
+      "systemMessage": "Gestisci i task non sensibili: messaggi di commit Git, documentazione pubblica e logiche di CI/CD."
+    }
+  ],
+  "customCommands": [
+    {
+      "name": "orchestra",
+      "prompt": "Agisci come Controller: dividi il task tra Coder e Tester. Spiegami i passaggi logici per farmi imparare.",
+      "description": "Avvia workflow multi-agente"
+    },
+    {
+      "name": "turbo",
+      "prompt": "Passa alla modalità Turbo: analizza questo problema complesso con la massima profondità.",
+      "description": "Usa 100% risorse GPU"
+    },
+    {
+      "name": "coach",
+      "prompt": "Analizza il mio codice, trova le mie lacune e proponimi un esercizio tecnico.",
+      "description": "Sessione di Mentoring locale"
+    },
+    {
+      "name": "test",
+      "prompt": "Genera una suite di test unitari completa e cerca potenziali bug logici.",
+      "description": "QA & Bug Hunting"
+    }
+  ],
+  "tabAutocompleteModel": {
+    "title": "Autocomplete Locale",
+    "provider": "ollama",
+    "model": "qwen2.5-coder:1.5b"
+  },
+  "allowAnonymousTelemetry": false,
+  "embeddingsProvider": {
+    "provider": "ollama",
+    "model": "nomic-embed-text"
+  }
+}

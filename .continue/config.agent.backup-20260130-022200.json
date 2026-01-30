@@ -1,0 +1,45 @@
+{
+    "preference":  {
+                       "priority":  "accuracy",
+                       "note":  "Prefer models with higher measured quality/accuracy for reasoning and code tasks. Use smaller/faster models only when latency or memory is constrained."
+                   },
+    "agents":  [
+                   {
+                       "name":  "LocalModelB",
+                       "type":  "local-model",
+                       "entry":  ".continue/python/agent_runner.py",
+                       "description":  "Local model B (larger/quality).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "local"
+                                   },
+                       "quality":  "high",
+                       "notes":  "High-quality agent; mapped to a model that fits under 20GB where possible (qwen2.5-coder:32b ≈19GB)."
+                   },
+                   {
+                       "name":  "LocalModelA",
+                       "type":  "local-model",
+                       "entry":  ".continue/python/agent_runner.py",
+                       "description":  "Local model A (smaller/faster).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:1.5b",
+                                       "mode":  "local"
+                                   },
+                       "quality":  "medium",
+                       "notes":  "Good for quick iterations on limited VRAM."
+                   },
+                   {
+                       "name":  "TurboAgent",
+                       "type":  "local-script",
+                       "entry":  ".continue/agent-runner.ps1",
+                       "description":  "High-performance agent profile (low-latency, may trade accuracy).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "turbo"
+                                   },
+                       "quality":  "high",
+                       "notes":  "Turbo profile allowed up to 22GB cap; using a model that currently fits (~19GB)."
+                   }
+               ],
+    "default":  "LocalModelB"
+}

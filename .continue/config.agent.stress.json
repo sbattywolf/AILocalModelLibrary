@@ -1,0 +1,249 @@
+﻿{
+    "preference":  {
+                       "priority":  "accuracy",
+                       "note":  "Prefer models with higher measured quality/accuracy for reasoning and code tasks. Use smaller/faster models only when latency or memory is constrained."
+                   },
+    "agents":  [
+                   {
+                       "name":  "stress-TurboAgent-1",
+                       "type":  "local-script",
+                       "entry":  ".continue/agent-runner.ps1",
+                       "description":  "High-performance agent profile (low-latency, may trade accuracy).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "turbo"
+                                   },
+                       "quality":  "high",
+                       "notes":  "Large model; best accuracy when resources permit."
+                   },
+                   {
+                       "name":  "stress-TurboAgent-2",
+                       "type":  "local-script",
+                       "entry":  ".continue/agent-runner.ps1",
+                       "description":  "High-performance agent profile (low-latency, may trade accuracy).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "turbo"
+                                   },
+                       "quality":  "high",
+                       "notes":  "Large model; best accuracy when resources permit."
+                   },
+                   {
+                       "name":  "stress-TurboAgent-3",
+                       "type":  "local-script",
+                       "entry":  ".continue/agent-runner.ps1",
+                       "description":  "High-performance agent profile (low-latency, may trade accuracy).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "turbo"
+                                   },
+                       "quality":  "high",
+                       "notes":  "Large model; best accuracy when resources permit."
+                   },
+                   {
+                       "name":  "stress-TurboAgent-4",
+                       "type":  "local-script",
+                       "entry":  ".continue/agent-runner.ps1",
+                       "description":  "High-performance agent profile (low-latency, may trade accuracy).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "turbo"
+                                   },
+                       "quality":  "high",
+                       "notes":  "Large model; best accuracy when resources permit."
+                   },
+                   {
+                       "name":  "stress-TurboAgent-5",
+                       "type":  "local-script",
+                       "entry":  ".continue/agent-runner.ps1",
+                       "description":  "High-performance agent profile (low-latency, may trade accuracy).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "turbo"
+                                   },
+                       "quality":  "high",
+                       "notes":  "Large model; best accuracy when resources permit."
+                   },
+                   {
+                       "name":  "stress-TurboAgent-6",
+                       "type":  "local-script",
+                       "entry":  ".continue/agent-runner.ps1",
+                       "description":  "High-performance agent profile (low-latency, may trade accuracy).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "turbo"
+                                   },
+                       "quality":  "high",
+                       "notes":  "Large model; best accuracy when resources permit."
+                   },
+                   {
+                       "name":  "stress-TurboAgent-7",
+                       "type":  "local-script",
+                       "entry":  ".continue/agent-runner.ps1",
+                       "description":  "High-performance agent profile (low-latency, may trade accuracy).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "turbo"
+                                   },
+                       "quality":  "high",
+                       "notes":  "Large model; best accuracy when resources permit."
+                   },
+                   {
+                       "name":  "stress-TurboAgent-8",
+                       "type":  "local-script",
+                       "entry":  ".continue/agent-runner.ps1",
+                       "description":  "High-performance agent profile (low-latency, may trade accuracy).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "turbo"
+                                   },
+                       "quality":  "high",
+                       "notes":  "Large model; best accuracy when resources permit."
+                   },
+                   {
+                       "name":  "stress-TurboAgent-9",
+                       "type":  "local-script",
+                       "entry":  ".continue/agent-runner.ps1",
+                       "description":  "High-performance agent profile (low-latency, may trade accuracy).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "turbo"
+                                   },
+                       "quality":  "high",
+                       "notes":  "Large model; best accuracy when resources permit."
+                   },
+                   {
+                       "name":  "stress-TurboAgent-10",
+                       "type":  "local-script",
+                       "entry":  ".continue/agent-runner.ps1",
+                       "description":  "High-performance agent profile (low-latency, may trade accuracy).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "turbo"
+                                   },
+                       "quality":  "high",
+                       "notes":  "Large model; best accuracy when resources permit."
+                   },
+                   {
+                       "name":  "stress-TurboAgent-11",
+                       "type":  "local-script",
+                       "entry":  ".continue/agent-runner.ps1",
+                       "description":  "High-performance agent profile (low-latency, may trade accuracy).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "turbo"
+                                   },
+                       "quality":  "high",
+                       "notes":  "Large model; best accuracy when resources permit."
+                   },
+                   {
+                       "name":  "stress-TurboAgent-12",
+                       "type":  "local-script",
+                       "entry":  ".continue/agent-runner.ps1",
+                       "description":  "High-performance agent profile (low-latency, may trade accuracy).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "turbo"
+                                   },
+                       "quality":  "high",
+                       "notes":  "Large model; best accuracy when resources permit."
+                   },
+                   {
+                       "name":  "stress-TurboAgent-13",
+                       "type":  "local-script",
+                       "entry":  ".continue/agent-runner.ps1",
+                       "description":  "High-performance agent profile (low-latency, may trade accuracy).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "turbo"
+                                   },
+                       "quality":  "high",
+                       "notes":  "Large model; best accuracy when resources permit."
+                   },
+                   {
+                       "name":  "stress-TurboAgent-14",
+                       "type":  "local-script",
+                       "entry":  ".continue/agent-runner.ps1",
+                       "description":  "High-performance agent profile (low-latency, may trade accuracy).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "turbo"
+                                   },
+                       "quality":  "high",
+                       "notes":  "Large model; best accuracy when resources permit."
+                   },
+                   {
+                       "name":  "stress-TurboAgent-15",
+                       "type":  "local-script",
+                       "entry":  ".continue/agent-runner.ps1",
+                       "description":  "High-performance agent profile (low-latency, may trade accuracy).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "turbo"
+                                   },
+                       "quality":  "high",
+                       "notes":  "Large model; best accuracy when resources permit."
+                   },
+                   {
+                       "name":  "stress-TurboAgent-16",
+                       "type":  "local-script",
+                       "entry":  ".continue/agent-runner.ps1",
+                       "description":  "High-performance agent profile (low-latency, may trade accuracy).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "turbo"
+                                   },
+                       "quality":  "high",
+                       "notes":  "Large model; best accuracy when resources permit."
+                   },
+                   {
+                       "name":  "stress-TurboAgent-17",
+                       "type":  "local-script",
+                       "entry":  ".continue/agent-runner.ps1",
+                       "description":  "High-performance agent profile (low-latency, may trade accuracy).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "turbo"
+                                   },
+                       "quality":  "high",
+                       "notes":  "Large model; best accuracy when resources permit."
+                   },
+                   {
+                       "name":  "stress-TurboAgent-18",
+                       "type":  "local-script",
+                       "entry":  ".continue/agent-runner.ps1",
+                       "description":  "High-performance agent profile (low-latency, may trade accuracy).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "turbo"
+                                   },
+                       "quality":  "high",
+                       "notes":  "Large model; best accuracy when resources permit."
+                   },
+                   {
+                       "name":  "stress-TurboAgent-19",
+                       "type":  "local-script",
+                       "entry":  ".continue/agent-runner.ps1",
+                       "description":  "High-performance agent profile (low-latency, may trade accuracy).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "turbo"
+                                   },
+                       "quality":  "high",
+                       "notes":  "Large model; best accuracy when resources permit."
+                   },
+                   {
+                       "name":  "stress-TurboAgent-20",
+                       "type":  "local-script",
+                       "entry":  ".continue/agent-runner.ps1",
+                       "description":  "High-performance agent profile (low-latency, may trade accuracy).",
+                       "options":  {
+                                       "model":  "qwen2.5-coder:32b",
+                                       "mode":  "turbo"
+                                   },
+                       "quality":  "high",
+                       "notes":  "Large model; best accuracy when resources permit."
+                   }
+               ],
+    "default":  "stress-TurboAgent-1"
+}

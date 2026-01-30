@@ -1,4 +1,4 @@
-﻿{
+{
   "generated": "2026-01-30T02:20:00Z",
   "description": "All-Low (10 agents) - Low profile uses qwen2.5-coder:1.5b",
   "preference": { "priority": "latency" },

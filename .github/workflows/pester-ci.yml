@@ -1,0 +1,46 @@
+name: CI - Pester Tests
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: windows-latest
+    env:
+      # Prevent tests from attempting to run model integration or download models in CI
+      RUN_OLLAMA_INTEGRATION: '0'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Ensure Pester available (no heavy downloads unless necessary)
+        shell: pwsh
+        run: |
+          # Use any preinstalled Pester if available; only install when missing to limit network downloads
+          Try { Import-Module Pester -ErrorAction SilentlyContinue } Catch { }
+          if (-not (Get-Module -ListAvailable -Name Pester)) {
+            Write-Host "Pester not found on runner; installing minimal required version"
+            Try { Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted -ErrorAction SilentlyContinue } Catch { }
+            Install-Module -Name Pester -Force -Scope CurrentUser -MinimumVersion 4.10.0 -AllowClobber -SkipPublisherCheck
+          } else {
+            Write-Host "Pester already available; skipping install"
+          }
+
+      - name: Run Pester tests
+        shell: pwsh
+        run: |
+          Import-Module Pester
+          # Run all tests; some integration tests are gated by RUN_OLLAMA_INTEGRATION
+          $r = Invoke-Pester -Script tests -PassThru
+          if ($r.Failed -ne 0) { Write-Error "Pester tests failed ($($r.Failed) failures)"; exit 1 }
+
+      - name: Light DryRun (repository smoke)
+        shell: pwsh
+        env:
+          # reinforce the gate to avoid contacting runtimes or downloading models
+          RUN_OLLAMA_INTEGRATION: '0'
+        run: |
+          # Lightweight DryRun to exercise orchestrator path only; no models or GPUs required
+          .\scripts\run-agents-epic.ps1 -DryRun -MaxParallel 1 -MaxVramGB 4 -SkipTurbo -PreferMaxAgent

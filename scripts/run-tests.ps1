@@ -1,7 +1,8 @@
 # Installs/loads Pester and runs tests under tests/*.Tests.ps1
 param(
     [string]$TestsPath = '.\tests',
-    [switch]$ForceInstallPester
+    [switch]$ForceInstallPester,
+    [string[]]$ExcludePattern
 )
 if ($ForceInstallPester -or -not (Get-Module -ListAvailable -Name Pester)) {
     Write-Host 'Installing Pester module (current user) version 4.10.0…'
@@ -10,6 +11,11 @@ if ($ForceInstallPester -or -not (Get-Module -ListAvailable -Name Pester)) {
 # Import Pester v4 if available; prefer explicit version to avoid older/module mismatch
 try { Import-Module Pester -RequiredVersion 4.10.0 -ErrorAction Stop } catch { Import-Module Pester -ErrorAction SilentlyContinue }
 $testFiles = Get-ChildItem -Path $TestsPath -Filter '*.Tests.ps1' -File -Recurse | Select-Object -ExpandProperty FullName
+if ($ExcludePattern -and $ExcludePattern.Length -gt 0) {
+    $patterns = $ExcludePattern -join '|'
+    Write-Host "Excluding test files matching pattern: $patterns"
+    $testFiles = $testFiles | Where-Object { -not ($_ -match $patterns) }
+}
 if (-not $testFiles) { Write-Host 'No tests found.'; exit 0 }
 $result = Invoke-Pester -Script $testFiles -PassThru
 if ($result.FailedCount -gt 0) { Write-Host "Tests failed: $($result.FailedCount)"; exit 1 } else { Write-Host 'All tests passed'; exit 0 }

@@ -1,0 +1,79 @@
+﻿{
+    "generated": "2026-01-30T02:20:00Z",
+    "description": "All-Low (10 agents) - Low profile uses qwen2.5-coder:1.5b",
+    "preference": { "priority": "latency" },
+    "agents": [
+        {
+            "name": "Low-1",
+            "type": "local-model",
+            "entry": ".continue/python/agent_runner.py",
+            "options": { "model": "qwen2.5-coder:1.5b", "mode": "local" },
+            "quality": "low"
+        },
+        {
+            "name": "Low-2",
+            "type": "local-model",
+            "entry": ".continue/python/agent_runner.py",
+            "options": { "model": "qwen2.5-coder:1.5b", "mode": "local" },
+            "quality": "low"
+        },
+        {
+            "name": "Low-3",
+            "type": "local-model",
+            "entry": ".continue/python/agent_runner.py",
+            "options": { "model": "qwen2.5-coder:1.5b", "mode": "local" },
+            "quality": "low"
+        },
+        {
+            "name": "Low-4",
+            "type": "local-model",
+            "entry": ".continue/python/agent_runner.py",
+            "options": { "model": "qwen2.5-coder:1.5b", "mode": "local" },
+            "quality": "low"
+        },
+        {
+            "name": "Low-5",
+            "type": "local-model",
+            "entry": ".continue/python/agent_runner.py",
+            "options": { "model": "qwen2.5-coder:1.5b", "mode": "local" },
+            "quality": "low"
+        },
+        {
+            "name": "Low-6",
+            "type": "local-model",
+            "entry": ".continue/python/agent_runner.py",
+            "options": { "model": "qwen2.5-coder:1.5b", "mode": "local" },
+            "quality": "low"
+        },
+        {
+            "name": "Low-7",
+            "type": "local-model",
+            "entry": ".continue/python/agent_runner.py",
+            "options": { "model": "qwen2.5-coder:1.5b", "mode": "local" },
+            "quality": "low"
+        },
+        {
+            "name": "Low-8",
+            "type": "local-model",
+            "entry": ".continue/python/agent_runner.py",
+            "options": { "model": "qwen2.5-coder:1.5b", "mode": "local" },
+            "quality": "low"
+        },
+        {
+            "name": "Low-9",
+            "type": "local-model",
+            "entry": ".continue/python/agent_runner.py",
+            "options": { "model": "qwen2.5-coder:1.5b", "mode": "local" },
+            "quality": "low"
+        },
+        {
+            "name": "Low-10",
+            "type": "local-model",
+            "entry": ".continue/python/agent_runner.py",
+            "options": { "model": "qwen2.5-coder:1.5b", "mode": "local" },
+            "quality": "low"
+        }
+    ],
+    "default": "Low-1"
+}
+}
