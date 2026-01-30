@@ -1,16 +1,120 @@
-{
-  "agents": [
-    { "name": "Low-1", "primaryRole": "tester", "labels": ["low-resource"], "priority": "medium", "resources": { "vramGB": 19, "memoryGB": 32, "cpus": 4 }, "skills": ["nlp:code-review","nlp:unit-test-gen"], "notes": "Reserve for high-capacity model (qwen2.5-coder:32b)" },
-    { "name": "Low-2", "primaryRole": "tester", "labels": ["low-resource"], "priority": "medium", "resources": { "vramGB": 2, "memoryGB": 4, "cpus": 2 }, "skills": ["nlp:unit-test-gen"] },
-    { "name": "Low-3", "primaryRole": "tester", "labels": ["low-resource"], "priority": "medium", "resources": { "vramGB": 2, "memoryGB": 4, "cpus": 2 }, "skills": ["nlp:bug-triage"] },
-    { "name": "Low-4", "primaryRole": "tester", "labels": ["low-resource"], "priority": "medium", "resources": { "vramGB": 2, "memoryGB": 4, "cpus": 2 } },
-    { "name": "Low-5", "primaryRole": "tester", "labels": ["low-resource"], "priority": "medium", "resources": { "vramGB": 2, "memoryGB": 4, "cpus": 2 } },
-    { "name": "Low-6", "primaryRole": "tester", "labels": ["low-resource"], "priority": "medium", "resources": { "vramGB": 2, "memoryGB": 4, "cpus": 2 } },
-    { "name": "Low-7", "primaryRole": "tester", "labels": ["low-resource"], "priority": "medium", "resources": { "vramGB": 2, "memoryGB": 4, "cpus": 2 } },
-    { "name": "Low-8", "primaryRole": "tester", "labels": ["low-resource"], "priority": "medium", "resources": { "vramGB": 2, "memoryGB": 4, "cpus": 2 } },
-    { "name": "Low-9", "primaryRole": "tester", "labels": ["low-resource"], "priority": "medium", "resources": { "vramGB": 2, "memoryGB": 4, "cpus": 2 } },
-    { "name": "Low-10", "primaryRole": "tester", "labels": ["low-resource"], "priority": "medium", "resources": { "vramGB": 2, "memoryGB": 4, "cpus": 2 }, "skills": ["nlp:prompt-eval"] }
+﻿{
+  "skills": [
+    "coordination",
+    "infra:orchestrator",
+    "nlp:code-review",
+    "nlp:unit-test-gen",
+    "runtime:inference",
+    "qa:unit-test",
+    "nlp:bug-triage",
+    "qa:fuzzing",
+    "qa:integration-test",
+    "dev:unit-test",
+    "dev:integration-test",
+    "dev:fuzzing",
+    "ops:monitoring",
+    "telemetry:collection",
+    "infra:container",
+    "infra:vm-orchestration",
+    "infra:network",
+    "cli:automation",
+    "nlp:prompt-eval",
+    "dev:notebook"
   ],
+  "agentRoles": {
+    "agents": [
+      {
+        "name": "Coordinator-1",
+        "role": "coordinator",
+        "labels": ["coordinator"],
+        "priority": "high",
+        "resources": { "vramGB": 4, "memoryGB": 8, "cpus": 2 },
+        "skills": ["coordination", "infra:orchestrator"],
+        "notes": "Coordinator agent added to satisfy test expectations"
+      },
+      {
+        "name": "Low-1",
+        "role": "tester",
+        "labels": ["low-resource"],
+        "priority": "medium",
+        "resources": { "vramGB": 19, "memoryGB": 32, "cpus": 4 },
+        "skills": ["nlp:code-review", "nlp:unit-test-gen", "runtime:inference"],
+        "notes": "Reserve for high-capacity model (qwen2.5-coder:32b)"
+      },
+      {
+        "name": "Low-2",
+        "role": "tester",
+        "labels": ["low-resource"],
+        "priority": "medium",
+        "resources": { "vramGB": 2, "memoryGB": 4, "cpus": 2 },
+        "skills": ["nlp:unit-test-gen", "qa:unit-test"]
+      },
+      {
+        "name": "Low-3",
+        "role": "tester",
+        "labels": ["low-resource"],
+        "priority": "medium",
+        "resources": { "vramGB": 2, "memoryGB": 4, "cpus": 2 },
+        "skills": ["nlp:bug-triage", "qa:fuzzing"]
+      },
+      {
+        "name": "Low-4",
+        "role": "tester",
+        "labels": ["low-resource"],
+        "priority": "medium",
+        "resources": { "vramGB": 2, "memoryGB": 4, "cpus": 2 },
+        "skills": ["qa:integration-test", "dev:unit-test"]
+      },
+      {
+        "name": "Low-5",
+        "role": "tester",
+        "labels": ["low-resource"],
+        "priority": "medium",
+        "resources": { "vramGB": 2, "memoryGB": 4, "cpus": 2 },
+        "skills": ["dev:integration-test", "dev:fuzzing"]
+      },
+      {
+        "name": "Low-6",
+        "role": "tester",
+        "labels": ["low-resource"],
+        "priority": "medium",
+        "resources": { "vramGB": 2, "memoryGB": 4, "cpus": 2 },
+        "skills": ["ops:monitoring", "telemetry:collection"]
+      },
+      {
+        "name": "Low-7",
+        "role": "tester",
+        "labels": ["low-resource"],
+        "priority": "medium",
+        "resources": { "vramGB": 2, "memoryGB": 4, "cpus": 2 },
+        "skills": ["infra:container", "infra:vm-orchestration"]
+      },
+      {
+        "name": "Low-8",
+        "role": "tester",
+        "labels": ["low-resource"],
+        "priority": "medium",
+        "resources": { "vramGB": 2, "memoryGB": 4, "cpus": 2 },
+        "skills": ["infra:network", "cli:automation"]
+      },
+      {
+        "name": "Low-9",
+        "role": "tester",
+        "labels": ["low-resource"],
+        "priority": "medium",
+        "resources": { "vramGB": 2, "memoryGB": 4, "cpus": 2 },
+        "skills": ["nlp:prompt-eval", "dev:notebook"]
+      },
+      {
+        "name": "Low-10",
+        "role": "tester",
+        "labels": ["low-resource"],
+        "priority": "medium",
+        "resources": { "vramGB": 2, "memoryGB": 4, "cpus": 2 },
+        "skills": ["nlp:prompt-eval"]
+      }
+    ]
+  },
   "generated": "2026-01-30T03:07:00Z",
   "notes": "Updated to reflect local model mapping: Low-1 reserved for high-capacity model (~19GB), others set to 2GB for 1.5b profiles. Adjust after profiling."
 }

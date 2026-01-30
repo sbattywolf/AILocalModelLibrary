@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OneAgent Skills Schema",
+  "type": "object",
+  "properties": {
+    "agentName": { "type": "string" },
+    "capacityPoints": { "type": "integer", "minimum": 1 },
+    "skills": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 10,
+      "patternProperties": {
+        "^[A-Za-z0-9_-]+$": {
+          "type": "object",
+          "properties": {
+            "level": { "type": "integer", "minimum": 0, "maximum": 5 },
+            "description": { "type": "string" },
+            "notes": { "type": "string" },
+            "examples": { "type": "array", "items": { "type": "string" } }
+          },
+          "required": ["level"],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "preferences": {
+      "type": "object",
+      "properties": {
+        "ui": { "type": "boolean" },
+        "dryRun": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["agentName","capacityPoints","skills"],
+  "additionalProperties": false
+}
