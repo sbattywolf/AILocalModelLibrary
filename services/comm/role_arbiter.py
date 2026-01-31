@@ -59,6 +59,8 @@ class RoleArbiter:
         # optional job handlers per role: `Handler` as defined above
         self._job_handlers: Dict[str, Handler] = {}
         # (simple approach) no shared async loop; handlers will use `asyncio.run`
+        # optional DialogManager-like object for executor callbacks
+        self._dialog_manager: Optional[object] = None
 
     def add_role(self, role: RoleDescriptor) -> None:
         self._roles.append(role)
@@ -175,6 +177,15 @@ class RoleArbiter:
         self._activations.append(status)
         # also enqueue a job placeholder
         self._job_queue.append({"role": role_name, "task": task_ctx})
+        # notify dialog manager of activation if provided (executor-level or call-level)
+        dm = dialog_manager
+        if dm is None:
+            dm = getattr(self, "_dialog_manager", None)
+        if dm and hasattr(dm, "on_activation"):
+            try:
+                dm.on_activation(role_name, status)
+            except Exception:
+                pass
         return status
 
     def get_activations(self) -> List[Dict[str, Any]]:
@@ -199,7 +210,7 @@ class RoleArbiter:
         to a callable; that will take precedence over the registered handler.
         """
         self._job_handlers[role_name] = handler
-    def start_executor(self, num_threads: int = 1) -> None:
+    def start_executor(self, num_threads: int = 1, dialog_manager: Optional[object] = None) -> None:
         """Start background executor threads that will process the job queue.
 
         The executor respects each role's `max_parallel_jobs` when dispatching.
@@ -207,6 +218,8 @@ class RoleArbiter:
         if self._executor_threads:
             return
         self._executor_stop.clear()
+        # store dialog manager for executor callbacks
+        self._dialog_manager = dialog_manager
         # no shared async loop required for the simpler per-handler approach
         for _ in range(max(1, int(num_threads))):
             t = threading.Thread(target=self._worker_loop, daemon=True)
@@ -243,9 +256,17 @@ class RoleArbiter:
             # increment running count
             with self._activations_lock:
                 self._running_counts[role_name] = self._running_counts.get(role_name, 0) + 1
-            # record running activation
-            with self._activations_lock:
-                self._activations.append({"role": role_name, "status": "running", "task": task_ctx})
+                # record running activation
+                with self._activations_lock:
+                    running_entry = {"role": role_name, "status": "running", "task": task_ctx}
+                    self._activations.append(running_entry)
+                # notify dialog manager of job start if available
+                dm = getattr(self, "_dialog_manager", None)
+                if dm and hasattr(dm, "on_job_started"):
+                    try:
+                        dm.on_job_started(role_name, task_ctx)
+                    except Exception:
+                        pass
 
             try:
                 # allow per-job override: a callable supplied in task_ctx takes precedence
@@ -264,13 +285,34 @@ class RoleArbiter:
                         # allow handler to return a dict-like status
                         if isinstance(result, dict) and "status" in result:
                             with self._activations_lock:
-                                self._activations.append({"role": role_name, "status": result.get("status"), "task": task_ctx, "result": result.get("result")})
+                                entry = {"role": role_name, "status": result.get("status"), "task": task_ctx, "result": result.get("result")}
+                                self._activations.append(entry)
+                            dm = getattr(self, "_dialog_manager", None)
+                            if dm and hasattr(dm, "on_job_completed"):
+                                try:
+                                    dm.on_job_completed(role_name, task_ctx, entry)
+                                except Exception:
+                                    pass
                         else:
                             with self._activations_lock:
-                                self._activations.append({"role": role_name, "status": "ok", "task": task_ctx, "result": result})
+                                entry = {"role": role_name, "status": "ok", "task": task_ctx, "result": result}
+                                self._activations.append(entry)
+                            dm = getattr(self, "_dialog_manager", None)
+                            if dm and hasattr(dm, "on_job_completed"):
+                                try:
+                                    dm.on_job_completed(role_name, task_ctx, entry)
+                                except Exception:
+                                    pass
                     except Exception:
                         with self._activations_lock:
-                            self._activations.append({"role": role_name, "status": "failed", "task": task_ctx})
+                            entry = {"role": role_name, "status": "failed", "task": task_ctx}
+                            self._activations.append(entry)
+                        dm = getattr(self, "_dialog_manager", None)
+                        if dm and hasattr(dm, "on_job_completed"):
+                            try:
+                                dm.on_job_completed(role_name, task_ctx, entry)
+                            except Exception:
+                                pass
                 else:
                     # simulate execution: use simulate_duration if present, else estimate
                     duration = float(task_ctx.get("simulate_duration", 0))
@@ -289,10 +331,24 @@ class RoleArbiter:
                     time.sleep(duration)
                     # mark completed
                     with self._activations_lock:
-                        self._activations.append({"role": role_name, "status": "completed", "task": task_ctx})
+                        entry = {"role": role_name, "status": "completed", "task": task_ctx}
+                        self._activations.append(entry)
+                    dm = getattr(self, "_dialog_manager", None)
+                    if dm and hasattr(dm, "on_job_completed"):
+                        try:
+                            dm.on_job_completed(role_name, task_ctx, entry)
+                        except Exception:
+                            pass
             except Exception:
                 with self._activations_lock:
-                    self._activations.append({"role": role_name, "status": "failed", "task": task_ctx})
+                    entry = {"role": role_name, "status": "failed", "task": task_ctx}
+                    self._activations.append(entry)
+                dm = getattr(self, "_dialog_manager", None)
+                if dm and hasattr(dm, "on_job_completed"):
+                    try:
+                        dm.on_job_completed(role_name, task_ctx, entry)
+                    except Exception:
+                        pass
             finally:
                 with self._activations_lock:
                     self._running_counts[role_name] = max(0, self._running_counts.get(role_name, 1) - 1)

@@ -1,9 +1,12 @@
 # AILocalModelLibrary
 
+IMPORTANT: Read this before setup — see [docs/README_FIRST.md](docs/README_FIRST.md)
+
 ## Monitor
 
 See [docs/MONITOR_BACKGROUND.md](docs/MONITOR_BACKGROUND.md) for how to run the background monitor and interpret outputs.
-# RoleArbiter handlers
+
+## RoleArbiter handlers
 
 The `RoleArbiter` supports pluggable handlers for running scheduled jobs. See [docs/ROLE_ARBITER_HANDLERS.md](docs/ROLE_ARBITER_HANDLERS.md) for examples of synchronous, asynchronous, and per-job override handlers.
 
