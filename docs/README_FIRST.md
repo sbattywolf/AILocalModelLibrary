@@ -37,6 +37,24 @@ Windows example: set `OLLAMA_HOME` for current user
 [Environment]::SetEnvironmentVariable("OLLAMA_HOME", "C:\ollama_data", "User")
 ```
 
+Notes about Ollama model storage and logs
+----------------------------------------
+- Where to store models: If you set `OLLAMA_HOME` the repository's helper scripts and templates will use that folder as the model store root. A common layout used by the installer templates is:
+
+  - `<OLLAMA_HOME>`\models  — model files and pulled images
+
+- If you prefer a custom location (for example a dedicated drive for large models), set `OLLAMA_HOME` to that path before running setup or the `start-ollama-role` scripts.
+
+- Repository run logs and process mappings: this project keeps per-run metadata under the `.continue` directory (examples: `.continue/ollama-processes.json`, `.continue/install-trace.log`). The installer and agent scripts write these files so you can inspect which model runs were started and where logs are stored.
+
+- Restore guidance: if your personal `.continue/user_config.json` is missing, copy `.continue/user_config.example.json` to `.continue/user_config.json` and update the `paths` and `env_overrides.OLLAMA_HOME` values to match your environment.
+
+Local user config storage
+-------------------------
+- For personal/local, non-shared values (tool install paths, per-user `OLLAMA_HOME`, etc.), keep them in the ignored `.private/user_config.local.json` file. The repository tracks a sanitized `.continue/user_config.json` that contains non-sensitive defaults and pointers to the local file.
+- The `.private` folder is already ignored by `.gitignore`. Do not commit secrets or personal paths — keep them in `.private/user_config.local.json`.
+
+
 4) Installing recommended packages (Windows using Chocolatey)
 
 ```powershell

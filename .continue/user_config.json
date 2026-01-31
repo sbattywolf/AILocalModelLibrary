@@ -1,16 +1,16 @@
 {
   "generated_from": ".continue/system_inventory.json",
   "paths": {
-    "ollama": "C:\\Users\\sbatt\\AppData\\Local\\Programs\\Ollama\\ollama.exe",
-    "gh": "C:\\Program Files\\GitHub CLI\\gh.exe",
-    "git": "C:\\Program Files\\Git\\cmd\\git.exe",
-    "node": "C:\\Program Files\\nodejs\\node.exe",
-    "python": "C:\\Program Files\\Python311\\python.exe",
-    "git-filter-repo": "C:\\Users\\sbatt\\AppData\\Roaming\\Python\\Python311\\Scripts\\git-filter-repo.exe",
-    "nvidia_smi": "C:\\Windows\\system32\\nvidia-smi.exe"
+    "ollama": "<set-in-.private/user_config.local.json>",
+    "gh": "<set-in-.private/user_config.local.json>",
+    "git": "<set-in-.private/user_config.local.json>",
+    "node": "<set-in-.private/user_config.local.json>",
+    "python": "<set-in-.private/user_config.local.json>",
+    "git-filter-repo": "<set-in-.private/user_config.local.json>",
+    "nvidia_smi": "<set-in-.private/user_config.local.json>"
   },
   "env_overrides": {
-    "OLLAMA_HOME": "C:\\Users\\sbatt\\AppData\\Local\\Programs\\Ollama"
+    "OLLAMA_HOME": "<set-in-.private/user_config.local.json>"
   },
   "secrets": {
     "GITHUB_PAT": {"source":"env_or_ci","env_var":"GITHUB_PAT","gh_secret_name":"GH_PAT"},
