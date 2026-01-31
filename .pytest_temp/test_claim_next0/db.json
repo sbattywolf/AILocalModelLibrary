@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "task1",
+    "description": null,
+    "status": "claimed",
+    "owner": "worker-1"
+  },
+  {
+    "id": 2,
+    "title": "task2",
+    "description": null,
+    "status": "open",
+    "owner": null
+  }
+]

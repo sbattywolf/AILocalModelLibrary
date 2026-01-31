@@ -1,0 +1,32 @@
+Describe 'Monitor Skills - Max 3 per agent' {
+  It 'ensures no agent has more than 3 skills assigned' {
+    $raw = Get-Content .\.continue\agent-roles.json -Raw
+    # If file contains multiple JSON blocks or fences, pick the first JSON object
+    $parts = $raw -split '\r?\n\}\r?\n'
+    $first = $parts[0] + [Environment]::NewLine + "}"
+    $roles = $first | ConvertFrom-Json
+    $agents = $roles.agents
+    foreach ($a in $agents) {
+      if ($a.skills) {
+        ($a.skills.count -le 3) | Should -BeTrue
+      }
+    }
+  }
+}
+Describe 'Monitor Skills - Max 3 per agent' {
+  It 'ensures no agent has more than 3 skills assigned' {
+    $raw = Get-Content .\.continue\agent-roles.json -Raw
+    # If file contains multiple JSON blocks or fences, pick the first JSON object
+    $parts = $raw -split '\r?\n\}\r?\n'
+    $first = $parts[0] + "`n}`"
+    $roles = $first | ConvertFrom-Json
+    $agents = $roles.agents
+    foreach ($a in $agents) {
+          if ($a.skills) {
+            $msg = "Agent $($a.name) has more than 3 skills: $($a.skills -join ', ')"
+            ($a.skills.count -le 3) | Should -BeTrue -Because $msg
+          }
+    }
+  }
+}
+

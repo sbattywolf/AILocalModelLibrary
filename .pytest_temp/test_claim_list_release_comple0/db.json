@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "alpha",
+    "description": null,
+    "status": "claimed",
+    "owner": "cli-worker"
+  },
+  {
+    "id": 2,
+    "title": "beta",
+    "description": null,
+    "status": "claimed",
+    "owner": "cli-worker"
+  },
+  {
+    "id": 3,
+    "title": "temp",
+    "description": null,
+    "status": "done",
+    "owner": null
+  }
+]

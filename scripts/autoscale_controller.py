@@ -19,10 +19,47 @@ def load_json(path: Path):
 
 
 def recommend(agents, roles, available_vram_gb, min_parallel=1, max_parallel=16):
+    # Normalize agents list: support entries that are simple strings (agent names)
+    norm_agents = []
+    for a in (agents or []):
+        if isinstance(a, str):
+            norm_agents.append({'name': a})
+        elif isinstance(a, dict):
+            norm_agents.append(a)
+        else:
+            # skip unknown formats
+            continue
+
+    # Helper: parse a skill entry (str or dict) -> (name, weight)
+    def parse_skill(s):
+        if isinstance(s, str):
+            return s, 1
+        if isinstance(s, dict):
+            name = s.get('name') or s.get('skill')
+            try:
+                w = int(s.get('weight', 1))
+            except Exception:
+                w = 1
+            return name, max(1, min(5, w))
+        return None, 0
+
+    # Gather team-level skills (optional) - support roles top-level keys 'teamSkills' or 'team_skills'
+    team_skills = []
+    for key in ('teamSkills', 'team_skills'):
+        if isinstance(roles or {}, dict) and roles.get(key):
+            for s in (roles.get(key) or []):
+                n, w = parse_skill(s)
+                if n:
+                    team_skills.append({'name': n, 'weight': w})
+
     vram_list = []
-    for a in agents:
+    # For summary, include per-agent computed skill list
+    agents_skill_summary = []
+    for a in norm_agents:
         # prefer explicit vram if present, else 0
-        v = a.get('vram')
+        v = None
+        if isinstance(a, dict):
+            v = a.get('vram')
         if v is None:
             # try role mapping
             r = next((rr for rr in (roles or {}).get('agents', []) if rr.get('name') == a.get('name')), None)
@@ -31,6 +68,53 @@ def recommend(agents, roles, available_vram_gb, min_parallel=1, max_parallel=16)
             else:
                 v = 0
         vram_list.append(int(v or 0))
+
+        # Build agent skill list, merging agent skills and inherited team skills
+        agent_skills_raw = []
+        if isinstance(a, dict):
+            agent_skills_raw = a.get('skills') or []
+
+        # Parse and aggregate weights by skill name
+        agg = {}
+        # first, agent's own skills
+        for s in agent_skills_raw:
+            n, w = parse_skill(s)
+            if not n:
+                continue
+            agg.setdefault(n, 0)
+            agg[n] += w
+
+        # then inherit team skills: mark as inherited and sum weights
+        inherited_names = set()
+        # limit team skills applied per agent to at most 3 (configurable later)
+        for ts in team_skills[:3]:
+            n = ts['name']
+            w = ts['weight']
+            agg.setdefault(n, 0)
+            agg[n] += w
+            inherited_names.add(n)
+
+        # Build list of skill dicts
+        skills_list = []
+        for name, weight in agg.items():
+            skills_list.append({'name': name, 'weight': int(weight), 'inherited': name in inherited_names})
+
+        # Warn if any skill's weight grew above 5 (suggest child-agent evaluation)
+        for s in skills_list:
+            if s['weight'] > 5:
+                print(f"WARNING: agent '{a.get('name')}' skill '{s['name']}' weight {s['weight']} > 5; consider child-agent or review.")
+
+        # Enforce max 10 skills per agent; prefer keeping inherited skills first, then highest-weight others
+        inherited = [s for s in skills_list if s['inherited']]
+        others = [s for s in skills_list if not s['inherited']]
+        others.sort(key=lambda x: x['weight'], reverse=True)
+        final_skills = inherited + others
+        final_skills = final_skills[:10]
+
+        # Sort final list by weight descending
+        final_skills.sort(key=lambda x: x['weight'], reverse=True)
+
+        agents_skill_summary.append({'name': a.get('name'), 'skills': final_skills})
 
     if not vram_list:
         return {'MaxParallel': min_parallel, 'MaxVramGB': available_vram_gb, 'reason': 'no agents'}

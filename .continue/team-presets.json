@@ -1,0 +1,36 @@
+{
+  "Infra": [
+    "gpu-admin",
+    "vram-heavy",
+    "container",
+    "vm-orchestration",
+    "network",
+    "monitoring",
+    "telemetry",
+    "cli"
+  ],
+  "Runtime": [
+    "inference",
+    "fast-response",
+    "low-latency",
+    "prompt-engineering",
+    "fewshot",
+    "vram-heavy",
+    "monitoring",
+    "telemetry"
+  ],
+  "Dev": [
+    "unit-test",
+    "integration-test",
+    "fuzzing",
+    "prompt-engineering",
+    "notebook"
+  ],
+  "QA": [
+    "integration-test",
+    "unit-test",
+    "fuzzing",
+    "cli",
+    "webhook"
+  ]
+}

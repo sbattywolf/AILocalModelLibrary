@@ -1,0 +1,53 @@
+﻿Exception Time: 2026-01-30T20:00:03.3345816+01:00
+--- Exception.ToString() ---
+Impossibile risolvere il set di parametri utilizzando i parametri denominati specificati.
+--- ErrorRecord ---
+
+--- Exception Details ---
+
+
+Message                     : Impossibile risolvere il set di parametri utilizzando i 
+                              parametri denominati specificati.
+ParameterName               : 
+ParameterType               : 
+TypeSpecified               : 
+ErrorId                     : AmbiguousParameterSet
+Line                        : 57
+Offset                      : 40
+CommandInvocation           : System.Management.Automation.InvocationInfo
+ErrorRecord                 : Impossibile risolvere il set di parametri utilizzando i 
+                              parametri denominati specificati.
+WasThrownFromThrowStatement : False
+Data                        : {System.Management.Automation.Interpreter.InterpretedFrameInf
+                              o}
+InnerException              : 
+TargetSite                  : Void CheckActionPreference(System.Management.Automation.Langu
+                              age.FunctionContext, System.Exception)
+StackTrace                  :    in System.Management.Automation.ExceptionHandlingOps.Check
+                              ActionPreference(FunctionContext funcContext, Exception 
+                              exception)
+                                 in System.Management.Automation.Interpreter.ActionCallInst
+                              ruction`2.Run(InterpretedFrame frame)
+                                 in System.Management.Automation.Interpreter.EnterTryCatchF
+                              inallyInstruction.Run(InterpretedFrame frame)
+                                 in System.Management.Automation.Interpreter.EnterTryCatchF
+                              inallyInstruction.Run(InterpretedFrame frame)
+HelpLink                    : 
+Source                      : System.Management.Automation
+HResult                     : -2146233087
+
+
+
+
+--- Recent $error array ---
+Should : Impossibile risolvere il set di parametri utilizzando i parametri denominati 
+specificati.
+In E:\Workspaces\Git\AILocalModelLibrary\tests\Monitor.PreferSkill.AgentsProposal.Tests.ps1
+:57 car:40
++             ([int]$a.CapacityPoints) | Should -BeGreaterThanOrEqual 0
++                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Should], ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameterSet,Should
+ 
+
+

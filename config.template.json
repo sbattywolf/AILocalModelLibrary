@@ -13,6 +13,20 @@
   "agent_secrets": {
     "custom_agent_key": "<PUT_CUSTOM_AGENT_KEY_HERE>"
   },
+  "comm_channel": {
+    "default": "public",
+    "available": ["public", "lan-secret"]
+  },
+  "network": {
+    "internet_access": false,
+    "internet_allowed_roles": ["controller"]
+  },
+  "secret_mode": false,
+  "secret_mode_policy": {
+    "mask_recent_replies": true,
+    "store_cleartext_in_continue": false,
+    "allowed_profiling": false
+  },
   "user_notes": "replace-with-personal-settings (do NOT commit)"
   ,
   "agent_defaults": {

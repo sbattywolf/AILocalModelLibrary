@@ -47,5 +47,22 @@ if ($missing.Count -gt 0) {
 } else {
   Write-Host ''
   Write-Host 'All required tools found.'
+  # Ensure .continue user_config exists; if not, try to create from example
+  $continueDir = Join-Path (Get-Location) '.continue'
+  $userCfg = Join-Path $continueDir 'user_config.json'
+  $exampleCfg = Join-Path $continueDir 'user_config.example.json'
+  try {
+    if (-not (Test-Path $userCfg -PathType Leaf)) {
+      if (Test-Path $exampleCfg -PathType Leaf) {
+        Copy-Item -Path $exampleCfg -Destination $userCfg -Force
+        Write-Host "Created .continue/user_config.json from example. Edit as needed."
+      } else {
+        Write-Host "Note: .continue/user_config.json missing and no example found (.continue/user_config.example.json)"
+      }
+    }
+  } catch {
+    Write-Host "Warning: failed to ensure .continue/user_config.json: $_"
+  }
+
   exit 0
 }

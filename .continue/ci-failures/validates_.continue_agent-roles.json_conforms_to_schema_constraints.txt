@@ -1,0 +1,212 @@
+
+  .continue\ci-failures\pester-full-run.txt:26:[95mRunning tests from 
+'AgentRoles.Schema.Tests.ps1'[0m
+  .continue\ci-failures\pester-full-run.txt:27:[92mDescribing Agent-Roles Schema - basic 
+validation[0m
+  .continue\ci-failures\pester-full-run.txt:28:AVVISO: Alcuni nomi di comandi importati 
+dal modulo 'TestHelpers' includono verbi non approvati che possono renderli meno 
+individuabili. Per trovare i comandi con verbi non approvati, eseguire di nuovo il comando 
+Import-Module con il parametro Verbose. Per visualizzare l'elenco dei verbi approvati, 
+digitare Get-Verb.
+> .continue\ci-failures\pester-full-run.txt:29:[32m  [+] validates 
+.continue\agent-roles.json conforms to schema constraints[0m
+  .continue\ci-failures\pester-full-run.txt:30:[90m 231ms (203ms|29ms)[0m
+  .continue\ci-failures\pester-full-run.txt:31:AVVISO: Alcuni nomi di comandi importati 
+dal modulo 'TestHelpers' includono verbi non approvati che possono renderli meno 
+individuabili. Per trovare i comandi con verbi non approvati, eseguire di nuovo il comando 
+Import-Module con il parametro Verbose. Per visualizzare l'elenco dei verbi approvati, 
+digitare Get-Verb.
+  .continue\ci-failures\pester-full-run.txt:32:AVVISO: agent-roles.fixed.json: agent 
+'Low-1' has unknown property 'primaryRole'
+  .continue\ci-failures\pester-full-run.txt:33:AVVISO: agent-roles.fixed.json: agent 
+'Low-1' has unknown property 'labels'
+  .continue\ci-failures\pester-full-run.txt:34:AVVISO: agent-roles.fixed.json: agent 
+'Low-1' has unknown property 'priority'
+  .continue\ci-failures\pester-full-run.txt:35:AVVISO: agent-roles.fixed.json: agent 
+'Low-1' has unknown property 'resources'
+  .continue\ci-failures\pester-full-run.txt:36:AVVISO: agent-roles.fixed.json: agent 
+'Low-1' has unknown property 'notes'
+  .continue\ci-failures\pester-full-run.txt:37:AVVISO: agent-roles.fixed.json: agent 
+'Low-2' has unknown property 'primaryRole'
+  .continue\ci-failures\pester-full-run.txt:38:AVVISO: agent-roles.fixed.json: agent 
+'Low-2' has unknown property 'labels'
+  .continue\ci-failures\pester-full-run.txt:39:AVVISO: agent-roles.fixed.json: agent 
+'Low-2' has unknown property 'priority'
+  .continue\ci-failures\pester-full-run.txt:1257:AVVISO: Collected candidate skill: Expose 
+a simple UI or CLI for interactions from oneagent-config.json
+  .continue\ci-failures\pester-full-run.txt:1258:AVVISO: Collected candidate skill: 
+Integrate with external APIs when required from oneagent-config.json
+  .continue\ci-failures\pester-full-run.txt:1259:AVVISO: Collected candidate skill: 
+Automate repetitive tasks and batch operations from oneagent-config.json
+> .continue\ci-failures\pester-full-run.txt:1260:AVVISO: Collected candidate skill (too 
+long): validates .continue\agent-roles.json conforms to schema constraints from 
+pester_failed_tests.json
+  .continue\ci-failures\pester-full-run.txt:1261:AVVISO: Collected candidate skill (too 
+long): validates all .continue JSON files against schema-derived rules from 
+pester_failed_tests.json
+  .continue\ci-failures\pester-full-run.txt:1262:AVVISO: Collected candidate skill: runs 
+once and writes skill-suggestions.json from pester_failed_tests.json
+  .continue\ci-failures\pester-full-run.txt:1263:AVVISO: Collected candidate skill: 
+validates example skill formatting category:capability from pester_failed_tests.json
+  .continue\ci-failures\pester-full-run.txt:1264:AVVISO: Collected candidate skill: 
+2026-01-30T19:11:33.8288485+01:00 from pester_full_result.json
+> .continue\ci-failures\pester-full-run.txt:1265:AVVISO: Collected candidate skill (too 
+long): validates .continue\agent-roles.json conforms to schema constraints from 
+pester_full_result.json
+  .continue\ci-failures\pester-full-run.txt:1266:AVVISO: Collected candidate skill (too 
+long): validates all .continue JSON files against schema-derived rules from 
+pester_full_result.json
+  .continue\ci-failures\pester-full-run.txt:1267:AVVISO: Collected candidate skill: 
+prefers agent with matching skill (API) for an API bug from pester_full_result.json
+  .continue\ci-failures\pester-full-run.txt:1268:AVVISO: Collected candidate skill: breaks 
+ties reproducibly by remaining capacity then name from pester_full_result.json
+  .continue\ci-failures\pester-full-run.txt:1269:AVVISO: Collected candidate skill: 
+converts textual priorities to numbers from pester_full_result.json
+  .continue\ci-failures\pester-full-run.txt:1270:AVVISO: Collected candidate skill: 
+calculates item points fallback and explicit from pester_full_result.json
+  .continue\ci-failures\pester-full-run.txt:1271:AVVISO: Collected candidate skill: does 
+not assign when capacity is insufficient from pester_full_result.json
+  .continue\ci-failures\pester-full-run.txt:1272:AVVISO: Collected candidate skill: 
+schedules highest-vram agents first when preference enabled from pester_full_result.json
+  .continue\ci-failures\pester-full-run.txt:1273:AVVISO: Collected candidate skill: 
+schedules <= MaxParallel and <= MaxVram (Vram=5,Par=1) from pester_full_result.json
+  .continue\ci-failures\pester-full-run.txt:1274:AVVISO: Collected candidate skill: 
+schedules <= MaxParallel and <= MaxVram (Vram=5,Par=2) from pester_full_result.json
+  .continue\ci-failures\pester-full-run.txt:1275:AVVISO: Collected candidate skill: 
+schedules <= MaxParallel and <= MaxVram (Vram=10,Par=1) from pester_full_result.json
+  .continue\ci-failures\pester-full-run.txt:1842:AVVISO: Collected candidate skill: 
+2026-01-29T19:12:02.8213313+01:00 from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:1843:AVVISO: Collected candidate skill: 
+oneagent-config.json from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:1844:AVVISO: Collected candidate skill: 
+pester_failed_tests.json from skill-candidates.json
+> .continue\ci-failures\pester-full-run.txt:1845:AVVISO: Collected candidate skill (too 
+long): validates .continue\agent-roles.json conforms to schema constraints from 
+skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:1846:AVVISO: Collected candidate skill (too 
+long): validates all .continue JSON files against schema-derived rules from 
+skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:1847:AVVISO: Collected candidate skill: runs 
+once and writes skill-suggestions.json from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:1848:AVVISO: Collected candidate skill: 
+validates example skill formatting category:capability from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:1849:AVVISO: Collected candidate skill: 
+pester_full_result.json from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:1850:AVVISO: Collected candidate skill: 
+2026-01-30T19:11:33.8288485+01:00 from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:1851:AVVISO: Collected candidate skill: 
+prefers agent with matching skill (API) for an API bug from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:1852:AVVISO: Collected candidate skill: breaks 
+ties reproducibly by remaining capacity then name from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:1853:AVVISO: Collected candidate skill: 
+converts textual priorities to numbers from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:1854:AVVISO: Collected candidate skill: 
+calculates item points fallback and explicit from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:1855:AVVISO: Collected candidate skill: does 
+not assign when capacity is insufficient from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2257:AVVISO: Collected candidate skill (too 
+long): @{name=coach; prompt=Analizza il mio codice, trova le mie lacune e proponimi un 
+esercizio tecnico.; description=Sessione di Mentoring locale} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2258:AVVISO: Collected candidate skill (too 
+long): @{name=test; prompt=Genera una suite di test unitari completa e cerca potenziali 
+bug logici.; description=QA & Bug Hunting} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2259:AVVISO: Collected candidate skill (too 
+long): @{Timestamp=2026-01-29T19:12:02.8213313+01:00; PID=14980; ProcessName=; 
+Role=SimRacingAgent; CPUPercent=; WorkingSetMB=; PrivateMB=; VirtualMB=; Threads=; 
+Handles=; IOReadBytes=; IOWriteBytes=; Alive=False; StartTime=} from skill-candidates.json
+> .continue\ci-failures\pester-full-run.txt:2260:AVVISO: Collected candidate skill (too 
+long): @{Name=validates .continue\agent-roles.json conforms to schema constraints; 
+FullName=; Result=Failed; Error=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2261:AVVISO: Collected candidate skill (too 
+long): @{Name=validates all .continue JSON files against schema-derived rules; FullName=; 
+Result=Failed; Error=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2262:AVVISO: Collected candidate skill (too 
+long): @{Name=runs once and writes skill-suggestions.json; FullName=; Result=Failed; 
+Error=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2263:AVVISO: Collected candidate skill (too 
+long): @{Name=validates example skill formatting category:capability; FullName=; 
+Result=Failed; Error=} from skill-candidates.json
+> .continue\ci-failures\pester-full-run.txt:2264:AVVISO: Collected candidate skill (too 
+long): @{Name=validates .continue\agent-roles.json conforms to schema constraints; 
+FullName=; Result=Passed; DurationSeconds=0.234; Error=; Message=} from 
+skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2265:AVVISO: Collected candidate skill (too 
+long): @{Name=validates all .continue JSON files against schema-derived rules; FullName=; 
+Result=Passed; DurationSeconds=1.089; Error=; Message=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2266:AVVISO: Collected candidate skill (too 
+long): @{Name=prefers agent with matching skill (API) for an API bug; FullName=; 
+Result=Passed; DurationSeconds=0.057; Error=; Message=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2267:AVVISO: Collected candidate skill (too 
+long): @{Name=breaks ties reproducibly by remaining capacity then name; FullName=; 
+Result=Passed; DurationSeconds=0.011; Error=; Message=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2268:AVVISO: Collected candidate skill (too 
+long): @{Name=converts textual priorities to numbers; FullName=; Result=Passed; 
+DurationSeconds=0.006; Error=; Message=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2269:AVVISO: Collected candidate skill (too 
+long): @{Name=calculates item points fallback and explicit; FullName=; Result=Passed; 
+DurationSeconds=0.007; Error=; Message=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2270:AVVISO: Collected candidate skill (too 
+long): @{Name=does not assign when capacity is insufficient; FullName=; Result=Passed; 
+DurationSeconds=0.128; Error=; Message=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2271:AVVISO: Collected candidate skill (too 
+long): @{Name=schedules highest-vram agents first when preference enabled; FullName=; 
+Result=Passed; DurationSeconds=0.006; Error=; Message=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2272:AVVISO: Collected candidate skill (too 
+long): @{Name=schedules <= MaxParallel and <= MaxVram (Vram=5,Par=1); FullName=; 
+Result=Passed; DurationSeconds=0.008; Error=; Message=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2273:AVVISO: Collected candidate skill (too 
+long): @{Name=schedules <= MaxParallel and <= MaxVram (Vram=5,Par=2); FullName=; 
+Result=Passed; DurationSeconds=0.005; Error=; Message=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2274:AVVISO: Collected candidate skill (too 
+long): @{Name=schedules <= MaxParallel and <= MaxVram (Vram=10,Par=1); FullName=; 
+Result=Passed; DurationSeconds=0.006; Error=; Message=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2694:AVVISO: Collected candidate skill (too 
+long): @{Timestamp=2026-01-30T19:09:38.3321544+01:00; PID=34836; ProcessName=powershell; 
+Role=monitor-unit; CPUPercent=0.1; WorkingSetMB=85.48; PrivateMB=66.11; 
+VirtualMB=2101938.14; Threads=32; Handles=706; IOReadBytes=; IOWriteBytes=; Alive=True; 
+StartTime=2026-01-30T19:09:36.7444803+01:00} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2695:AVVISO: Collected candidate skill (too 
+long): @{Timestamp=2026-01-30T19:09:39.3592526+01:00; PID=34836; ProcessName=powershell; 
+Role=monitor-unit; CPUPercent=0; WorkingSetMB=85.47; PrivateMB=66.08; 
+VirtualMB=2101937.89; Threads=31; Handles=705; IOReadBytes=; IOWriteBytes=; Alive=True; 
+StartTime=2026-01-30T19:09:36.7444803+01:00} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2696:AVVISO: Collected candidate skill: 
+2026-01-30T19:09:40.3906279+01:00 from skill-candidates.json
+> .continue\ci-failures\pester-full-run.txt:2697:AVVISO: Collected candidate skill (too 
+long): @{Name=validates .continue\agent-roles.json conforms to schema constraints; 
+FullName=; Result=Passed; DurationSeconds=0.238; Error=; Message=} from 
+skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2698:AVVISO: Collected candidate skill (too 
+long): @{Name=validates all .continue JSON files against schema-derived rules; FullName=; 
+Result=Passed; DurationSeconds=1.088; Error=; Message=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2699:AVVISO: Collected candidate skill (too 
+long): @{Name=prefers agent with matching skill (API) for an API bug; FullName=; 
+Result=Passed; DurationSeconds=0.055; Error=; Message=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2700:AVVISO: Collected candidate skill (too 
+long): @{Name=breaks ties reproducibly by remaining capacity then name; FullName=; 
+Result=Passed; DurationSeconds=0.01; Error=; Message=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2701:AVVISO: Collected candidate skill (too 
+long): @{Name=converts textual priorities to numbers; FullName=; Result=Passed; 
+DurationSeconds=0.007; Error=; Message=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2702:AVVISO: Collected candidate skill (too 
+long): @{Name=does not assign when capacity is insufficient; FullName=; Result=Passed; 
+DurationSeconds=0.143; Error=; Message=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2703:AVVISO: Collected candidate skill (too 
+long): @{Name=schedules highest-vram agents first when preference enabled; FullName=; 
+Result=Passed; DurationSeconds=0.007; Error=; Message=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2704:AVVISO: Collected candidate skill (too 
+long): @{Name=kill DryRun does not remove mapping; FullName=; Result=Passed; 
+DurationSeconds=2.879; Error=; Message=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2705:AVVISO: Collected candidate skill (too 
+long): @{Name=kill actually removes mapping entries; FullName=; Result=Passed; 
+DurationSeconds=2.272; Error=; Message=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2706:AVVISO: Collected candidate skill (too 
+long): @{Name=runs once and writes skill-suggestions.json; FullName=; Result=Passed; 
+DurationSeconds=0.156; Error=; Message=} from skill-candidates.json
+  .continue\ci-failures\pester-full-run.txt:2707:AVVISO: Collected candidate skill (too 
+long): @{Name=orders candidates by weight then startedAt when system not under pressure; 
+FullName=; Result=Passed; DurationSeconds=0.011; Error=; Message=} from 
+skill-candidates.json
+
+
+

@@ -1,0 +1,24 @@
+﻿{
+    "timestamp":  "2026-01-30T19:48:12.4605967+01:00",
+    "agents":  [
+                   {
+                       "name":  "agent-A",
+                       "role":  "role-A",
+                       "vramGB":  16,
+                       "memoryGB":  8,
+                       "skills":  [
+                                      "nlp"
+                                  ]
+                   },
+                   {
+                       "name":  "agent-B",
+                       "role":  "role-B",
+                       "vramGB":  8,
+                       "memoryGB":  4,
+                       "skills":  [
+                                      "nlp",
+                                      "other"
+                                  ]
+                   }
+               ]
+}

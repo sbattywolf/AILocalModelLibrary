@@ -75,4 +75,10 @@
     }
   ],
   "default": "Low-1"
+  ,
+  "monitor": {
+    "MemoryPressureThresholdGB": 6,
+    "CpuPressurePercent": 80,
+    "RollingWindow": 60
+  }
 }

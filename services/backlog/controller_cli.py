@@ -9,6 +9,7 @@ from pathlib import Path
 
 def main(argv=None):
     p = argparse.ArgumentParser()
+    p.add_argument("--db", help="path to backlog DB JSON file", default=None)
     sub = p.add_subparsers(dest="cmd")
 
     s_claim = sub.add_parser("claim-next")
@@ -23,7 +24,8 @@ def main(argv=None):
     s_complete.add_argument("id", type=int)
 
     args = p.parse_args(argv)
-    controller = Controller(db_path=Path.cwd() / "services" / "backlog" / "backlog_store.json")
+    db_path = Path(args.db) if args.db else Path.cwd() / "services" / "backlog" / "backlog_store.json"
+    controller = Controller(db_path=db_path)
 
     if args.cmd == "claim-next":
         it = controller.claim_next(args.owner)

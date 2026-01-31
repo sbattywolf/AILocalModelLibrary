@@ -47,6 +47,21 @@ $agents = $cfg.agents
 # Ensure roleResources is initialized (avoid null when role file missing)
 if (-not $roleResources) { $roleResources = @{} }
 
+# Load role resource estimates to respect per-agent VRAM when scheduling
+$rolesPath = '.continue/agent-roles.json'
+$roleResources = @{}
+if (Test-Path $rolesPath) {
+  try {
+    $r = Get-Content $rolesPath -Raw | ConvertFrom-Json -ErrorAction Stop
+    foreach ($ra in $r.agents) {
+      $v = ($ra.resources.vramGB -as [int])
+      $m = ($ra.resources.memoryGB -as [int])
+      $c = ($ra.resources.cpus -as [int])
+      $roleResources[$ra.name] = @{ vram = $v; memory = $m; cpus = $c }
+    }
+  } catch { }
+}
+
 # If requested, prefer scheduling the highest-capability (highest estimated VRAM) agents first.
 # Build an agent->vram estimate map and order descending when -PreferMaxAgent is supplied.
 $agentsOrdered = $agents
@@ -62,13 +77,6 @@ if ($PreferMaxAgent) {
   Write-Log "PreferMaxAgent: ordering agents by estimated vram descending"
 } else {
   $agentsOrdered = $agents
-}
-
-# Load role resource estimates to respect per-agent VRAM when scheduling
-$rolesPath = '.continue/agent-roles.json'
-$roleResources = @{}
-if (Test-Path $rolesPath) {
-  try { $r = Get-Content $rolesPath -Raw | ConvertFrom-Json -ErrorAction Stop; foreach ($ra in $r.agents) { $roleResources[$ra.name] = ($ra.resources.vramGB -as [int]) } } catch { }
 }
 if (-not $agents -or $agents.Count -eq 0) { Write-Log 'No agents found in config.agent'; exit 0 }
 
@@ -109,7 +117,7 @@ $null = Register-EngineEvent Console.CancelKeyPress -Action {
   Write-Log "Shutdown complete. Exiting."; exit 130
 }
 
-foreach ($a in $agentsOrdered) {
+  foreach ($a in $agentsOrdered) {
     $name = $a.name -replace '[^A-Za-z0-9_-]','-'
     $entry = $a.entry
     $model = $null
@@ -125,17 +133,23 @@ foreach ($a in $agentsOrdered) {
     $startedAt = (Get-Date).ToString('o')
 
     $agentVram = 0
-    if ($roleResources.ContainsKey($name)) { $agentVram = $roleResources[$name] }
+    $agentMemory = 0
+    $agentCpus = 0
+    if ($roleResources.ContainsKey($name)) {
+      $agentVram = ($roleResources[$name].vram -as [int])
+      $agentMemory = ($roleResources[$name].memory -as [int])
+      $agentCpus = ($roleResources[$name].cpus -as [int])
+    }
 
     if ($DryRun) {
       # In DryRun show scheduling decision (would run vs would queue)
       if ($currentVram + $agentVram -le $MaxVramGB) {
-        Write-Log "[DryRun] SCHEDULED Agent: $name  entry=$entry  model=$model  log=$logFile  vram=$agentVram"
-        $map += [ordered]@{ name=$name; entry=$entry; model=$model; log=$logFile; status='scheduled'; vram=$agentVram }
+        Write-Log "[DryRun] SCHEDULED Agent: $name  entry=$entry  model=$model  log=$logFile  vram=$agentVram  memoryGB=$agentMemory  cpus=$agentCpus"
+        $map += [ordered]@{ name=$name; entry=$entry; model=$model; log=$logFile; status='scheduled'; resources=[ordered]@{ vramGB=$agentVram; memoryGB=$agentMemory; cpus=$agentCpus } }
         $currentVram += $agentVram
       } else {
-        Write-Log "[DryRun] QUEUED Agent: $name  entry=$entry  model=$model  log=$logFile  vram=$agentVram (exceeds MaxVramGB=$MaxVramGB)"
-        $map += [ordered]@{ name=$name; entry=$entry; model=$model; log=$logFile; status='queued'; vram=$agentVram }
+        Write-Log "[DryRun] QUEUED Agent: $name  entry=$entry  model=$model  log=$logFile  vram=$agentVram  memoryGB=$agentMemory  cpus=$agentCpus (exceeds MaxVramGB=$MaxVramGB)"
+        $map += [ordered]@{ name=$name; entry=$entry; model=$model; log=$logFile; status='queued'; resources=[ordered]@{ vramGB=$agentVram; memoryGB=$agentMemory; cpus=$agentCpus } }
       }
       continue
     }
@@ -195,7 +209,7 @@ foreach ($a in $agentsOrdered) {
       }
     }
 
-    $map += [ordered]@{ name=$name; entry=$entry; model=$model; log=$logFile; pid=$proc.Id; startedAt=$startedAt; status='running'; vram=$agentVram }
+    $map += [ordered]@{ name=$name; entry=$entry; model=$model; log=$logFile; pid=$proc.Id; startedAt=$startedAt; status='running'; resources=[ordered]@{ vramGB=$agentVram; memoryGB=$agentMemory; cpus=$agentCpus } }
     $jobs += $proc
     $currentVram += $agentVram
 

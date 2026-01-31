@@ -1,0 +1,58 @@
+{
+  "agentName": "oneagent-prototype",
+  "capacityPoints": 8,
+  "skills": {
+    "task-management": {
+      "level": 5,
+      "description": "Create and manage backlogs (generate, edit, prioritize work items)",
+      "examples": ["scan repo TODOs", "parse docs for work items"],
+      "notes": "See docs/skills_summary.md — TO BE REPLACED with concrete implementation from workspace docs (exclude .continue)"
+    },
+    "prioritization": {
+      "level": 5,
+      "description": "Determine task order based on importance/urgency and business rules",
+      "notes": "See docs/skills_summary.md — TO BE REPLACED with concrete implementation from workspace docs (exclude .continue)"
+    },
+    "assignment": {
+      "level": 4,
+      "description": "Automatically assign tasks to agents by skill match and capacity",
+      "notes": "See docs/skills_summary.md — TO BE REPLACED with concrete implementation from workspace docs (exclude .continue)"
+    },
+    "status-update": {
+      "level": 5,
+      "description": "Change task statuses (e.g., To Do, In Progress, Done) and record history",
+      "notes": "See docs/skills_summary.md — TO BE REPLACED with concrete implementation from workspace docs (exclude .continue)"
+    },
+    "reporting": {
+      "level": 4,
+      "description": "Generate summaries and reports for stakeholders",
+      "notes": "See docs/skills_summary.md — TO BE REPLACED with concrete implementation from workspace docs (exclude .continue)"
+    },
+    "simulation": {
+      "level": 4,
+      "description": "Mimic team behavior for planning and load testing",
+      "notes": "See docs/skills_summary.md — TO BE REPLACED with concrete implementation from workspace docs (exclude .continue)"
+    },
+    "data-storage": {
+      "level": 5,
+      "description": "Store data locally (JSON files under .continue by default)",
+      "notes": "See docs/skills_summary.md — TO BE REPLACED with concrete implementation from workspace docs (exclude .continue)"
+    },
+    "ui": {
+      "level": 3,
+      "description": "Expose a simple UI or CLI for interactions",
+      "notes": "See docs/skills_summary.md — TO BE REPLACED with concrete implementation from workspace docs (exclude .continue)"
+    },
+    "api-integration": {
+      "level": 3,
+      "description": "Integrate with external APIs when required",
+      "notes": "See docs/skills_summary.md — TO BE REPLACED with concrete implementation from workspace docs (exclude .continue)"
+    },
+    "automation": {
+      "level": 4,
+      "description": "Automate repetitive tasks and batch operations",
+      "notes": "See docs/skills_summary.md — TO BE REPLACED with concrete implementation from workspace docs (exclude .continue)"
+    }
+  },
+  "preferences": { "ui": false, "dryRun": true }
+}

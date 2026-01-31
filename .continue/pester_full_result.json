@@ -1,0 +1,532 @@
+﻿{
+    "Timestamp":  "2026-01-30T19:11:33.8288485+01:00",
+    "Passed":  65,
+    "Failed":  0,
+    "Skipped":  0,
+    "Inconclusive":  0,
+    "NotRun":  0,
+    "Total":  65,
+    "DurationSeconds":  null,
+    "Tests":  [
+                  {
+                      "Name":  "validates .continue\\agent-roles.json conforms to schema constraints",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.234,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "validates all .continue JSON files against schema-derived rules",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  1.089,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "prefers agent with matching skill (API) for an API bug",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.057,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "breaks ties reproducibly by remaining capacity then name",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.011,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "converts textual priorities to numbers",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.006,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "calculates item points fallback and explicit",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.007,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "does not assign when capacity is insufficient",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.128,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "schedules highest-vram agents first when preference enabled",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.006,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "schedules \u003c= MaxParallel and \u003c= MaxVram (Vram=5,Par=1)",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.008,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "schedules \u003c= MaxParallel and \u003c= MaxVram (Vram=5,Par=2)",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.005,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "schedules \u003c= MaxParallel and \u003c= MaxVram (Vram=10,Par=1)",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.006,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "schedules \u003c= MaxParallel and \u003c= MaxVram (Vram=10,Par=2)",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.006,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "kill DryRun does not remove mapping",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  2.908,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "kill actually removes mapping entries",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  2.269,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "runs once and writes skill-suggestions.json",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.169,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "orders candidates by weight then startedAt when system not under pressure",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.008,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "orders candidates by weight then prefers high-memory then high-cpu under pressure",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.007,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "returns ok when HTTP health probe succeeds",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.259,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "returns unhealthy when CLI health command times out or nonzero",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.038,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "starts queued agents when capacity allows (no eviction)",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.019,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "evicts lower-priority agents to make room for higher-priority queued",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.005,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "writes telemetry lines to the specified telemetry file",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  1.285,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "reads mapping and updates it (non-destructive) when agents report",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  1.255,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "handles ops and tester agents without interfering",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  1.268,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "writes agents-proposal.json with expected structure and types",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.344,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "selects agents matching the skill ordered by vram desc",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.261,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "respects MaxVramGB cumulative limit",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.257,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "sets RollingWindow to 60 in monitor-agents-epic.ps1",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.004,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "stops extra agents so only one per role remains and updates mapping",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.265,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "ensures only one `tester` agent instance runs on a developer machine",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  1.567,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "ensures only one `coordinator`/orchestrator instance runs per PC",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  1.553,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "creates a DryRun config scaffold for single-agent-per-role testing",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.005,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "ensures no agent has more than 3 skills assigned",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.011,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "ensures no agent has more than 3 skills assigned",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.018,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "ensures no agent has more than 3 skills assigned",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.012,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "ensures agents have a skills array when present in roles file",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.008,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "validates example skill formatting category:capability",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.014,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "generates warnings and enforces limits",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.242,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "sorts queued agents descending by vram",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.008,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "picks lower-priority running agents sufficient to free required vram",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.008,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "selects the earliest started coordinator to keep",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.003,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "orders agents by estimated vram descending when -PreferMaxAgent is used",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.006,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "loads all json files under .continue without error",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  1.235,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "validates skill-like strings across all .continue JSON files",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  2.701,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "validates skill-like strings across all .continue JSON files",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  6.806,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "validates skills in .continue\\agent-roles.json when present",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.039,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "validates presets in .continue\\team-presets.json when present",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.039,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "start-ollama-role appends mapping when starting serve",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  1.645,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "stop-ollama-role removes mapping for role",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  1.255,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "start-ollama-role uses LogDir default when not provided",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  1.617,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "inner command quoting preserves prompt text",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  1.639,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "Has a mapping file with agents",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.012,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "Selects candidate agents for a random probe question",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.014,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "Probes running agent entries in isolated environment (no ollama)",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.039,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "Measures agent latency under isolated conditions",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.035,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "Ollama integration test for one agent (gated by RUN_OLLAMA_INTEGRATION=1)",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.003,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "Has an agent roles mapping file",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.011,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "All role entries map to configured agents and include required fields",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.023,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "Reports potential role conflicts and resource summary (warnings, non-fatal) ",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.008,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "returns ok and echoes prompt in CI/no runtime mode",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.117,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "writes suggestion and apply request when --apply --signal used and change forced",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.13,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "returns a JSON recommendation",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.118,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "runs once and writes suggestion file when --apply used",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.119,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "monitor-local-llama captures samples for a running PID (using stub)",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  2.703,
+                      "Error":  null,
+                      "Message":  null
+                  },
+                  {
+                      "Name":  "start-local-llama-role appends mapping when starting run (DryRun stub)",
+                      "FullName":  null,
+                      "Result":  "Passed",
+                      "DurationSeconds":  0.798,
+                      "Error":  null,
+                      "Message":  null
+                  }
+              ]
+}

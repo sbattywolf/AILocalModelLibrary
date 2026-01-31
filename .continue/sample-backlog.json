@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Schema standardization",
+    "description": "Define JSON schemas for agent roles, proposals, and telemetry",
+    "status": "not-started",
+    "team": "Infra",
+    "role": "schema"
+  },
+  {
+    "id": 2,
+    "title": "Scheduler integration",
+    "description": "Wire scheduler outputs to monitor",
+    "status": "in-progress",
+    "team": "Runtime",
+    "role": "scheduler"
+  }
+]

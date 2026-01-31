@@ -1,3 +1,50 @@
+Describe 'Monitor - Single Agent Per Role Enforcement' {
+  It 'stops extra agents so only one per role remains and updates mapping' {
+    $tempDir = Join-Path $env:TEMP ([System.Guid]::NewGuid().ToString())
+    New-Item -ItemType Directory -Path $tempDir | Out-Null
+    $mappingPath = Join-Path $tempDir 'mapping.json'
+
+    try {
+      # spawn 3 dummy agents for same role
+      $spawn = (Resolve-Path .\scripts\spawn-dummy-agents.ps1).Path
+      & $spawn -Count 3 -MappingPath $mappingPath -NamePrefix 'sa-test' -PrimaryRole 'worker' | Out-Null
+
+      # ensure mapping exists
+      (Test-Path $mappingPath) | Should -BeTrue
+
+      # run the enforcer to clean extras
+      $enforcer = (Resolve-Path .\scripts\enforce-single-agent-per-role.ps1).Path
+      & $enforcer -MappingFile $mappingPath
+
+      # read mapping and count alive pids for role 'worker'
+      $raw = Get-Content -Path $mappingPath -Raw -ErrorAction Stop
+      $content = $raw | ConvertFrom-Json
+      $workers = @($content | Where-Object { $_.primaryRole -eq 'worker' })
+
+      # Exactly 3 entries should exist, but only one should have a pid set (others should be null or status stopped)
+      $workers.Count | Should -Be 3
+      $alive = @($workers | Where-Object { $_.pid -and $_.pid -ne $null })
+      $alive.Count | Should -Be 1
+
+      # Verify mapping directory sidecar pid-*.agent files: there should be exactly one for the kept pid
+      $mappingDir = Split-Path -Parent $mappingPath
+      $pidFiles = Get-ChildItem -Path $mappingDir -Filter 'pid-*.agent' -File -ErrorAction SilentlyContinue
+      $pidFiles.Count | Should -Be 1
+      $pidContent = Get-Content -Path $pidFiles[0].FullName -Raw -ErrorAction Stop
+      $keptName = $alive[0].name
+      ($pidContent.Trim()) | Should -Be $keptName
+
+      # Ensure stopped entries are marked (pid null or status 'stopped')
+      $stopped = @($workers | Where-Object { -not ($_.pid) -or $_.status -eq 'stopped' })
+      $stopped.Count | Should -Be 2
+
+      # cleanup any remaining ping processes to avoid leaks in CI
+      Get-Process -Name ping -ErrorAction SilentlyContinue | ForEach-Object { Try { Stop-Process -Id $_.Id -Force -ErrorAction SilentlyContinue } Catch {} }
+    } finally {
+      Remove-Item -Path $tempDir -Recurse -Force -ErrorAction SilentlyContinue
+    }
+  }
+}
 Describe 'Monitor Single-Agent-Per-Role' {
   Context 'Enforce single agent per role on developer machine' {
     It 'ensures only one `tester` agent instance runs on a developer machine' {

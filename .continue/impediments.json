@@ -1,0 +1,82 @@
+[
+  {
+    "reason": "too_many_invalid_replies",
+    "weight": 3,
+    "context": {
+      "options": [
+        "A",
+        "B"
+      ],
+      "recent_replies": [
+        "nope",
+        "<REDACTED>",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "timestamp": "2026-01-30T23:33:15.999244+00:00"
+  },
+  {
+    "reason": "too_many_invalid_replies",
+    "weight": 3,
+    "context": {
+      "options": [
+        "a",
+        "b"
+      ],
+      "recent_replies": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "timestamp": "2026-01-31T00:29:38.413633+00:00"
+  },
+  {
+    "reason": "too_many_invalid_replies",
+    "weight": 3,
+    "context": {
+      "options": [
+        "a",
+        "b"
+      ],
+      "recent_replies": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "timestamp": "2026-01-31T00:29:38.414836+00:00"
+  },
+  {
+    "reason": "too_many_invalid_replies",
+    "weight": 3,
+    "context": {
+      "options": [
+        "opt1",
+        "opt2",
+        "opt3"
+      ],
+      "recent_replies": [
+        "4",
+        "4",
+        "4",
+        "4",
+        "4",
+        "4",
+        "4",
+        "4",
+        "4",
+        "4"
+      ]
+    },
+    "timestamp": "2026-01-31T00:29:38.575227+00:00"
+  }
+]

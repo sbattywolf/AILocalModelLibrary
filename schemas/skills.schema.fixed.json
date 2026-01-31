@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Skills Schema (fixed)",
+  "description": "Minimal skills schema for CI validation (fixed copy).",
+  "type": "object",
+  "properties": {
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 60,
+        "pattern": "^([a-z]+:)?[a-z0-9-]+$"
+      },
+      "uniqueItems": true,
+      "maxItems": 200
+    },
+    "teamPresets": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" },
+        "uniqueItems": true
+      }
+    },
+    "agentRoles": {
+      "type": "object",
+      "properties": {
+        "agents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "role": { "type": "string" },
+              "skills": {
+                "type": "array",
+                "items": { "type": "string" },
+                "uniqueItems": true
+              }
+            },
+            "required": ["name"]
+          }
+        }
+      }
+    }
+  },
+  "required": ["skills"],
+  "additionalProperties": false
+}

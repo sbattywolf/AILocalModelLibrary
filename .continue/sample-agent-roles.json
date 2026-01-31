@@ -1,0 +1,20 @@
+{
+  "agents": [
+    {
+      "name": "dev-node-01",
+      "role": "developer",
+      "skills": ["infra:docker","ml:python","qa:unit-tests"],
+      "skillWeights": { "infra:docker": 3, "ml:python": 4, "qa:unit-tests": 2 }
+    },
+    {
+      "name": "ops-gpu-01",
+      "role": "ops",
+      "skills": ["runtime:gpu","infra:nvidia-drivers"],
+      "skillWeights": { "runtime:gpu": 5 }
+    }
+  ],
+  "teamPresets": {
+    "infra": ["infra:docker","infra:ansible"],
+    "ml": ["ml:python","ml:tensorflow"]
+  }
+}

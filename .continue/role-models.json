@@ -1,0 +1,21 @@
+{
+  "description": "Per-role recommended model profiles (low/medium/high) with example model ids and VRAM estimates (GB). Updated to match local Ollama availability.",
+  "generated": "2026-01-30T00:00:00Z",
+  "roles": {
+    "tester": {
+      "low": { "model": "qwen2.5-coder:1.5b", "vramGB": 2, "notes": "fast scaffolding, unit-tests" },
+      "medium": { "model": "qwen2.5-coder:1.5b-base", "vramGB": 2, "notes": "better reasoning about tests and coverage (local fallback)" },
+      "high": { "model": "qwen2.5-coder:32b", "vramGB": 19, "notes": "deep integration/fuzzing harness" }
+    },
+    "developer": {
+      "low": { "model": "qwen2.5-coder:1.5b", "vramGB": 2, "notes": "snippets, quick refactors" },
+      "medium": { "model": "qwen2.5-coder:1.5b-base", "vramGB": 2, "notes": "larger-context refactors (local fallback)" },
+      "high": { "model": "qwen2.5-coder:32b", "vramGB": 19, "notes": "cross-repo refactors and design" }
+    },
+    "controller": {
+      "low": { "model": "qwen2.5-coder:1.5b", "vramGB": 2, "notes": "kanban/todo management" },
+      "medium": { "model": "qwen2.5-coder:1.5b-base", "vramGB": 2, "notes": "detailed planning and trade-offs (local fallback)" },
+      "high": { "model": "qwen2.5-coder:32b", "vramGB": 19, "notes": "org-level scheduling and proposals" }
+    }
+  }
+}

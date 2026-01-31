@@ -1,0 +1,26 @@
+﻿[
+    {
+        "Name":  "validates .continue\\agent-roles.json conforms to schema constraints",
+        "FullName":  null,
+        "Result":  "Failed",
+        "Error":  null
+    },
+    {
+        "Name":  "validates all .continue JSON files against schema-derived rules",
+        "FullName":  null,
+        "Result":  "Failed",
+        "Error":  null
+    },
+    {
+        "Name":  "runs once and writes skill-suggestions.json",
+        "FullName":  null,
+        "Result":  "Failed",
+        "Error":  null
+    },
+    {
+        "Name":  "validates example skill formatting category:capability",
+        "FullName":  null,
+        "Result":  "Failed",
+        "Error":  null
+    }
+]

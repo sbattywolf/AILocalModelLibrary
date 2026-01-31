@@ -1,0 +1,53 @@
+﻿[
+    {
+        "capacity":  8,
+        "assignedPoints":  0,
+        "name":  "Agent-A",
+        "skills":  {
+                       "Assignment":  3,
+                       "Reporting":  3,
+                       "UI":  2,
+                       "CreateBacklog":  5,
+                       "Storage":  5,
+                       "StatusUpdate":  4,
+                       "Simulation":  3,
+                       "API":  2,
+                       "Automation":  4,
+                       "Prioritization":  4
+                   }
+    },
+    {
+        "capacity":  6,
+        "assignedPoints":  0,
+        "name":  "Agent-B",
+        "skills":  {
+                       "Assignment":  4,
+                       "Reporting":  4,
+                       "UI":  4,
+                       "CreateBacklog":  3,
+                       "Storage":  3,
+                       "StatusUpdate":  3,
+                       "Simulation":  2,
+                       "API":  3,
+                       "Automation":  3,
+                       "Prioritization":  5
+                   }
+    },
+    {
+        "capacity":  5,
+        "assignedPoints":  0,
+        "name":  "Agent-C",
+        "skills":  {
+                       "Assignment":  5,
+                       "Reporting":  2,
+                       "UI":  3,
+                       "CreateBacklog":  2,
+                       "Storage":  2,
+                       "StatusUpdate":  2,
+                       "Simulation":  4,
+                       "API":  5,
+                       "Automation":  2,
+                       "Prioritization":  3
+                   }
+    }
+]

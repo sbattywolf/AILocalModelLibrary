@@ -1,0 +1,4 @@
+[
+  { "name": "agent-A", "role": "role-A", "vramGB": 16, "memoryGB": 8, "skills": ["nlp"] },
+  { "name": "agent-B", "role": "role-B", "vramGB": 8, "memoryGB": 4, "skills": ["nlp","other"] }
+]

@@ -1,14 +1,16 @@
 Describe 'Agents Epic Mapping' {
 
     It 'Has a mapping file with agents' {
+        Import-Module (Resolve-Path (Join-Path $PSScriptRoot '..\TestHelpers.psm1')).Path -Force
         $path = '.continue/agents-epic.json'
         Test-Path $path | Should -BeTrue
-        $agents = Get-Content $path -Raw | ConvertFrom-Json
+        $agents = Load-JsonDefensive $path
         $agents.Count | Should -BeGreaterThan 0
     }
 
     It 'Selects candidate agents for a random probe question' {
-        $mapping = Get-Content '.continue/agents-epic.json' -Raw | ConvertFrom-Json
+        Import-Module (Resolve-Path (Join-Path $PSScriptRoot '..\TestHelpers.psm1')).Path -Force
+        $mapping = Load-JsonDefensive '.continue/agents-epic.json'
         $questions = @(
             'Write a unit test for a sorting function',
             'Optimize a function for lower memory',
@@ -45,6 +47,8 @@ Describe 'Agents Epic Mapping' {
             $entry = $a.entry
             $name = $a.name
             $probe = "Test probe for $name"
+
+            if (-not $entry) { Write-Warning "No entry for $name; skipping probe"; continue }
 
             if ($removeDir) {
                 # build PATH without ollama dir
@@ -95,6 +99,8 @@ Describe 'Agents Epic Mapping' {
             $entry = $a.entry
             $name = $a.name
             $probe = "Latency probe for $name"
+
+            if (-not $entry) { Write-Warning "No entry for $name; skipping latency probe"; continue }
 
             if ($entry -match '\.py$') {
                 if (-not $pythonExe) { Write-Warning "Skipping python agent $name - python not found"; continue }

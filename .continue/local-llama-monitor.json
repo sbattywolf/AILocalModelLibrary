@@ -1,37 +1,37 @@
 ﻿{
-    "CollectedAt":  "2026-01-30T02:41:03.0674782+01:00",
+    "CollectedAt":  "2026-01-30T20:15:06.8860436+01:00",
     "Samples":  [
                     {
-                        "Timestamp":  "2026-01-30T02:41:02.0330349+01:00",
-                        "PID":  17532,
+                        "Timestamp":  "2026-01-30T20:15:05.8548531+01:00",
+                        "PID":  11712,
                         "ProcessName":  "powershell",
                         "Role":  "monitor-unit",
                         "CPUPercent":  0,
-                        "WorkingSetMB":  84.23,
-                        "PrivateMB":  65.61,
+                        "WorkingSetMB":  84.35,
+                        "PrivateMB":  65.62,
                         "VirtualMB":  2101935.16,
                         "Threads":  28,
                         "Handles":  696,
                         "IOReadBytes":  null,
                         "IOWriteBytes":  null,
                         "Alive":  true,
-                        "StartTime":  "2026-01-30T02:41:00.4020240+01:00"
+                        "StartTime":  "2026-01-30T20:15:04.2464899+01:00"
                     },
                     {
-                        "Timestamp":  "2026-01-30T02:41:03.0604266+01:00",
-                        "PID":  17532,
+                        "Timestamp":  "2026-01-30T20:15:06.8860436+01:00",
+                        "PID":  11712,
                         "ProcessName":  "powershell",
                         "Role":  "monitor-unit",
                         "CPUPercent":  0,
-                        "WorkingSetMB":  84.22,
-                        "PrivateMB":  65.58,
+                        "WorkingSetMB":  84.34,
+                        "PrivateMB":  65.59,
                         "VirtualMB":  2101934.91,
                         "Threads":  27,
                         "Handles":  695,
                         "IOReadBytes":  null,
                         "IOWriteBytes":  null,
                         "Alive":  true,
-                        "StartTime":  "2026-01-30T02:41:00.4020240+01:00"
+                        "StartTime":  "2026-01-30T20:15:04.2464899+01:00"
                     }
                 ]
 }

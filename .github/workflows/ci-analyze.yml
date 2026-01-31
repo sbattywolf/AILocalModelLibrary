@@ -1,0 +1,49 @@
+name: CI - Tests with Gemini analysis
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Pester tests and capture transcript
+        shell: pwsh
+        run: |
+          $out = 'test-output.txt'
+          if (Test-Path $out) { Remove-Item $out -Force }
+          Start-Transcript -Path $out -Force
+          Import-Module Pester -ErrorAction Stop
+          # Run all tests under tests/; step will fail on test failures
+          Invoke-Pester -Script tests -EnableExit
+          Stop-Transcript
+
+      - name: Upload test transcript (always)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-output
+          path: test-output.txt
+
+      - name: Analyze failures with Gemini (free)
+        if: failure()
+        shell: pwsh
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          Write-Output "Running analysis runner"
+          mkdir -Force ./.continue/analysis | Out-Null
+          pwsh ./scripts/ci-gemini-analyze.ps1 -LogFile test-output.txt -OutputDir ./.continue/analysis
+
+      - name: Upload Gemini suggestions
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gemini-suggestions
+          path: ./.continue/analysis

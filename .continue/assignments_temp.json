@@ -1,0 +1,1041 @@
+﻿{
+    "assignments":  [
+                        {
+                            "id":  83,
+                            "title":  "Review export-todos-dashboard.ps1: The script reads a JSON array of todo items with optional fields: id, title, description, status, team, role.",
+                            "priority":  "high",
+                            "points":  2,
+                            "assignedTo":  "agent-C"
+                        },
+                        {
+                            "id":  84,
+                            "title":  "Review export-todos-dashboard.ps1: if (-not (Test-Path $p)) { throw \"Todo JSON not found: $p\" }",
+                            "priority":  "high",
+                            "points":  2,
+                            "assignedTo":  "agent-C"
+                        },
+                        {
+                            "id":  85,
+                            "title":  "Review export-todos-dashboard.ps1: $md += \"# Todo Dashboard\"",
+                            "priority":  "high",
+                            "points":  2,
+                            "assignedTo":  "agent-C"
+                        },
+                        {
+                            "id":  53,
+                            "title":  "Review BACKLOG_MANAGEMENT.md: - Tag todo items with `team` and `role` fields so agent selectors can pick them.",
+                            "priority":  "high",
+                            "points":  2,
+                            "assignedTo":  "agent-C"
+                        },
+                        {
+                            "id":  128,
+                            "title":  "Review single_agent_backlog.py: # Simple heuristics: TODO=1-3, doc/code based on file size",
+                            "priority":  "high",
+                            "points":  2,
+                            "assignedTo":  "agent-C"
+                        },
+                        {
+                            "id":  51,
+                            "title":  "Review BACKLOG_MANAGEMENT.md: - Task -\u003e 1..k Todo items (fine-grained actionable work)",
+                            "priority":  "high",
+                            "points":  2,
+                            "assignedTo":  "agent-B"
+                        },
+                        {
+                            "id":  18,
+                            "title":  "Review skill-candidates.json: \"notes\":  \"kanban/todo management\"",
+                            "priority":  "high",
+                            "points":  13,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  21,
+                            "title":  "Review skill-candidates.json: \"kanban/todo management\",",
+                            "priority":  "high",
+                            "points":  13,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  19,
+                            "title":  "Review skill-candidates.json: \"kanban/todo management\",",
+                            "priority":  "high",
+                            "points":  13,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  67,
+                            "title":  "Review TODO_DASHBOARD_SAMPLE.md: # Todo Dashboard",
+                            "priority":  "high",
+                            "points":  2,
+                            "assignedTo":  "agent-B"
+                        },
+                        {
+                            "id":  54,
+                            "title":  "Review BACKLOG_MANAGEMENT.md: - The `scripts/export-todos-dashboard.ps1` (added) reads a todo JSON and produces a Markdown dashboard grouped by `team` and `role` for easy review.",
+                            "priority":  "high",
+                            "points":  2,
+                            "assignedTo":  "agent-B"
+                        },
+                        {
+                            "id":  20,
+                            "title":  "Review skill-candidates.json: \"kanban/todo management\",",
+                            "priority":  "high",
+                            "points":  13,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  52,
+                            "title":  "Review BACKLOG_MANAGEMENT.md: - Todo items are small actions that can be picked up by agents or developers.",
+                            "priority":  "high",
+                            "points":  2,
+                            "assignedTo":  "agent-A"
+                        },
+                        {
+                            "id":  16,
+                            "title":  "Review role-models.json: \"low\": { \"model\": \"qwen2.5-coder:1.5b\", \"vramGB\": 2, \"notes\": \"kanban/todo management\" },",
+                            "priority":  "high",
+                            "points":  2,
+                            "assignedTo":  "agent-A"
+                        },
+                        {
+                            "id":  130,
+                            "title":  "Review single_agent_backlog.py: \u0027priority\u0027: \u0027high\u0027 if it.get(\u0027type\u0027) == \u0027todo\u0027 else \u0027medium\u0027",
+                            "priority":  "high",
+                            "points":  2,
+                            "assignedTo":  "agent-A"
+                        },
+                        {
+                            "id":  129,
+                            "title":  "Review single_agent_backlog.py: if item.get(\u0027type\u0027) == \u0027todo\u0027:",
+                            "priority":  "high",
+                            "points":  2,
+                            "assignedTo":  "agent-A"
+                        },
+                        {
+                            "id":  116,
+                            "title":  "Review run_single_agent_backlog.ps1: if ($lines[$i] -match \u0027\\b(TODO|FIXME)\\b\u0027) {",
+                            "priority":  "high",
+                            "points":  2,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  127,
+                            "title":  "Review single_agent_backlog.py: \u0027type\u0027: \u0027todo\u0027",
+                            "priority":  "high",
+                            "points":  2,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  126,
+                            "title":  "Review single_agent_backlog.py: if re.search(r\u0027\\b(TODO|FIXME)\\b\u0027, line, re.IGNORECASE):",
+                            "priority":  "high",
+                            "points":  2,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  125,
+                            "title":  "Review single_agent_backlog.py: # find TODO/FIXME lines",
+                            "priority":  "high",
+                            "points":  2,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  124,
+                            "title":  "Review single_agent_backlog.py: Scans the repository for TODO/FIXME markers and source files to produce",
+                            "priority":  "high",
+                            "points":  2,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  117,
+                            "title":  "Review run_single_agent_backlog.ps1: $items += [pscustomobject]@{ source = $rel; line = $i+1; text = $lines[$i].Trim(); type=\u0027todo\u0027 }",
+                            "priority":  "high",
+                            "points":  2,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  61,
+                            "title":  "Review SESSION_SUMMARY_AND_EPICS.md: 4. Groom backlog per team/role and assign owners for each epic (see backlog management task in TODO list).",
+                            "priority":  "high",
+                            "points":  2,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  118,
+                            "title":  "Review run_single_agent_backlog.ps1: \u0027todo\u0027 { $base = 2 }",
+                            "priority":  "high",
+                            "points":  2,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  119,
+                            "title":  "Review run_single_agent_backlog.ps1: $priority = if ($it.type -eq \u0027todo\u0027) { \u0027high\u0027 } else { \u0027medium\u0027 }",
+                            "priority":  "high",
+                            "points":  2,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  12,
+                            "title":  "Review PATH-update-instructions.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  9,
+                            "title":  "Review cleanup_procs.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  10,
+                            "title":  "Review do-add-user-path.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  15,
+                            "title":  "Review repro_tester_it.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  8,
+                            "title":  "Review check-port-11434.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  13,
+                            "title":  "Review README.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  14,
+                            "title":  "Review repro_coordinator_it.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  11,
+                            "title":  "Review monitor-dashboard.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  64,
+                            "title":  "Review TEAM_SETUP_PROPOSAL.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  60,
+                            "title":  "Review SECRETS_SETUP.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  59,
+                            "title":  "Review MONITOR_BACKGROUND.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  68,
+                            "title":  "Review TODO_DASHBOARD_SAMPLE.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  66,
+                            "title":  "Review TESTING_GUIDE.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  65,
+                            "title":  "Review TEAM_SKILLS_MATRIX.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  69,
+                            "title":  "Review TRAINING_PLAN.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  35,
+                            "title":  "Review README.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  36,
+                            "title":  "Review check-model-updates.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  37,
+                            "title":  "Review install-deps.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  38,
+                            "title":  "Review pull-model.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  39,
+                            "title":  "Review quick-setup.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  40,
+                            "title":  "Review run_agentcore_tests.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  41,
+                            "title":  "Review Setup-AI-Models.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  17,
+                            "title":  "Review session-history.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  1,
+                            "title":  "Review .gitattributes: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  2,
+                            "title":  "Review .gitignore: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  3,
+                            "title":  "Review README.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  4,
+                            "title":  "Review run-sequence.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  5,
+                            "title":  "Review TASKS.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  6,
+                            "title":  "Review TODO_FIXES.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  7,
+                            "title":  "Review agent-runner.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  63,
+                            "title":  "Review skills-schema.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  56,
+                            "title":  "Review ENVIRONMENT.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  57,
+                            "title":  "Review INSTALLER_CI.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  58,
+                            "title":  "Review local-setup.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  50,
+                            "title":  "Review agent-resource-monitoring.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  42,
+                            "title":  "Review Start-AI-Orchestrator.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  45,
+                            "title":  "Review Stop-AI-Env.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  44,
+                            "title":  "Review start-model.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  55,
+                            "title":  "Review BACKLOG_MANAGEMENT.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  29,
+                            "title":  "Review stop_model.py: Contains code definitions",
+                            "priority":  "medium",
+                            "points":  3,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  26,
+                            "title":  "Review agent_runner.py: Contains code definitions",
+                            "priority":  "medium",
+                            "points":  3,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  34,
+                            "title":  "Review test_agent_runner_usbmanager.py: Contains code definitions",
+                            "priority":  "medium",
+                            "points":  3,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  28,
+                            "title":  "Review start_model.py: Contains code definitions",
+                            "priority":  "medium",
+                            "points":  3,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  131,
+                            "title":  "Review single_agent_backlog.py: Contains code definitions",
+                            "priority":  "medium",
+                            "points":  3,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  33,
+                            "title":  "Review test_agent_runner.py: Contains code definitions",
+                            "priority":  "medium",
+                            "points":  3,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  74,
+                            "title":  "Review autoscale_controller.py: Contains code definitions",
+                            "priority":  "medium",
+                            "points":  3,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  77,
+                            "title":  "Review check-port-listener.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  148,
+                            "title":  "Review agent-smoke-test.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  71,
+                            "title":  "Review agent-runtime-monitor-single-sample.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  78,
+                            "title":  "Review check-tools.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  62,
+                            "title":  "Review SESSION_SUMMARY_AND_EPICS.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  76,
+                            "title":  "Review check-installs.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  75,
+                            "title":  "Review check-environment.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  70,
+                            "title":  "Review llama-cli.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  49,
+                            "title":  "Review imported_save_session.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  48,
+                            "title":  "Review pre-commit: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  43,
+                            "title":  "Review Start-Local-AI.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  46,
+                            "title":  "Review validate-repo-fast.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  73,
+                            "title":  "Review apply-aider-suggestion.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  72,
+                            "title":  "Review agent_stub.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  47,
+                            "title":  "Review validate-repo.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  32,
+                            "title":  "Review README.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  92,
+                            "title":  "Review install-git-filter-repo.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  93,
+                            "title":  "Review install-git-hooks.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  94,
+                            "title":  "Review install-missing.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  80,
+                            "title":  "Review clean-hkcu-environment.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  95,
+                            "title":  "Review install-ollama-aider.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  96,
+                            "title":  "Review install-windows.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  97,
+                            "title":  "Review install-winget.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  137,
+                            "title":  "Review validate-local-llama-model.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  134,
+                            "title":  "Review start-ollama-role.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  135,
+                            "title":  "Review stop-ollama-role.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  140,
+                            "title":  "Review run-team-3-dev.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  133,
+                            "title":  "Review start-local-llama-role.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  138,
+                            "title":  "Review verify-ollama-home-e-drive.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  139,
+                            "title":  "Review stress-parallel.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  136,
+                            "title":  "Review update-system-path.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  98,
+                            "title":  "Review kill-ollama-role.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  100,
+                            "title":  "Review monitor-background.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  99,
+                            "title":  "Review monitor-agents-epic.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  102,
+                            "title":  "Review monitor-ollama.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  101,
+                            "title":  "Review monitor-local-llama.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  103,
+                            "title":  "Review package-module.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  104,
+                            "title":  "Review pre-commit-scan.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  88,
+                            "title":  "Review install-7zip-auto.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  82,
+                            "title":  "Review elevated-runbook.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  86,
+                            "title":  "Review export-todos-dashboard.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  91,
+                            "title":  "Review install-git-filter-repo-retry.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  81,
+                            "title":  "Review create-personal-config.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  89,
+                            "title":  "Review install-7zip-winget.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  90,
+                            "title":  "Review install-choco-7zip.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  87,
+                            "title":  "Review find-python.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  145,
+                            "title":  "Review set-local-llama-defaults.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  113,
+                            "title":  "Review run-ollama-serve-detached.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  114,
+                            "title":  "Review run-team-dryrun.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  115,
+                            "title":  "Review run-tests.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  120,
+                            "title":  "Review run_single_agent_backlog.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  121,
+                            "title":  "Review scan-secrets.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  122,
+                            "title":  "Review scheduler-prefer-skill.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  123,
+                            "title":  "Review set-ollama-home.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  79,
+                            "title":  "Review ci-gemini-analyze.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  22,
+                            "title":  "Review skills-trace.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  23,
+                            "title":  "Review stop-ollama-on-11434-and-restart.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  24,
+                            "title":  "Review tmp_debug_enforcer.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  25,
+                            "title":  "Review tmp_repro_enforcer.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  27,
+                            "title":  "Review README.md: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  30,
+                            "title":  "Review .gitignore: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  31,
+                            "title":  "Review CACHEDIR.TAG: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  142,
+                            "title":  "Review TemplateAgent.psm1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  143,
+                            "title":  "Review load-local-llama-session.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  132,
+                            "title":  "Review skill-monitor.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  141,
+                            "title":  "Review SimRacingAgent.psm1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  146,
+                            "title":  "Review start-ollama-agent.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  147,
+                            "title":  "Review model-store.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  144,
+                            "title":  "Review run-local-llama-agent.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  109,
+                            "title":  "Review review-skill-candidates.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  106,
+                            "title":  "Review probe-agents.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  107,
+                            "title":  "Review provision-server.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  112,
+                            "title":  "Review run-ollama-check-and-list.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  105,
+                            "title":  "Review preload-session.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  110,
+                            "title":  "Review run-agents-epic.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  111,
+                            "title":  "Review run-long-sampler-monitor.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        },
+                        {
+                            "id":  108,
+                            "title":  "Review pull-qwen-to-e.ps1: Contains headings/documentation",
+                            "priority":  "medium",
+                            "points":  1,
+                            "assignedTo":  null
+                        }
+                    ],
+    "generatedAt":  "2026-01-30T18:57:29.1118521+01:00"
+}

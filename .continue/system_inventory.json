@@ -1,0 +1,112 @@
+﻿{
+    "ollama":  "C:\\Users\\sbatt\\AppData\\Local\\Programs\\Ollama\\ollama.exe",
+    "llmstudio":  null,
+    "drivers":  [
+                    {
+                        "DeviceName":  "Intel(R) I211 Gigabit Network Connection",
+                        "DriverVersion":  "14.1.22.0",
+                        "Manufacturer":  "Intel",
+                        "DriverProviderName":  "Intel"
+                    },
+                    {
+                        "DeviceName":  "Intel(R) Wi-Fi 6 AX200 160MHz",
+                        "DriverVersion":  "24.10.0.4",
+                        "Manufacturer":  "Intel Corporation",
+                        "DriverProviderName":  "Intel"
+                    },
+                    {
+                        "DeviceName":  "NVIDIA GeForce RTX 3090",
+                        "DriverVersion":  "32.0.15.9186",
+                        "Manufacturer":  "NVIDIA",
+                        "DriverProviderName":  "NVIDIA"
+                    }
+                ],
+    "env_names":  [
+                      "ALLUSERSPROFILE",
+                      "APPDATA",
+                      "BUNDLED_DEBUGPY_PATH",
+                      "CHROME_CRASHPAD_PIPE_NAME",
+                      "COLORTERM",
+                      "CommonProgramFiles",
+                      "CommonProgramFiles(x86)",
+                      "CommonProgramW6432",
+                      "COMPUTERNAME",
+                      "ComSpec",
+                      "DriverData",
+                      "EFC_10520_1592913036",
+                      "FPS_BROWSER_APP_PROFILE_STRING",
+                      "FPS_BROWSER_USER_PROFILE_STRING",
+                      "GIT_ASKPASS",
+                      "GIT_PAGER",
+                      "HOMEDRIVE",
+                      "HOMEPATH",
+                      "LANG",
+                      "LOCALAPPDATA",
+                      "LOGONSERVER",
+                      "NUMBER_OF_PROCESSORS",
+                      "OculusBase",
+                      "OneDrive",
+                      "OneDriveConsumer",
+                      "OS",
+                      "Path",
+                      "PATHEXT",
+                      "PROCESSOR_ARCHITECTURE",
+                      "PROCESSOR_IDENTIFIER",
+                      "PROCESSOR_LEVEL",
+                      "PROCESSOR_REVISION",
+                      "ProgramData",
+                      "ProgramFiles",
+                      "ProgramFiles(x86)",
+                      "ProgramW6432",
+                      "PSExecutionPolicyPreference",
+                      "PSModulePath",
+                      "PUBLIC",
+                      "PYDEVD_DISABLE_FILE_VALIDATION",
+                      "PYTHON_BASIC_REPL",
+                      "PYTHONSTARTUP",
+                      "SESSIONNAME",
+                      "SIMHUB_INSTALL_PATH",
+                      "SystemDrive",
+                      "SystemRoot",
+                      "TEMP",
+                      "TERM_PROGRAM",
+                      "TERM_PROGRAM_VERSION",
+                      "TMP",
+                      "USERDOMAIN",
+                      "USERDOMAIN_ROAMINGPROFILE",
+                      "USERNAME",
+                      "USERPROFILE",
+                      "VSCODE_DEBUGPY_ADAPTER_ENDPOINTS",
+                      "VSCODE_GIT_ASKPASS_EXTRA_ARGS",
+                      "VSCODE_GIT_ASKPASS_MAIN",
+                      "VSCODE_GIT_ASKPASS_NODE",
+                      "VSCODE_GIT_IPC_HANDLE",
+                      "VSCODE_INJECTION",
+                      "VSCODE_PYTHON_AUTOACTIVATE_GUARD",
+                      "windir"
+                  ],
+    "nvidia-smi":  "C:\\Windows\\system32\\nvidia-smi.exe",
+    "bw":  null,
+    "video":  [
+                  {
+                      "Name":  "Virtual Desktop Monitor",
+                      "DriverVersion":  "13.50.53.699",
+                      "AdapterRAM":  null
+                  },
+                  {
+                      "Name":  "Meta Virtual Monitor",
+                      "DriverVersion":  "11.1.45.729",
+                      "AdapterRAM":  null
+                  },
+                  {
+                      "Name":  "NVIDIA GeForce RTX 3090",
+                      "DriverVersion":  "32.0.15.9186",
+                      "AdapterRAM":  4293918720
+                  }
+              ],
+    "python":  null,
+    "git":  "C:\\Program Files\\Git\\cmd\\git.exe",
+    "docker":  null,
+    "git_version":  "git version 2.52.0.windows.1",
+    "gh":  "C:\\Program Files\\GitHub CLI\\gh.exe"
+}
